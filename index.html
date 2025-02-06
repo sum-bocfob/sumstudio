@@ -8,10 +8,26 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="./style.css" />
+        <script>
+            function includeHTML(id, url) {
+                fetch(url)
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch((error) => console.error("Error loading HTML:", error));
+            }
+
+            // ページが読み込まれたらHTMLをインクルード
+            window.onload = function () {
+                includeHTML("header-container", "header.html"); // ヘッダーをインクルード
+                includeHTML("footer-container", "footer.html"); // フッターをインクルード
+            };
+        </script>
     </head>
 
     <body>
-        --- layout: default --- {% include header.html %}
+        <div id="header-container"></div>
 
         <!-- コンテンツとサイドバー -->
         <div class="container">
@@ -298,16 +314,16 @@
                 </div>
                 <div class="sns-share">
                     <a href="https://twitter.com/share?url=https://sum-bocfob.github.io/quick-brush-selector/&hashtags=blender,blender3d,b3d,blenderaddon" target="_blank" class="sns-btn twitter">
-                        <img id="x_img" src="./Images/x_logo-white.png" alt="X" />
+                        <img id="x_img" src="./WebIcons/x_logo-white.png" alt="X" />
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://sum-bocfob.github.io/quick-brush-selector/" target="_blank" class="sns-btn">
-                        <img src="./Images/Facebook_Logo_Primary.png" alt="Facebook" />
+                        <img src="WebIcons/Facebook_Logo_Primary.png" alt="Facebook" />
                     </a>
                     <a href="https://social-plugins.line.me/lineit/share?url=https://sum-bocfob.github.io/quick-brush-selector/" target="_blank" class="sns-btn">
-                        <img src="./Images/LINE_APP_Android.png" alt="LINE" />
+                        <img src="WebIcons/LINE_APP_Android.png" alt="LINE" />
                     </a>
                     <a href="https://b.hatena.ne.jp/entry/s/https://sum-bocfob.github.io/quick-brush-selector/" target="_blank" class="sns-btn">
-                        <img src="./Images/hatenabookmark_symbolmark.png" alt="はてなブックマーク" />
+                        <img src="WebIcons/hatenabookmark_symbolmark.png" alt="はてなブックマーク" />
                     </a>
                 </div>
             </main>
@@ -341,7 +357,7 @@
                 </div>
             </aside>
         </div>
-        {% include footer.html %}
+        <div id="footer-container"></div>
         <script src="./loadRandomUrl.js"></script>
     </body>
 </html>
