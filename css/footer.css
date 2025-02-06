@@ -3,8 +3,34 @@ footer {
     color: #216582;
     text-align: center;
     padding: 10px;
-    font-family: 'Montserrat', serif;
+    font-family: "Montserrat", serif;
     font-size: large;
     font-weight: 800;
     background: #efefef;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.footer_x_btn img {
+    border-radius: 25%;
+    width: 30px;
+    height: auto;
+    background: #2c2c2c;
+    padding: 10px;
+}
+
+.footer_youtube_btn img {
+    width: auto;
+    height: 40px;
+}
+
+.footer_blenderMarket_btn img,
+.footer_booth_btn img {
+    width: auto;
+    height: 60px;
 }
