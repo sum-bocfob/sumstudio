@@ -1,0 +1,286 @@
+/* 全体のリセット */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* レイアウト */
+body {
+    font-family: "Noto Sans JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ヘッダー */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #efefef;
+    padding: 15px;
+    text-align: center;
+}
+
+.headerMyName {
+    padding: 0 0 0 50px;
+    font-size: xx-large;
+    font-family: 'Montserrat', serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    text-decoration: none;
+    color: #216582;
+}
+
+.separator {
+    width: 1px;
+    background: #216582;
+}
+
+/* ナビゲーション */
+nav ul {
+    display: flex;
+    text-align: center;
+    font-weight: 800;
+    padding-right: 200px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #216582;
+}
+
+/* メインコンテンツとサイドバーのコンテナ */
+.container {
+    display: flex;
+    padding: 30px 30px;
+    background: #3d3d3d;
+}
+
+/* メインコンテンツ */
+main {
+    background: #2c2c2c;
+    border-radius: 15px;
+    color: #f3f3f3;
+    overflow: hidden;
+    min-width: 700px
+}
+
+/* サイドバー */
+aside {
+    background: #efefef;
+    margin-left: 20px;
+    border-radius: 15px;
+    width: 30%;
+    min-width: 200px;
+    height: 80vh;
+    position: sticky;
+    top: 20px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+aside h2 {
+    margin: 20px 0; color: #216582;
+}
+
+aside div {
+    background-color: #2e2e2e;
+    padding-bottom: 15px;
+}
+
+aside div :hover {
+    opacity: 80%;
+}
+
+aside a {
+    text-decoration: none;
+    color: #efefef;
+}
+
+.asideImg {
+    max-width: 80%; margin-top: 20px;
+}
+
+
+/* フッター */
+footer {
+    color: #216582;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Montserrat', serif;
+    font-size: large;
+    font-weight: 800;
+    background: #efefef;
+}
+
+.title {
+    font-family: 'Montserrat', serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    border-radius: 15px 15px 0 0;
+}
+
+/* 見出し */
+.headline1 {
+    margin: 0;
+    padding: 30px;
+    /* 上下左右のバランスを調整 */
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right, #8ec5fc, #a1acff, #e0c3fc);
+    color: #363636;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headline2 {
+    display: inline-block;
+    width: 90%;
+    padding: 25px 20px;
+    border-radius: 200px;
+    color: #2c2c2c;
+    background: linear-gradient(to right, #fff75e 0%, #ffd53e 50%, #fdb833 100%);
+    text-align: center;
+}
+
+
+.fontSize1 {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.fontSize2 {
+    font-size: xxx-large;
+    font-weight: bold;
+}
+
+.fontSize3 {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.fontSize4 {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.fontAccent {
+    font-weight: bold;
+}
+
+/* 画像中央配置 白枠 */
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px auto
+    /* background: #818181; */
+    /* padding: 10px 0; */
+}
+
+.imgBorder {
+    border-color: #818181;
+    border-width: 1px;
+    border-style: solid;
+    max-width: 90%;
+}
+
+/* リスト */
+.myList {
+    padding-left: 0;
+    display: inline-block;
+    line-height: 30px;
+}
+
+.myListContent {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.iframe-container {
+    position: relative;
+    width: 80%; /* 幅を親要素の80%に設定 */
+    padding-top: 45%; /* 高さを16:9の比率に設定 (9 / 16 * 100 = 56.25%) */
+    margin: 0 auto; /* 中央に配置 */
+    margin-bottom: 20px;
+    background-color: #000; /* iframeの背景色を黒に設定 */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* 幅を親要素に合わせる */
+    height: 100%; /* 高さを親要素に合わせる */
+}
+
+/* シェアボタン */
+.sns-share-title {
+    /* display: inline-block; */
+    text-align: center;
+    align-items: center;
+    margin-left:  auto;
+    margin-right:  auto;
+    font-weight: bold;
+    font-size: large;
+}
+
+.sns-share {
+    display: flex;
+    gap: 50px; /* ボタン間の余白 */
+    justify-content: center;
+    margin: 20px auto 50px auto;
+}
+
+.sns-btn {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50%; */
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f5f5f5; 背景色（必要に応じて変更） */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 影を追加 */
+    transition: 0.3s;
+}
+
+.sns-btn img {
+    /* アイコンサイズ */
+    width: 50px; 
+    height: 50px;
+}
+
+.sns-btn:hover {
+    opacity: 0.8;
+}
+
+
+.twitter {
+    border-radius: 50%;
+    border: #e9e9e9;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#x_img {
+    width: 30px;
+    height: 30px
+}

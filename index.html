@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quick Brush Selector</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header>
+            <a class="headerMyName" href="#">sum studio</a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">ホーム</a>
+                    </li>
+                    <div class="separator"></div>
+                    <li>
+                        <a href="#">Blenderアドオン</a>
+                    </li>
+                    <div class="separator"></div>
+                    <li>
+                        <a href="#">チュートリアル</a>
+                    </li>
+                    <div class="separator"></div>
+                    <li>
+                        <a href="#">3Dモデル</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <main>
+                <!-- タイトル -->
+                <h1 class="headline1 fontSize1 title"><i class="fa-brands fa-x-twitter fa-5x"></i>Quick Brush Selector</h1>
+
+                <div class="imgContainer" style="background: #efefef; padding: 10px 0">
+                    <a href="https://blendermarket.com/products/sculpt-brush-toolset" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                        <img src="https://github.com/sum-bocfob/publicImages/blob/main/Blender%20Market%20logo.png?raw=true" alt="Quick Brush Selector Blender Market" style="width: 200px; height: auto; display: block" />
+                    </a>
+                    <a href="https://sumsum.booth.pm/items/6535509" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
+                        <img src="https://github.com/sum-bocfob/publicImages/blob/main/BOOTH_Logo.png?raw=true" alt="Quick Brush Selector BOOTH" style="width: 200px; height: auto; display: block" />
+                    </a>
+                </div>
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">スカルプト, テクスチャペイント, ドロー（グリースペンシル）のブラシを簡単に 選択/保存できるようにするアドオンです。</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">異なる.blendファイル間でも、保存したメニューを使用できます。</h3>
+                    <h4 style="font-weight: bold; color: #f3f3f3">バージョン1.6.1以上は、Blender3.4以上対応です。</h4>
+                    <div class="imgContainer">
+                        <img class="imgBorder" src="https://assets.superhivemarket.com/cache/4a50389b7c448409c111220849421aff.png" style="max-width: 80%" />
+                    </div>
+                    <br />
+                    <h5 style="color: #f3f3f3">Sculpt Brush Toolsetの機能が改良されたため、製品名がQuick Brush Selectorに変更されました。</h5>
+                    <iframe
+                        width="640px%"
+                        height="360px"
+                        src="https://www.youtube.com/embed/CgvLfXqV9BY"
+                        title="Sculpt Brush Toolset is now compatible with Blender4.3【Blender Addon】"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                    <h5 style="color: #bfd7ff">
+                        テクスチャペイント、ドロー（グリースペンシル）での機能は、Blender4.3以降で 使用できます。<br />
+                        それ以前のバージョンのBlenderを使用している方は、スカルプトでの機能のみ使用できる ”sculpt_brush_toolset_1.2.2.zip”をご利用ください。
+                    </h5>
+                    <br />
+                </div>
+                <!-- Features -->
+                <h2 class="headline1 fontSize2">特徴</h2>
+                <h2 class="fontSize4" style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">好みの設定のブラシを簡単にアクティブに</li>
+                        <li class=".myListContent">複数のツールセット(ブラシのコレクション)を保存可能<br /></li>
+                        <li class=".myListContent">簡単操作/カスタマイズ可能なUI<br /></li>
+                    </ul>
+                </h2>
+                <!-- how to use -->
+                <h2 class="headline1 fontSize2">使用方法</h2>
+                <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">スカルプトモード / テクスチャペイントモード / ドローモード（グリースペンシル）でNパネルのQBSを選択します</p>
+                <div class="imgContainer">
+                    <img src="https://github.com/sum-bocfob/quick-brush-selector/blob/main/Images/NPanel1_Ja.png?raw=true" class="imgBorder" />
+                </div>
+
+                <div style="margin: 16px auto; text-align: center; color: #f3f3f3">
+                    <!-- Add Toolset / Brush -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">ツールセット、ブラシの追加</span>
+                    </h1>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        ツールセットは、ブラシのコレクションです。<br />
+                        複数のツールセットを保持することができます。<br />
+                        <span class="fontAccent">「ツールセットを追加」</span>ボタンから、ツールセットを追加できます。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="https://github.com/sum-bocfob/quick-brush-selector/blob/main/Images/AddToolset_JP.gif?raw=true" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        3Dビューポートのアセットシェルフでブラシを右クリックし、<span class="fontAccent">「アクティブなツールセットへ追加」</span>または<span class="fontAccent">「新しいツールセットへ追加」</span>を選択すると、 アクティブなツールセットまたは新しいツールセットにブラシを追加できます。<br />
+                        各モードのアセットシェルフからは、各モード毎のライブラリにブラシを追加します。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="https://github.com/sum-bocfob/quick-brush-selector/blob/main/Images/AddBrush_JP.gif?raw=true" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        また、スカルプトのボックスマスク, 投げ縄で隠す, クロスフィルター, 移動などのようなツールや、グリースペンシルのボックス, トリム, スポイトなどのツールも、ツールセットへ追加することができます。<br /><br />
+                        まず追加したいツールをアクティブにし、ツールシェルフ上で右クリックし<br />
+                        <span class="fontAccent">”アクティブなツールをアクティブなツールセット/新しいツールセットへ追加”</span>を押します。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="https://github.com/sum-bocfob/quick-brush-selector/blob/main/Images/AddTool_JP.gif?raw=true" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        アセットブラウザーからは、<span class="fontAccent">それぞれのモードのツールセットに対して</span>、ブラシを追加できます。<br />
+                        また、<span class="fontAccent">複数のブラシをまとめて追加</span>することもできます。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="https://github.com/sum-bocfob/quick-brush-selector/blob/main/Images/FromAssetBrowser_JP.gif?raw=true" class="imgBorder" />
+                    </div>
+                    <!-- Select Toolset / Brush -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">ツールセット、ブラシを選択</span>
+                    </h1>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        ツールセットにブラシを追加したら、<span class="fontAccent">3DビューポートでYキー</span>(デフォルト)を押して、ブラシセレクターを開くことができます。<br />
+                        アイコンの上にマウスを持っていくと、ブラシ名が表示され、<span class="fontAccent">クリックするとそのブラシをアクティブにします</span>。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="https://assets.superhivemarket.com/cache/b7feb79c3649481621d3a86b8e210614.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        複数のツールセットが存在する場合、ブラシセレクターを開いた状態で<span class="fontAccent">TまたはUキー</span>(デフォルト)を押して、アクティブなツールセットを変更できます。<br />
+                        また、<span class="fontAccent">ブラシセレクター上部の四角形をクリック</span>しても変更可能です。
+                    </p>
+                    <div class="imgContainer" class="imgContainer">
+                        <img src="https://assets.superhivemarket.com/cache/480d458a0cfe57494f91cd3b8d260ff1.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">開いたときと同じキー(デフォルトではY)を押すか、マウスを遠くに持っていくとブラシセレクターが閉じます。</p>
+                    <div class="imgContainer" class="imgContainer">
+                        <img src="https://assets.superhivemarket.com/cache/4cb6029ab0b5a2fb7c0216496ab0d3db.gif" class="imgBorder" />
+                    </div>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        ブラシは、上から時計回りに配置されます。<br />
+                        パネルから順序を変更したり、削除したりすることが可能です。
+                    </p>
+                    <!-- Import / Export -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">インポート / エクスポート</span>
+                    </h1>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">インポート / エクスポートメニューには、3種類のメニューが存在します。</p>
+                    <div class="imgContainer" class="imgContainer">
+                        <img src="https://github.com/sum-bocfob/quick-brush-selector/blob/main/Images/ImportExportMenu_JP.png?raw=true" class="imgBorder" />
+                    </div>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <span style="font-weight: bold">グローバルライブラリ</span>は、異なるBlenderファイル間で、すべてのツールセットの保存 / 読み込みをします。<br />
+                        これは一つだけ作成できます。<br /><br />
+                        「グローバルライブラリを読み込む」をクリックすると、現在のライブラリが上書きされることに注意してください。<br /><br />
+                        グローバルライブラリは、それぞれのモード毎に保存されます。
+                    </p>
+                    <hr style="border: none; height: 3px; text-align: center; margin: 20px auto; background-color: #f3f3f3; width: 80%; border-radius: 5px" />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%"><span style="font-weight: bold">ツールセット</span>は、アクティブなツールセットをテキストファイルにエクスポートしたり、エクスポートしたテキストファイルからツールセットをインポートします。</p>
+                    <hr style="border: none; height: 3px; text-align: center; margin: 20px auto; background-color: #f3f3f3; width: 80%; border-radius: 5px" />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <span style="font-weight: bold">ライブラリ</span>は、すべてのツールセットをテキストファイルにインポート / エクスポートします。<br /><br />
+                        「ライブラリをインポート」をクリックすると、現在のライブラリが上書きされることに注意してください。
+                    </p>
+                    <!-- Settings -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">設定</span>
+                    </h1>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">設定にはいくつかの調整可能なパラメータがあります。</p>
+                    <div class="imgContainer">
+                        <img src="https://github.com/sum-bocfob/quick-brush-selector/blob/main/Images/Settings_JP.png?raw=true" class="imgBorder" />
+                    </div>
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <span class="fontAccent">“シンプルパネルを使用”</span>をオンにすると、ブラシセレクターは名前のみを表示するシンプルなパネルになります。<br />
+                        これはアクティブなツールセットのブラシのみを表示します(ショートカットキーでツールセットを変更することはできません)。<br />
+                        ブラシは左上から下に配置されます。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="https://assets.superhivemarket.com/cache/ce1cac64eba0a2268e5cc86f5864ccff.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">ブラシセレクターのアイコンは自動で生成されますが、何らかの理由でファイルが削除された場合などは、<span class="fontAccent">”アイコンの画像を再生成”</span>ボタンで再び生成することができます。</p>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">Toolset Settingsでは、ツールセットの名前と順序を変更できます。</p>
+                    <div class="imgContainer">
+                        <img src="https://assets.superhivemarket.com/cache/b9fc8c800c82265b061c1ee33d6ac532.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">プリファレンス → アドオン → Quick Brush Selectorから、ショートカットキーなどを変更できます。</p>
+                    <div class="imgContainer">
+                        <img src="https://github.com/sum-bocfob/quick-brush-selector/blob/main/Images/Preferences_JP.png?raw=true" class="imgBorder" />
+                    </div>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">プリファレンスの<span class="fontAccent">「グローバルライブラリを自動で読み込む」</span>をオンにしていれば(デフォルトでオン)、新しい.blendファイルでも自動で読み込まれます。</p>
+                    <!-- installation -->
+                    <h2 class="headline1 fontSize2">インストール方法</h2>
+                    <div style="text-align: center; color: #f3f3f3; max-width: 80%; margin: 20px auto 0 auto">Blender4.2以上</div>
+                    <div style="margin: 0px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <ul style="padding-left: 0; display: inline-block">
+                            <li style="text-align: left">zipファイルをダウンロード(解凍する必要はありません)</li>
+                            <li style="text-align: left">編集→プリファレンス→”アドオン”または”エクステンションを入手”タブ</li>
+                            <li style="text-align: left">右上の下向き矢印から、ディスクからインストールをクリック</li>
+                            <li style="text-align: left">ダウンロードしたzipファイルを選択</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center; color: #f3f3f3; max-width: 80%; margin: 20px auto 0 auto">Blender4.1以下</div>
+                    <div style="margin: 0 auto 50px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <ul style="padding-left: 0; display: inline-block">
+                            <li style="text-align: left">zipファイルをダウンロード(解凍する必要はありません)</li>
+                            <li style="text-align: left">編集→プリファレンス→アドオン</li>
+                            <li style="text-align: left">インストールをクリックし、zipファイルを選択</li>
+                            <li style="text-align: left">チェックボックスにチェックを入れる</li>
+                        </ul>
+                    </div>
+                    <!-- Update -->
+                    <h2 class="headline1 fontSize2">アップデート履歴</h2>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        バージョン2.1.0はBlender4.3またはBlender4.4.0aで動作します。<br />
+                        また、バージョン2.1.0では下位のバージョンで作られたツールセット / ライブラリのテキストファイルを読み込むことはできません。
+                    </p>
+                    <div style="text-align: center; color: #f3f3f3; margin: auto; margin-bottom: 30px; max-width: 80%; display: block">
+                        <table style="margin: auto; text-align: left; border-collapse: collapse">
+                            <tbody>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>2.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>
+                                        テクスチャペイント、グリースペンシルのドローに対応しました<br />
+                                        製品名が「Sculpt Brush Toolset」から「Quick Brush Selector」に変更されました
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>2.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>
+                                        Blender4.3に対応<br />
+                                        以下の機能を追加<br />
+                                        アセットブラウザーからブラシを追加<br />
+                                        新しいツールセットへブラシを追加<br />
+                                        メニューの色を変更<br />
+                                        ツールセットの名前を変更<br />
+                                        シンプルパネルの列数を変更<br />
+                                        日本語に対応
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.2.2</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>シンプルパネルを追加</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.2.1</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>Blender 4.2</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.2.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>Blender 4.0対応</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>アクティブなツールセットを変更した際に一部のブラシが選択できなくなる問題の修正</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>
+                                        セレクターを開いたときと同じキーを押すか、マウスを遠くに移動することでセレクターを閉じることができるようになりました。<br />
+                                        ショートカットキーを環境設定から変更できるようになりました。<br />
+                                        今後のアップデートに備えてバックアップ機能を追加しました。
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>初期リリース</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- シェアボタン -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 90%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 30px"></span>シェアする
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 30px"></span>
+                </div>
+                <div class="sns-share">
+                    <a href="https://twitter.com/share?url=https://sum-bocfob.github.io/quick-brush-selector/&hashtags=blender,blender3d,b3d,blenderaddon" target="_blank" class="sns-btn twitter">
+                        <img id="x_img" src="./Images/x_logo-white.png" alt="X" />
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://sum-bocfob.github.io/quick-brush-selector/" target="_blank" class="sns-btn">
+                        <img src="./Images/Facebook_Logo_Primary.png" alt="Facebook" />
+                    </a>
+                    <a href="https://social-plugins.line.me/lineit/share?url=https://sum-bocfob.github.io/quick-brush-selector/" target="_blank" class="sns-btn">
+                        <img src="./Images/LINE_APP_Android.png" alt="LINE" />
+                    </a>
+                    <a href="https://b.hatena.ne.jp/entry/s/https://sum-bocfob.github.io/quick-brush-selector/" target="_blank" class="sns-btn">
+                        <img src="./Images/hatenabookmark_symbolmark.png" alt="はてなブックマーク" />
+                    </a>
+                </div>
+            </main>
+
+            <aside>
+                <h2>人気のBlenderアドオン</h2>
+                <div>
+                    <a href="https://blendermarket.com/products/easy-text-animation" target="_blank" rel="noopener noreferrer">
+                        <img src="https://github.com/sum-bocfob/publicImages/blob/main/AddonStoreImages/EasyTextAnimationHeader1.png?raw=true" class="asideImg" />
+                        <p>Easy Text Animation<br />テキストアニメーション簡単に作成</p>
+                    </a>
+                </div>
+                <hr style="margin: 0 auto" />
+                <div>
+                    <a href="https://blendermarket.com/products/easy-text-animation" target="_blank" rel="noopener noreferrer">
+                        <img src="https://github.com/sum-bocfob/publicImages/blob/main/AddonStoreImages/QuickBrushSelectorHeader1.png?raw=true" class="asideImg" />
+                        <p>Quick Brush Selector<br />お気に入りのブラシを素早く選択</p>
+                    </a>
+                </div>
+                <hr style="margin: 0 auto" />
+                <div>
+                    <a href="https://blendermarket.com/products/easy-text-animation" target="_blank" rel="noopener noreferrer">
+                        <img src="https://github.com/sum-bocfob/publicImages/blob/main/AddonStoreImages/FastSculptAndPaintAssistantHeader1.png?raw=true" class="asideImg" />
+                        <p>Fast Sculpt and Paint Assistant<br />スカルプト、ペイントの効率化</p>
+                    </a>
+                </div>
+
+                <h2>おすすめのチュートリアル</h2>
+                <div class="iframe-container">
+                    <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </aside>
+        </div>
+
+        <!-- フッター -->
+        <footer>
+            <p>sum studio</p>
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px">
+                <a href="https://twitter.com/boc_fob" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                    <img src="https://assets.superhivemarket.com/cache/591717d03f1cdd6d2bbb052a52cb8cfa.png" alt="sum studio x" style="width: 80px; height: auto" />
+                </a>
+                <a href="https://www.youtube.com/channel/UCzFITeATkQiVA_wpuqnhmQw" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                    <img src="https://assets.superhivemarket.com/cache/4f38b7be60e6f88a8900e4d39fc52189.png" alt="sum studio YouTube" style="width: 80px; height: auto" />
+                </a>
+                <a href="https://blendermarket.com/creators/sumstudio" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                    <img src="https://assets.superhivemarket.com/cache/3af0579d882a98a16ae560ab552e65b9.svg" alt="sum studio Blender market" style="width: 80px; height: auto" />
+                </a>
+                <a href="https://sumsum.booth.pm/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://assets.superhivemarket.com/cache/935b7da1cd8fae48209d8df1a28e1313.png" alt="sum studio BOOTH" style="width: 80px; height: auto" />
+                </a>
+            </div>
+        </footer>
+        <script src="./loadRandomUrl.js"></script>
+    </body>
+</html>
