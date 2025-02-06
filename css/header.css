@@ -1,9 +1,9 @@
 /* ヘッダー */
-@scope (header){
+/* @scope (header){
     .separator {
         width: 1px;
         background: #216582;
-    }
+    } */
 
     .headerMyName {
         padding: 0 0 0 50px;
