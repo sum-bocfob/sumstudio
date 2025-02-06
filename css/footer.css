@@ -1,0 +1,10 @@
+/* フッター */
+footer {
+    color: #216582;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Montserrat', serif;
+    font-size: large;
+    font-weight: 800;
+    background: #efefef;
+}

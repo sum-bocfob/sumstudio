@@ -1,0 +1,49 @@
+/* シェアボタン */
+.sns-share-title {
+    /* display: inline-block; */
+    text-align: center;
+    align-items: center;
+    margin-left:  auto;
+    margin-right:  auto;
+    font-weight: bold;
+    font-size: large;
+}
+
+.sns-share {
+    display: flex;
+    gap: 50px; /* ボタン間の余白 */
+    justify-content: center;
+    margin: 20px auto 50px auto;
+}
+
+.sns-btn {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sns-btn img {
+    /* アイコンサイズ */
+    width: 50px; 
+    height: 50px;
+}
+
+.sns-btn:hover {
+    opacity: 0.8;
+}
+
+
+.twitter {
+    border-radius: 50%;
+    border: #e9e9e9;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#x_img {
+    width: 30px;
+    height: 30px
+}

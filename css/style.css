@@ -96,10 +96,11 @@ aside {
 }
 
 aside h2 {
-    margin: 20px 0; color: #216582;
+    margin: 20px 0;
+    color: #216582;
 }
 
-aside div {
+.favAddonDiv {
     background-color: #2e2e2e;
     padding-bottom: 15px;
 }
@@ -221,7 +222,6 @@ footer {
     padding-top: 45%; /* 高さを16:9の比率に設定 (9 / 16 * 100 = 56.25%) */
     margin: 0 auto; /* 中央に配置 */
     margin-bottom: 20px;
-    background-color: #000; /* iframeの背景色を黒に設定 */
 }
 
 .iframe-container iframe {
@@ -230,6 +230,7 @@ footer {
     left: 0;
     width: 100%; /* 幅を親要素に合わせる */
     height: 100%; /* 高さを親要素に合わせる */
+    margin-top: 20px;
 }
 
 /* シェアボタン */
@@ -254,11 +255,8 @@ footer {
     display: flex;
     width: 50px;
     height: 50px;
-    /* border-radius: 50%; */
     justify-content: center;
     align-items: center;
-    /* background-color: #f5f5f5; 背景色（必要に応じて変更） */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 影を追加 */
     transition: 0.3s;
 }
 

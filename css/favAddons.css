@@ -1,0 +1,24 @@
+
+
+h2 {
+    margin: 20px 0;
+    color: #216582;
+}
+
+.favAddonDiv {
+    background-color: #2e2e2e;
+    padding-bottom: 15px;
+}
+
+div :hover {
+    opacity: 80%;
+}
+
+a {
+    text-decoration: none;
+    color: #efefef;
+}
+
+.asideImg {
+    max-width: 80%; margin-top: 20px;
+}
