@@ -14,8 +14,11 @@
     opacity: 80%;
 }
 
-.favAddons_container p {
+.favAddons_container a {
     text-decoration: none;
+}
+
+.favAddons_container p {
     color: #efefef;
 }
 

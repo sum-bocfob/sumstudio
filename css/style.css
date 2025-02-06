@@ -50,28 +50,10 @@ aside {
     text-align: center;
 }
 
-aside h2 {
-    margin: 20px 0;
-    color: #216582;
-}
-
-.favAddonDiv {
-    background-color: #2e2e2e;
-    padding-bottom: 15px;
-}
-
-aside div :hover {
-    /* opacity: 80%; */
-}
-
-aside a {
-    text-decoration: none;
-    color: #efefef;
-}
-
-.asideImg {
-    max-width: 80%; margin-top: 20px;
-}
+.index_recomTut h2 {
+        margin: 20px 0;
+        color: #216582;
+    }
 
 
 .title {
@@ -174,6 +156,5 @@ aside a {
     left: 0;
     width: 100%; /* 幅を親要素に合わせる */
     height: 100%; /* 高さを親要素に合わせる */
-    margin-top: 20px;
 }
 
