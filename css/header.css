@@ -1,4 +1,45 @@
 /* ヘッダー */
+@scope (header){
+    .separator {
+        width: 1px;
+        background: #216582;
+    }
+
+    .headerMyName {
+        padding: 0 0 0 50px;
+        font-size: xx-large;
+        font-family: 'Montserrat', serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        text-decoration: none;
+        color: #216582;
+    }
+    
+    
+    
+    /* ナビゲーション */
+    nav ul {
+        display: flex;
+        text-align: center;
+        font-weight: 800;
+        padding-right: 200px;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        margin: 0 15px;
+        list-style: none;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 10px 10px;
+        text-decoration: none;
+        color: #216582;
+    }
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -8,39 +49,3 @@ header {
     text-align: center;
 }
 
-.headerMyName {
-    padding: 0 0 0 50px;
-    font-size: xx-large;
-    font-family: 'Montserrat', serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    text-decoration: none;
-    color: #216582;
-}
-
-.separator {
-    width: 1px;
-    background: #216582;
-}
-
-/* ナビゲーション */
-nav ul {
-    display: flex;
-    text-align: center;
-    font-weight: 800;
-    padding-right: 200px;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-    list-style: none;
-}
-
-nav ul li a {
-    display: block;
-    padding: 10px 10px;
-    text-decoration: none;
-    color: #216582;
-}

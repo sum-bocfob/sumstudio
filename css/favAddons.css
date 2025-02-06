@@ -1,20 +1,20 @@
 
 
-h2 {
+.favAddons_container h2 {
     margin: 20px 0;
     color: #216582;
 }
 
-.favAddonDiv {
+.favAddons_container div {
     background-color: #2e2e2e;
     padding-bottom: 15px;
 }
 
-div :hover {
+.favAddons_container div :hover {
     opacity: 80%;
 }
 
-a {
+.favAddons_container p {
     text-decoration: none;
     color: #efefef;
 }
