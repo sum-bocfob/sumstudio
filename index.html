@@ -11,29 +11,7 @@
     </head>
 
     <body>
-        <!-- ヘッダー -->
-        <header>
-            <a class="headerMyName" href="#">sum studio</a>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">ホーム</a>
-                    </li>
-                    <div class="separator"></div>
-                    <li>
-                        <a href="#">Blenderアドオン</a>
-                    </li>
-                    <div class="separator"></div>
-                    <li>
-                        <a href="#">チュートリアル</a>
-                    </li>
-                    <div class="separator"></div>
-                    <li>
-                        <a href="#">3Dモデル</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        {% include header.html %}
 
         <!-- コンテンツとサイドバー -->
         <div class="container">
@@ -43,10 +21,10 @@
 
                 <div class="imgContainer" style="background: #efefef; padding: 10px 0">
                     <a href="https://blendermarket.com/products/sculpt-brush-toolset" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
-                        <img src="https://github.com/sum-bocfob/publicImages/blob/main/Blender%20Market%20logo.png?raw=true" alt="Quick Brush Selector Blender Market" style="width: 200px; height: auto; display: block" />
+                        <img src="./WebIcons/Blender Market logo.png" alt="Quick Brush Selector Blender Market" style="width: 200px; height: auto; display: block" />
                     </a>
                     <a href="https://sumsum.booth.pm/items/6535509" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
-                        <img src="https://github.com/sum-bocfob/publicImages/blob/main/BOOTH_Logo.png?raw=true" alt="Quick Brush Selector BOOTH" style="width: 200px; height: auto; display: block" />
+                        <img src="./WebIcons/BOOTH_Logo.png" alt="Quick Brush Selector BOOTH" style="width: 200px; height: auto; display: block" />
                     </a>
                 </div>
                 <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
@@ -363,25 +341,7 @@
                 </div>
             </aside>
         </div>
-
-        <!-- フッター -->
-        <footer>
-            <p>sum studio</p>
-            <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px">
-                <a href="https://twitter.com/boc_fob" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
-                    <img src="https://assets.superhivemarket.com/cache/591717d03f1cdd6d2bbb052a52cb8cfa.png" alt="sum studio x" style="width: 80px; height: auto" />
-                </a>
-                <a href="https://www.youtube.com/channel/UCzFITeATkQiVA_wpuqnhmQw" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
-                    <img src="https://assets.superhivemarket.com/cache/4f38b7be60e6f88a8900e4d39fc52189.png" alt="sum studio YouTube" style="width: 80px; height: auto" />
-                </a>
-                <a href="https://blendermarket.com/creators/sumstudio" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
-                    <img src="https://assets.superhivemarket.com/cache/3af0579d882a98a16ae560ab552e65b9.svg" alt="sum studio Blender market" style="width: 80px; height: auto" />
-                </a>
-                <a href="https://sumsum.booth.pm/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://assets.superhivemarket.com/cache/935b7da1cd8fae48209d8df1a28e1313.png" alt="sum studio BOOTH" style="width: 80px; height: auto" />
-                </a>
-            </div>
-        </footer>
+        {% include footer.html %}
         <script src="./loadRandomUrl.js"></script>
     </body>
 </html>
