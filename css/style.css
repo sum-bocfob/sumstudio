@@ -18,52 +18,7 @@ body {
     font-style: normal;
 }
 
-/* ヘッダー */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #efefef;
-    padding: 15px;
-    text-align: center;
-}
 
-.headerMyName {
-    padding: 0 0 0 50px;
-    font-size: xx-large;
-    font-family: 'Montserrat', serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    text-decoration: none;
-    color: #216582;
-}
-
-.separator {
-    width: 1px;
-    background: #216582;
-}
-
-/* ナビゲーション */
-nav ul {
-    display: flex;
-    text-align: center;
-    font-weight: 800;
-    padding-right: 200px;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-    list-style: none;
-}
-
-nav ul li a {
-    display: block;
-    padding: 10px 10px;
-    text-decoration: none;
-    color: #216582;
-}
 
 /* メインコンテンツとサイドバーのコンテナ */
 .container {
@@ -106,7 +61,7 @@ aside h2 {
 }
 
 aside div :hover {
-    opacity: 80%;
+    /* opacity: 80%; */
 }
 
 aside a {
@@ -118,17 +73,6 @@ aside a {
     max-width: 80%; margin-top: 20px;
 }
 
-
-/* フッター */
-footer {
-    color: #216582;
-    text-align: center;
-    padding: 10px;
-    font-family: 'Montserrat', serif;
-    font-size: large;
-    font-weight: 800;
-    background: #efefef;
-}
 
 .title {
     font-family: 'Montserrat', serif;
@@ -233,52 +177,3 @@ footer {
     margin-top: 20px;
 }
 
-/* シェアボタン */
-.sns-share-title {
-    /* display: inline-block; */
-    text-align: center;
-    align-items: center;
-    margin-left:  auto;
-    margin-right:  auto;
-    font-weight: bold;
-    font-size: large;
-}
-
-.sns-share {
-    display: flex;
-    gap: 50px; /* ボタン間の余白 */
-    justify-content: center;
-    margin: 20px auto 50px auto;
-}
-
-.sns-btn {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-}
-
-.sns-btn img {
-    /* アイコンサイズ */
-    width: 50px; 
-    height: 50px;
-}
-
-.sns-btn:hover {
-    opacity: 0.8;
-}
-
-
-.twitter {
-    border-radius: 50%;
-    border: #e9e9e9;
-    border-width: 2px;
-    border-style: solid;
-}
-
-#x_img {
-    width: 30px;
-    height: 30px
-}
