@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="baseOfRelPath.js"></script>
+        <!-- <script src="./baseOfRelPath.js"></script> -->
         <!-- <base href="https://sum-bocfob.github.io/sumstudio/" /> -->
+        <base href="/" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>sum studio</title>
@@ -25,7 +26,7 @@
             window.onload = function () {
                 includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
                 includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
-                includeHTML("favAddons-container", "includes/favAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
                 includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
             };
         </script>
@@ -52,7 +53,7 @@
 
             <aside>
                 <!-- 人気のアドオン -->
-                <div id="favAddons-container"></div>
+                <div id="popularAddons-container"></div>
 
                 <div class="index_recomTut">
                     <h2>おすすめのチュートリアル</h2>

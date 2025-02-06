@@ -1,0 +1,26 @@
+.popularAddons_container h2 {
+    margin: 20px 0;
+    color: #216582;
+}
+
+.popularAddons_container div {
+    background-color: #2e2e2e;
+    padding-bottom: 15px;
+}
+
+.popularAddons_container div :hover {
+    opacity: 80%;
+}
+
+.popularAddons_container a {
+    text-decoration: none;
+}
+
+.popularAddons_container p {
+    color: #efefef;
+}
+
+.asideImg {
+    max-width: 80%;
+    margin-top: 20px;
+}
