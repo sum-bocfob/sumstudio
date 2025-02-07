@@ -94,6 +94,19 @@ aside {
     text-align: center;
 }
 
+.headline3 {
+    position: relative;
+    padding-left: 15px;
+    border-left: 5px solid #f3f3f3;
+    text-align: left;
+    color: #f3f3f3;
+    max-width: 80%;
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; */
+    margin: 20px auto;
+}
+
 .fontSize1 {
     font-size: 80px;
     font-weight: bold;
