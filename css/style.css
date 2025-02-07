@@ -25,12 +25,17 @@ body {
     background: #3d3d3d;
 }
 
+/* 目次 */
+.table-of-contents {
+}
+
 /* メインコンテンツ */
 main {
     background: #2c2c2c;
     border-radius: 15px;
     color: #f3f3f3;
     overflow: hidden;
+    width: 70%;
     min-width: 700px;
 }
 
@@ -48,7 +53,7 @@ aside {
     text-align: center;
 }
 
-.index_recomTut h2 {
+.recomTut h2 {
     margin: 20px 0;
     color: #216582;
 }

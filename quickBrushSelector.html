@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
         <base href="https://sum-bocfob.github.io/sumstudio/" />
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Quick Brush Selector</title>
@@ -22,6 +24,7 @@
             // ページが読み込まれたらHTMLをインクルード
             window.onload = function () {
                 includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents-container", "includes/tableOfContents_quickBrushSelector.html"); // 目次をインクルード
                 includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
                 includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
                 includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
@@ -34,9 +37,12 @@
 
         <!-- コンテンツとサイドバー -->
         <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents-container"></div>
+
             <main>
                 <!-- タイトル -->
-                <h1 class="headline1 fontSize1 title"><i class="fa-brands fa-x-twitter fa-5x"></i>Quick Brush Selector</h1>
+                <h1 id="section1" class="headline1 fontSize1 title"><i class="fa-brands fa-x-twitter fa-5x"></i>Quick Brush Selector</h1>
 
                 <div class="imgContainer" style="background: #efefef; padding: 10px 0">
                     <a href="https://blendermarket.com/products/sculpt-brush-toolset" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
@@ -72,7 +78,7 @@
                     <br />
                 </div>
                 <!-- Features -->
-                <h2 class="headline1 fontSize2">特徴</h2>
+                <h2 id="section2" class="headline1 fontSize2">特徴</h2>
                 <h2 class="fontSize4" style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
                     <ul class="myList" style="line-height: 30px">
                         <li class=".myListContent">好みの設定のブラシを簡単にアクティブに</li>
@@ -81,7 +87,7 @@
                     </ul>
                 </h2>
                 <!-- how to use -->
-                <h2 class="headline1 fontSize2">使用方法</h2>
+                <h2 id="section3" class="headline1 fontSize2">使用方法</h2>
                 <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">スカルプトモード / テクスチャペイントモード / ドローモード（グリースペンシル）でNパネルのQBSを選択します</p>
                 <div class="imgContainer">
                     <img src="Addons/QuickBrushSelector/NPanel1_Ja.png" class="imgBorder" />
@@ -212,8 +218,9 @@
                         <img src="Addons/QuickBrushSelector/Preferences_JP.png" class="imgBorder" />
                     </div>
                     <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">プリファレンスの<span class="fontAccent">「グローバルライブラリを自動で読み込む」</span>をオンにしていれば(デフォルトでオン)、新しい.blendファイルでも自動で読み込まれます。</p>
+
                     <!-- installation -->
-                    <h2 class="headline1 fontSize2">インストール方法</h2>
+                    <h2 id="section4" class="headline1 fontSize2">インストール方法</h2>
                     <div style="text-align: center; color: #f3f3f3; max-width: 80%; margin: 20px auto 0 auto">Blender4.2以上</div>
                     <div style="margin: 0px auto; text-align: center; color: #f3f3f3; max-width: 80%">
                         <ul style="padding-left: 0; display: inline-block">
@@ -233,7 +240,7 @@
                         </ul>
                     </div>
                     <!-- Update -->
-                    <h2 class="headline1 fontSize2">アップデート履歴</h2>
+                    <h2 id="section5" class="headline1 fontSize2">アップデート履歴</h2>
                     <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
                         バージョン2.1.0はBlender4.3またはBlender4.4.0aで動作します。<br />
                         また、バージョン2.1.0では下位のバージョンで作られたツールセット / ライブラリのテキストファイルを読み込むことはできません。
@@ -317,13 +324,17 @@
                 <!-- 人気のアドオン -->
                 <div id="popularAddons-container"></div>
 
-                <h2>おすすめのチュートリアル</h2>
-                <div class="iframe-container">
-                    <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="recomTut">
+                    <h2>おすすめのチュートリアル</h2>
+                    <div class="iframe-container">
+                        <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                 </div>
             </aside>
         </div>
+        <!-- フッター -->
         <div id="footer-container"></div>
+
         <!-- 再生リストの名前ごとにランダムな動画を取得-->
         <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
         <script>
