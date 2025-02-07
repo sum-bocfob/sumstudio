@@ -10,6 +10,14 @@ li {
     padding: 0;
 }
 
+.defaultText {
+    text-align: center;
+    color: #f3f3f3;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* レイアウト */
 body {
     font-family: "Noto Sans JP", serif;
@@ -23,10 +31,6 @@ body {
     display: flex;
     padding: 30px 30px;
     background: #3d3d3d;
-}
-
-/* 目次 */
-.table-of-contents {
 }
 
 /* メインコンテンツ */
@@ -157,4 +161,9 @@ aside {
     left: 0;
     width: 100%; /* 幅を親要素に合わせる */
     height: 100%; /* 高さを親要素に合わせる */
+}
+
+/* Fast Sculpt and Paint Assistant */
+.numberedFunc-container div {
+    padding: 20px 20px;
 }

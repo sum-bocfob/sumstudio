@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fast Sculpt and Paint Assistant</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script>
+            function includeHTML(id, url) {
+                fetch(url)
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch((error) => console.error("Error loading HTML:", error));
+            }
+
+            // ページが読み込まれたらHTMLをインクルード
+            window.onload = function () {
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents-container", "includes/tableOfContents_quickBrushSelector.html"); // 目次をインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+            };
+        </script>
+    </head>
+
+    <body>
+        <div id="header-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title"><i class="fa-brands fa-x-twitter fa-5x"></i>Fast Sculpt and Paint Assistant</h1>
+
+                <div class="imgContainer" style="background: #efefef; padding: 10px 0">
+                    <a href="https://blendermarket.com/products/fast-sculpt-assistant" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                        <img src="WebIcons/Blender Market logo.png" alt="Quick Brush Selector Blender Market" style="width: 200px; height: auto; display: block" />
+                    </a>
+                    <a href="https://sumsum.booth.pm/items/6529238" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
+                        <img src="WebIcons/BOOTH_Logo.png" alt="Quick Brush Selector BOOTH" style="width: 200px; height: auto; display: block" />
+                    </a>
+                </div>
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">このアドオンを使用すると、スカルプトとペイントのさまざまな操作を、 1 つのキーから簡単に呼び出せます。</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">キーボード上での面倒な指の移動を無くします。</h3>
+                    <h4 style="font-weight: bold; color: #f3f3f3">
+                        これは、ペンタブレットユーザーにとって特に効果的です。<br />
+                        ペンタブのショートカット ボタンの数は限られていますが、左右の手をできるだけペンタブレットから離さずにスカルプト、ペイントできます。
+                    </h4>
+                    <h4 style="font-weight: bold; color: #f3f3f3"><span style="color: rgb(245, 232, 117)">メッシュスカルプト、テクスチャペイント、頂点ペイント、ウェイトペイント、カーブススカルプト</span>、および<span style="color: rgb(245, 232, 117)">メッシュスカルプトメニューから作成されたオブジェクト用のメニュー</span>があります。</h4>
+                </div>
+
+                <div style="background: #111111; margin: 20px auto; text-align: center; padding: 20px 0">
+                    <h2>バージョン1.8の新機能！頭身定規を作成！</h2>
+                    <div class="imgContainer">
+                        <img class="imgBorder" src="Addons/FastSculptAndPaintAssistant/Measure.gif" style="max-width: 80%" />
+                    </div>
+                </div>
+
+                <!-- how to use -->
+                <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
+                <div style="margin: 16px auto; text-align: center; color: #f3f3f3">
+                    <!-- Add Toolset / Brush -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">メッシュスカルプト</span>
+                    </h1>
+                    <p class="defaultText" style="margin: 30px auto">
+                        スカルプトモードでは、「Shift + U」 キー (設定から変更できます)を押すとメニューが開きます。<br /><br />
+                        何もせずに閉じるには、同じキーを押すか、空白領域をクリックします。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/SculptMenu_JP.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">メニューはいくつかのセクションに分かれています。</p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Description1_Ja.png" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Description2.png" class="imgBorder" />
+                    </div>
+                    <br />
+
+                    <!-- 番号別それぞれの機能 -->
+                    <div class="numberedFunc-container">
+                        <div style="background: #222222">
+                            <p class="defaultText">1: ブラシ半径 / 2: ブラシの強さ / 3:スムーズブラシの強さ</p>
+                        </div>
+                        <div>
+                            <p class="defaultText">
+                                4: ビューパイを開く / 5: ブラシパネルを開く / 6: テクスチャパネルを開く / 7: ストロークパネルを開く / 8: 減衰パネルを開く / 9: ブラシコンテキスト(右クリックで開くメニュー)を開く / 10: 面セットパイメニューを開く / 11: ピボット設定パイメニューを開く / 12: 自動マスクパイメニューを開く / 13: リメッシュパネルを開く / 14:
+                                対称パネルを開く
+                            </p>
+                        </div>
+                        <div style="background: #155328">
+                            <p class="defaultText">15: マスクを反転 / 16: マスクを縮小,拡大 / 17: マスクをシャープに,スムーズに / 18: マスクをクリア</p>
+                        </div>
+                        <div style="background: #222222">
+                            <p class="defaultText">19: ファイルを保存 / 20: ミラーモディファイアを追加 / 21: 対象化 / 22: 領域をズーム / 23: “前面のみ”のオンオフ / 24: 減衰の形状の切り替え</p>
+                        </div>
+                        <div style="background: #6d803c">
+                            <p class="defaultText">25: Z軸をロック / 26: Y軸をロック / 27: X軸をロック</p>
+                        </div>
+                        <div style="background: #121e44">
+                            <p class="defaultText">28: 表示を反転 / 29: 全てのトポロジーを表示 / 30:トポロジーの短径範囲を隠す / 31: トポロジーのマスク範囲を隠す</p>
+                        </div>
+                        <div style="background: #5c451c">
+                            <p class="defaultText">
+                                32: 初期設定サイズでリメッシュ(プリファレンスから変更可能) / 33: 現在の設定サイズでリメッシュ / 34: ディテールサイズを取得してリメッシュ / 35: 現在のサイズ × mulltiplier2(プリファレンスから変更可能)の値でリメッシュ / 36: 現在のサイズ * multiplier1(プリファレンスから変更可能)の値でリメッシュ / 37: 現在のサイズ ÷
+                                mulltiplier1の値でリメッシュ / 38: 現在のサイズ ÷ multiplier2の値でリメッシュ / 39: スマートマルチレゾリューション
+                            </p>
+                        </div>
+                        <div style="background: #2c5264">
+                            <p class="defaultText">40: 新規オブジェクトを作成 / 41: オブジェクトを結合 / 42: バックアップを作成 / 43: スカルプトモードを転送 / 44: オブジェクトモードに移行 / 45: アルファを消去への切り替え</p>
+                        </div>
+                        <div style="background: #222222">
+                            <p class="defaultText">46: 次のmatcap / 47: 前のmatcap / 48: 設定されたマットキャップの切り替え / 49: アクティブオブジェクトのワイヤーフレームを表示・非表示</p>
+                        </div>
+                        <div style="background: #551818">
+                            <p class="defaultText">50: 透過表示 / 51: シルエット表示 / 52: Matcapを反転 / 53: スムーズ,フラットシェーディングの切り替え / 54: アクティブオブジェクトの表示・非表示 / 55: コレクションの表示・非表示 / 56: 背景画像の透明度変更</p>
+                        </div>
+                        <div style="background: #222222">
+                            <p class="defaultText">57: 定規の作成 / 58: 全定規の表示 / 59: 全定規の非表示 / 60: 全定規の削除</p>
+                        </div>
+                    </div>
+
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        また、スカルプトのボックスマスク, 投げ縄で隠す, クロスフィルター, 移動などのようなツールや、グリースペンシルのボックス, トリム, スポイトなどのツールも、ツールセットへ追加することができます。<br /><br />
+                        まず追加したいツールをアクティブにし、ツールシェルフ上で右クリックし<br />
+                        <span class="fontAccent">”アクティブなツールをアクティブなツールセット/新しいツールセットへ追加”</span>を押します。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/AddTool_JP.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        アセットブラウザーからは、<span class="fontAccent">それぞれのモードのツールセットに対して</span>、ブラシを追加できます。<br />
+                        また、<span class="fontAccent">複数のブラシをまとめて追加</span>することもできます。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/FromAssetBrowser_JP.gif" class="imgBorder" />
+                    </div>
+                    <!-- Select Toolset / Brush -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">ツールセット、ブラシを選択</span>
+                    </h1>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        ツールセットにブラシを追加したら、<span class="fontAccent">3DビューポートでYキー</span>(デフォルト)を押して、ブラシセレクターを開くことができます。<br />
+                        アイコンの上にマウスを持っていくと、ブラシ名が表示され、<span class="fontAccent">クリックするとそのブラシをアクティブにします</span>。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/SelectBrush.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        複数のツールセットが存在する場合、ブラシセレクターを開いた状態で<span class="fontAccent">TまたはUキー</span>(デフォルト)を押して、アクティブなツールセットを変更できます。<br />
+                        また、<span class="fontAccent">ブラシセレクター上部の四角形をクリック</span>しても変更可能です。
+                    </p>
+                    <div class="imgContainer" class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/SelectToolset.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">開いたときと同じキー(デフォルトではY)を押すか、マウスを遠くに持っていくとブラシセレクターが閉じます。</p>
+                    <div class="imgContainer" class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/CloseMenu.gif" class="imgBorder" />
+                    </div>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        ブラシは、上から時計回りに配置されます。<br />
+                        パネルから順序を変更したり、削除したりすることが可能です。
+                    </p>
+                    <!-- Import / Export -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">インポート / エクスポート</span>
+                    </h1>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">インポート / エクスポートメニューには、3種類のメニューが存在します。</p>
+                    <div class="imgContainer" class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/ImportExportMenu_JP.png" class="imgBorder" />
+                    </div>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <span style="font-weight: bold">グローバルライブラリ</span>は、異なるBlenderファイル間で、すべてのツールセットの保存 / 読み込みをします。<br />
+                        これは一つだけ作成できます。<br /><br />
+                        「グローバルライブラリを読み込む」をクリックすると、現在のライブラリが上書きされることに注意してください。<br /><br />
+                        グローバルライブラリは、それぞれのモード毎に保存されます。
+                    </p>
+                    <hr style="border: none; height: 3px; text-align: center; margin: 20px auto; background-color: #f3f3f3; width: 80%; border-radius: 5px" />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%"><span style="font-weight: bold">ツールセット</span>は、アクティブなツールセットをテキストファイルにエクスポートしたり、エクスポートしたテキストファイルからツールセットをインポートします。</p>
+                    <hr style="border: none; height: 3px; text-align: center; margin: 20px auto; background-color: #f3f3f3; width: 80%; border-radius: 5px" />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <span style="font-weight: bold">ライブラリ</span>は、すべてのツールセットをテキストファイルにインポート / エクスポートします。<br /><br />
+                        「ライブラリをインポート」をクリックすると、現在のライブラリが上書きされることに注意してください。
+                    </p>
+                    <!-- Settings -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">設定</span>
+                    </h1>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">設定にはいくつかの調整可能なパラメータがあります。</p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/Settings_JP.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <span class="fontAccent">“シンプルパネルを使用”</span>をオンにすると、ブラシセレクターは名前のみを表示するシンプルなパネルになります。<br />
+                        これはアクティブなツールセットのブラシのみを表示します(ショートカットキーでツールセットを変更することはできません)。<br />
+                        ブラシは左上から下に配置されます。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/SimplePanel.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">ブラシセレクターのアイコンは自動で生成されますが、何らかの理由でファイルが削除された場合などは、<span class="fontAccent">”アイコンの画像を再生成”</span>ボタンで再び生成することができます。</p>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">Toolset Settingsでは、ツールセットの名前と順序を変更できます。</p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/ToolsetSettings.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">プリファレンス → アドオン → Quick Brush Selectorから、ショートカットキーなどを変更できます。</p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/Preferences_JP.png" class="imgBorder" />
+                    </div>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">プリファレンスの<span class="fontAccent">「グローバルライブラリを自動で読み込む」</span>をオンにしていれば(デフォルトでオン)、新しい.blendファイルでも自動で読み込まれます。</p>
+
+                    <!-- installation -->
+                    <h2 id="section4" class="headline1 fontSize2">インストール方法</h2>
+                    <div style="text-align: center; color: #f3f3f3; max-width: 80%; margin: 20px auto 0 auto">Blender4.2以上</div>
+                    <div style="margin: 0px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <ul style="padding-left: 0; display: inline-block">
+                            <li style="text-align: left">zipファイルをダウンロード(解凍する必要はありません)</li>
+                            <li style="text-align: left">編集→プリファレンス→”アドオン”または”エクステンションを入手”タブ</li>
+                            <li style="text-align: left">右上の下向き矢印から、ディスクからインストールをクリック</li>
+                            <li style="text-align: left">ダウンロードしたzipファイルを選択</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center; color: #f3f3f3; max-width: 80%; margin: 20px auto 0 auto">Blender4.1以下</div>
+                    <div style="margin: 0 auto 50px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <ul style="padding-left: 0; display: inline-block">
+                            <li style="text-align: left">zipファイルをダウンロード(解凍する必要はありません)</li>
+                            <li style="text-align: left">編集→プリファレンス→アドオン</li>
+                            <li style="text-align: left">インストールをクリックし、zipファイルを選択</li>
+                            <li style="text-align: left">チェックボックスにチェックを入れる</li>
+                        </ul>
+                    </div>
+                    <!-- Update -->
+                    <h2 id="section5" class="headline1 fontSize2">アップデート履歴</h2>
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        バージョン2.1.0はBlender4.3またはBlender4.4.0aで動作します。<br />
+                        また、バージョン2.1.0では下位のバージョンで作られたツールセット / ライブラリのテキストファイルを読み込むことはできません。
+                    </p>
+                    <div style="text-align: center; color: #f3f3f3; margin: auto; margin-bottom: 30px; max-width: 80%; display: block">
+                        <table style="margin: auto; text-align: left; border-collapse: collapse">
+                            <tbody>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>2.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>
+                                        テクスチャペイント、グリースペンシルのドローに対応しました<br />
+                                        製品名が「Sculpt Brush Toolset」から「Quick Brush Selector」に変更されました
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>2.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>
+                                        Blender4.3に対応<br />
+                                        以下の機能を追加<br />
+                                        アセットブラウザーからブラシを追加<br />
+                                        新しいツールセットへブラシを追加<br />
+                                        メニューの色を変更<br />
+                                        ツールセットの名前を変更<br />
+                                        シンプルパネルの列数を変更<br />
+                                        日本語に対応
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.2.2</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>シンプルパネルを追加</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.2.1</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>Blender 4.2</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.2.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>Blender 4.0対応</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>アクティブなツールセットを変更した際に一部のブラシが選択できなくなる問題の修正</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>
+                                        セレクターを開いたときと同じキーを押すか、マウスを遠くに移動することでセレクターを閉じることができるようになりました。<br />
+                                        ショートカットキーを環境設定から変更できるようになりました。<br />
+                                        今後のアップデートに備えてバックアップ機能を追加しました。
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>初期リリース</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="shareButtons-container"></div>
+            </main>
+
+            <aside>
+                <!-- 人気のアドオン -->
+                <div id="popularAddons-container"></div>
+
+                <div class="recomTut">
+                    <h2>おすすめのチュートリアル</h2>
+                    <div class="iframe-container">
+                        <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- フッター -->
+        <div id="footer-container"></div>
+
+        <!-- 再生リストの名前ごとにランダムな動画を取得-->
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script>
+            setRandomVideo("adddonTutorialList");
+        </script>
+    </body>
+</html>
