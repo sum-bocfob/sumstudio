@@ -25,6 +25,7 @@
             window.onload = function () {
                 includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
                 includeHTML("tableOfContents-container", "includes/tableOfContents_quickBrushSelector.html"); // 目次をインクルード
+                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
                 includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
                 includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
                 includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
@@ -73,20 +74,22 @@
                         allowfullscreen
                     ></iframe>
                     <h5 style="color: #bfd7ff">
-                        テクスチャペイント、ドロー（グリースペンシル）での機能は、Blender4.3以降で 使用できます。<br />
+                        テクスチャペイント、ドロー(グリースペンシル)での機能は、Blender4.3以降で 使用できます。<br />
                         それ以前のバージョンのBlenderを使用している方は、スカルプトでの機能のみ使用できる ”sculpt_brush_toolset_1.2.2.zip”をご利用ください。
                     </h5>
                     <br />
                 </div>
                 <!-- Features -->
                 <h2 id="section2" class="headline1 fontSize2">特徴</h2>
-                <h2 class="fontSize4" style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
-                    <ul class="myList" style="line-height: 30px">
+                <!-- <h2 class="fontSize4 myList-container" style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%"> -->
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
                         <li class=".myListContent">好みの設定のブラシを簡単にアクティブに</li>
                         <li class=".myListContent">複数のツールセット(ブラシのコレクション)を保存可能<br /></li>
                         <li class=".myListContent">簡単操作/カスタマイズ可能なUI<br /></li>
                     </ul>
-                </h2>
+                </div>
+                <!-- </h2> -->
                 <!-- how to use -->
                 <h2 id="section3" class="headline1 fontSize2">使用方法</h2>
                 <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">スカルプトモード / テクスチャペイントモード / ドローモード（グリースペンシル）でNパネルのQBSを選択します</p>
@@ -221,25 +224,8 @@
                     <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">プリファレンスの<span class="fontAccent">「グローバルライブラリを自動で読み込む」</span>をオンにしていれば(デフォルトでオン)、新しい.blendファイルでも自動で読み込まれます。</p>
 
                     <!-- installation -->
-                    <h2 id="section4" class="headline1 fontSize2">インストール方法</h2>
-                    <div style="text-align: center; color: #f3f3f3; max-width: 80%; margin: 20px auto 0 auto">Blender4.2以上</div>
-                    <div style="margin: 0px auto; text-align: center; color: #f3f3f3; max-width: 80%">
-                        <ul style="padding-left: 0; display: inline-block">
-                            <li style="text-align: left">zipファイルをダウンロード(解凍する必要はありません)</li>
-                            <li style="text-align: left">編集→プリファレンス→”アドオン”または”エクステンションを入手”タブ</li>
-                            <li style="text-align: left">右上の下向き矢印から、ディスクからインストールをクリック</li>
-                            <li style="text-align: left">ダウンロードしたzipファイルを選択</li>
-                        </ul>
-                    </div>
-                    <div style="text-align: center; color: #f3f3f3; max-width: 80%; margin: 20px auto 0 auto">Blender4.1以下</div>
-                    <div style="margin: 0 auto 50px auto; text-align: center; color: #f3f3f3; max-width: 80%">
-                        <ul style="padding-left: 0; display: inline-block">
-                            <li style="text-align: left">zipファイルをダウンロード(解凍する必要はありません)</li>
-                            <li style="text-align: left">編集→プリファレンス→アドオン</li>
-                            <li style="text-align: left">インストールをクリックし、zipファイルを選択</li>
-                            <li style="text-align: left">チェックボックスにチェックを入れる</li>
-                        </ul>
-                    </div>
+                    <div id="installation-container"></div>
+
                     <!-- Update -->
                     <h2 id="section5" class="headline1 fontSize2">アップデート履歴</h2>
                     <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
@@ -265,12 +251,12 @@
                                     <td>
                                         Blender4.3に対応<br />
                                         以下の機能を追加<br />
-                                        アセットブラウザーからブラシを追加<br />
-                                        新しいツールセットへブラシを追加<br />
-                                        メニューの色を変更<br />
-                                        ツールセットの名前を変更<br />
-                                        シンプルパネルの列数を変更<br />
-                                        日本語に対応
+                                        - アセットブラウザーからブラシを追加<br />
+                                        - 新しいツールセットへブラシを追加<br />
+                                        - メニューの色を変更<br />
+                                        - ツールセットの名前を変更<br />
+                                        - シンプルパネルの列数を変更<br />
+                                        - 日本語に対応
                                     </td>
                                 </tr>
                                 <tr>
@@ -283,7 +269,7 @@
                                     <td style="padding-right: 1rem; vertical-align: top">
                                         <div style="display: flex; align-items: baseline"><span>1.2.1</span><span style="margin-left: 0.5rem"></span></div>
                                     </td>
-                                    <td>Blender 4.2</td>
+                                    <td>Blender4.2で一部のブラシを登録できない問題を修正</td>
                                 </tr>
                                 <tr>
                                     <td style="padding-right: 1rem; vertical-align: top">

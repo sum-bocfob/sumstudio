@@ -24,7 +24,8 @@
             // ページが読み込まれたらHTMLをインクルード
             window.onload = function () {
                 includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                includeHTML("tableOfContents-container", "includes/tableOfContents_quickBrushSelector.html"); // 目次をインクルード
+                includeHTML("tableOfContents-container", "includes/tableOfContents_fastSculptAndPaintAssistant.html"); // 目次をインクルード
+                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
                 includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
                 includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
                 includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
@@ -69,14 +70,14 @@
                 <div style="background: #111111; margin: 20px auto; text-align: center; padding: 20px 0">
                     <h2>バージョン1.8の新機能！頭身定規を作成！</h2>
                     <div class="imgContainer">
-                        <img class="imgBorder" src="Addons/FastSculptAndPaintAssistant/Measure.gif" style="max-width: 80%" />
+                        <img class="imgBorder" src="Addons/FastSculptAndPaintAssistant/Measure.gif" style="max-width: 50%" />
                     </div>
                 </div>
 
                 <!-- how to use -->
                 <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
                 <div style="margin: 16px auto; text-align: center; color: #f3f3f3">
-                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <h1 id="section2_1" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
                         <span class="headline2">メッシュスカルプト</span>
                     </h1>
                     <p class="defaultText" style="margin: 30px auto">
@@ -154,7 +155,7 @@
                         </ul>
                     </div>
                     <div class="imgContainer">
-                        <img src="Addons/FastSculptAndPaintAssistant/MaskModal.gif" class="imgBorder" />
+                        <img src="Addons/FastSculptAndPaintAssistant/MaskModal.gif" class="imgBorder" style="max-width: 50%" />
                     </div>
                     <br />
 
@@ -178,7 +179,7 @@
                     <p class="defaultText">Blender が高速化される可能性があります。</p>
 
                     <div class="imgContainer">
-                        <img src="Addons/FastSculptAndPaintAssistant/MaskModal.gif" class="imgBorder" />
+                        <img src="Addons/FastSculptAndPaintAssistant/Multires.gif" class="imgBorder" style="max-width: 60%" />
                     </div>
                     <br />
                     <h3 class="headline3">「41: バックアップを作成」では、アクティブオブジェクトが複製され、”オブジェクト名_backup”という名前のコレクションに自動的に格納されます。</h3>
@@ -203,7 +204,7 @@
                     </div>
                     <br />
 
-                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <h1 id="section2_2" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
                         <span class="headline2">新しいベースメッシュを作成</span>
                     </h1>
                     <p class="defaultText">新しいオブジェクトパネルでは、以下の画像の赤枠 3 つの項目は自身でベース メッシュを作成するためのもので、他の項目はプリミティブ メッシュを追加するためのものです。</p>
@@ -242,12 +243,13 @@
                     </div>
 
                     <!-- テクスチャペイント -->
-                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <h1 id="section2_3" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
                         <span class="headline2">テクスチャペイント</span>
                     </h1>
                     <p class="defaultText" style="margin: 30px auto">
                         テクスチャペイントモードでも、「Shift + U」 キー (設定から変更できます)を押すとメニューが開きます。<br /><br />
-                        何もせずに閉じるには、同じキーを押すか、空白領域をクリックします。
+                        何もせずに閉じるには、同じキーを押すか、空白領域をクリックします。<br /><br />
+                        ※Blender4.3以上では、ツールではなく各ブラシへのアクセスするボタンになります。
                     </p>
                     <div class="imgContainer">
                         <img src="Addons/FastSculptAndPaintAssistant/TexturePaint_JP.png" class="imgBorder" />
@@ -319,94 +321,235 @@
                     <div class="imgContainer" style="margin-top: -10px; margin-bottom: -10px">
                         <img src="Addons/FastSculptAndPaintAssistant/OpenGradientPanel.gif" class="imgBorder" />
                     </div>
+
+                    <!-- 頂点ペイント -->
+                    <h1 id="section2_4" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">頂点ペイント</span>
+                    </h1>
+                    <p class="defaultText" style="margin: 30px auto">
+                        頂点ペイントモードでも、「Shift + U」 キー (設定から変更できます)を押すとメニューが開きます。<br /><br />
+                        何もせずに閉じるには、同じキーを押すか、空白領域をクリックします。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Vert_Menu_JP.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText" style="margin: 30px auto">
+                        ほとんどの機能は、テクスチャペイントのものと同じです。<br /><br />
+                        頂点ペイントではグラデーションが使えないのでその部分はなくなり、ツールも頂点ペイントで使うものに変更されています。<br /><br />
+                        ※Blender4.3以上では、ツールではなく各ブラシへのアクセスするボタンになります。
+                    </p>
+
+                    <!-- ウェイトペイント -->
+                    <h1 id="section2_5" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">ウェイトペイント</span>
+                    </h1>
+                    <p class="defaultText" style="margin: 30px auto">
+                        ウェイトペイントモードでも、「Shift + U」 キー (設定から変更できます)を押すとメニューが開きます。<br /><br />
+                        何もせずに閉じるには、同じキーを押すか、空白領域をクリックします。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Menu_WeightPaint_UI.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText" style="margin: 30px auto">
+                        ほとんどの機能は、テクスチャペイントのものと同じです。<br /><br />
+                        ウェイトペイントではカラーが使えないのでその部分がなくなり、ツールがウェイトペイントのものに変更されています。<br /><br />
+                        強さを変えるドーナツ形の部分は、上半分で強さを変え、下半分でウェイトを変えます。<br /><br />
+                        ※Blender4.3以上では、ツールではなく各ブラシへのアクセスするボタンになります。
+                    </p>
+
+                    <!-- カーブスカルプト -->
+                    <h1 id="section2_6" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">カーブスカルプト</span>
+                    </h1>
+                    <p class="defaultText" style="margin: 30px auto">
+                        カーブスオブジェクトのスカルプトモードでも、「Shift + U」 キー (設定から変更できます)を押すとメニューが開きます。<br /><br />
+                        何もせずに閉じるには、同じキーを押すか、空白領域をクリックします。
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Menu_SculptCurves_UI.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText" style="margin: 30px auto">
+                        一番外側の部分は、右上から時計回りに、「選択モードを切り替え」、「全選択」、「選択なし」、「選択を反転」、「選択拡大」、「減衰の形状の切り替え」です。<br /><br />
+                        ※Blender4.3以上では、ツールではなく各ブラシへのアクセスするボタンになります。
+                    </p>
+                </div>
+
+                <!-- 設定 -->
+                <h2 id="section3" class="headline1 fontSize2">設定</h2>
+                <p class="defaultText" style="margin-top: 30px">プリファレンスには変更可能なパラメータがあります。</p>
+                <div class="imgContainer">
+                    <img src="Addons/FastSculptAndPaintAssistant/Preferences_JP.png" class="imgBorder" />
+                </div>
+                <p class="defaultText" style="margin-top: 30px">スカルプトモードでは、上部のヘッダーに次の内容が表示されます。 ミラー警告軸 / 減衰の形状/ ロックされた軸/ 前面のみ</p>
+                <div class="imgContainer">
+                    <img src="Addons/FastSculptAndPaintAssistant/HeaderAlert.png" class="imgBorder" />
                 </div>
                 <!-- /////////////////////// -->
 
                 <!-- installation -->
-                <h2 id="section4" class="headline1 fontSize2">インストール方法</h2>
-                <div style="text-align: center; color: #f3f3f3; max-width: 80%; margin: 20px auto 0 auto">Blender4.2以上</div>
-                <div style="margin: 0px auto; text-align: center; color: #f3f3f3; max-width: 80%">
-                    <ul style="padding-left: 0; display: inline-block">
-                        <li style="text-align: left">zipファイルをダウンロード(解凍する必要はありません)</li>
-                        <li style="text-align: left">編集→プリファレンス→”アドオン”または”エクステンションを入手”タブ</li>
-                        <li style="text-align: left">右上の下向き矢印から、ディスクからインストールをクリック</li>
-                        <li style="text-align: left">ダウンロードしたzipファイルを選択</li>
-                    </ul>
-                </div>
-                <div style="text-align: center; color: #f3f3f3; max-width: 80%; margin: 20px auto 0 auto">Blender4.1以下</div>
-                <div style="margin: 0 auto 50px auto; text-align: center; color: #f3f3f3; max-width: 80%">
-                    <ul style="padding-left: 0; display: inline-block">
-                        <li style="text-align: left">zipファイルをダウンロード(解凍する必要はありません)</li>
-                        <li style="text-align: left">編集→プリファレンス→アドオン</li>
-                        <li style="text-align: left">インストールをクリックし、zipファイルを選択</li>
-                        <li style="text-align: left">チェックボックスにチェックを入れる</li>
-                    </ul>
-                </div>
+                <div id="installation-container"></div>
+
                 <!-- Update -->
-                <h2 id="section5" class="headline1 fontSize2">アップデート履歴</h2>
-                <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">
-                    バージョン2.1.0はBlender4.3またはBlender4.4.0aで動作します。<br />
-                    また、バージョン2.1.0では下位のバージョンで作られたツールセット / ライブラリのテキストファイルを読み込むことはできません。
-                </p>
+                <h2 id="section5" class="headline1 fontSize2" style="margin-bottom: 20px">アップデート履歴</h2>
                 <div style="text-align: center; color: #f3f3f3; margin: auto; margin-bottom: 30px; max-width: 80%; display: block">
                     <table style="margin: auto; text-align: left; border-collapse: collapse">
                         <tbody>
                             <tr>
                                 <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>3.0.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>ペイントモード以外で、エラーが出る問題を修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>3.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>各種ペイントモードに対応しました</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>アイコンがピンクになる問題を修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
                                     <div style="display: flex; align-items: baseline"><span>2.1.0</span><span style="margin-left: 0.5rem"></span></div>
                                 </td>
-                                <td>
-                                    テクスチャペイント、グリースペンシルのドローに対応しました<br />
-                                    製品名が「Sculpt Brush Toolset」から「Quick Brush Selector」に変更されました
+                                <td>Blender4.3対応</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.3</span><span style="margin-left: 0.5rem"></span></div>
                                 </td>
+                                <td>バージョン2.0.2でメニューが開かない問題を修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>すべてのアイコンはリンクされるようになりました</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Blender4.2対応</td>
                             </tr>
                             <tr>
                                 <td style="padding-right: 1rem; vertical-align: top">
                                     <div style="display: flex; align-items: baseline"><span>2.0.0</span><span style="margin-left: 0.5rem"></span></div>
                                 </td>
                                 <td>
-                                    Blender4.3に対応<br />
                                     以下の機能を追加<br />
-                                    アセットブラウザーからブラシを追加<br />
-                                    新しいツールセットへブラシを追加<br />
-                                    メニューの色を変更<br />
-                                    ツールセットの名前を変更<br />
-                                    シンプルパネルの列数を変更<br />
-                                    日本語に対応
+                                    - カーブスオブジェクトのスカルプトモードでのメニュー<br />
+                                    - スマートマルチレゾリューシ機能<br />
+                                    - 半径の位置がずれる問題を修正<br />
+                                    - マットキャップを変更する機能で、追加されたマットキャップを選択できない問題を修正しました。
                                 </td>
                             </tr>
                             <tr>
                                 <td style="padding-right: 1rem; vertical-align: top">
-                                    <div style="display: flex; align-items: baseline"><span>1.2.2</span><span style="margin-left: 0.5rem"></span></div>
+                                    <div style="display: flex; align-items: baseline"><span>1.8.2</span><span style="margin-left: 0.5rem"></span></div>
                                 </td>
-                                <td>シンプルパネルを追加</td>
+                                <td>小さなバグを修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.8.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Blender 4.0以降でRound Skinを作成するときに発生するバグを修正しました</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.8.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    頭身定規機能を追加<br />
+                                    日本語に対応しました<br />
+                                    BlenderのUIが英語ではないときのバグを修正しました<br />
+                                    このバージョンからBlender3.1以降対応となります
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.7.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    以下の機能を追加<br />
+                                    - "前面のみ"<br />
+                                    - 表示を反転<br />
+                                    - 対称化にマウスを当てると、対象化の方向を表示<br />
+                                    - Ctrlを押しながら対象化をクリックすると、反対方向に対象化
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.6.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>オブジェクトを結合 / 領域をズームを追加</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.5.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Curve / Round Skin / Skinを追加<br />
+                                    オブジェクト モードでショートカット キーを押すと、[新規オブジェクト]パネルが開くようになりました。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.3.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Blender 4.0.に対応</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.3.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Remesh multiplierが整数から少数になりました</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.3.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    以下の機能を追加<br />
+                                    - 対称化<br />
+                                    - 各軸をロック<br />
+                                    - シルエット表示<br />
+                                    - スムーズ/フラットシェーディングの切り替え
+                                </td>
                             </tr>
                             <tr>
                                 <td style="padding-right: 1rem; vertical-align: top">
                                     <div style="display: flex; align-items: baseline"><span>1.2.1</span><span style="margin-left: 0.5rem"></span></div>
                                 </td>
-                                <td>Blender 4.2</td>
+                                <td>「対称パネルを開く」が重い問題を修正しました</td>
                             </tr>
                             <tr>
                                 <td style="padding-right: 1rem; vertical-align: top">
                                     <div style="display: flex; align-items: baseline"><span>1.2.0</span><span style="margin-left: 0.5rem"></span></div>
                                 </td>
-                                <td>Blender 4.0対応</td>
-                            </tr>
-                            <tr>
-                                <td style="padding-right: 1rem; vertical-align: top">
-                                    <div style="display: flex; align-items: baseline"><span>1.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                <td>
+                                    以下の機能を追加しました<br />
+                                    - 対称パネルを開く<br />
+                                    - 設定したコレクション内の画像の透明度を変更
                                 </td>
-                                <td>アクティブなツールセットを変更した際に一部のブラシが選択できなくなる問題の修正</td>
                             </tr>
                             <tr>
                                 <td style="padding-right: 1rem; vertical-align: top">
                                     <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
                                 </td>
                                 <td>
-                                    セレクターを開いたときと同じキーを押すか、マウスを遠くに移動することでセレクターを閉じることができるようになりました。<br />
-                                    ショートカットキーを環境設定から変更できるようになりました。<br />
-                                    今後のアップデートに備えてバックアップ機能を追加しました。
+                                    ビューボタンはビューパイに変更されました<br />
+                                    以下の機能を追加しました<br />
+                                    - トポロジーを表示/非表示<br />
+                                    - ファイルを保存<br />
+                                    - マスク<br />
+                                    - ミラーモディファイアを追加<br />
+                                    - スムーズの強さ
                                 </td>
                             </tr>
                             <tr>
