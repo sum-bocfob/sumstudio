@@ -6,27 +6,16 @@
     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 30px"></span>
 </div>
 <div class="sns-share">
-    <a href="https://twitter.com/share?url=https://sum-bocfob.github.io/URL/&hashtags=blender,blender3d,b3d,blenderaddon" target="_blank" class="sns-btn twitter">
+    <a href="https://twitter.com/share?url=https://sum-bocfob.github.io/&hashtags=blender,blender3d,b3d,blenderaddon" target="_blank" class="sns-btn twitter">
         <img id="x_img" src="WebIcons/x_logo-white.png" alt="X" />
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://sum-bocfob.github.io/URL/" target="_blank" class="sns-btn">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://sum-bocfob.github.io/" target="_blank" class="sns-btn">
         <img src="WebIcons/Facebook_Logo_Primary.png" alt="Facebook" />
     </a>
-    <a href="https://social-plugins.line.me/lineit/share?url=https://sum-bocfob.github.io/URL/" target="_blank" class="sns-btn">
+    <a href="https://social-plugins.line.me/lineit/share?url=https://sum-bocfob.github.io/" target="_blank" class="sns-btn">
         <img src="WebIcons/LINE_APP_Android.png" alt="LINE" />
     </a>
-    <a href="https://b.hatena.ne.jp/entry/s/https://sum-bocfob.github.io/URL/" target="_blank" class="sns-btn">
+    <a href="https://b.hatena.ne.jp/entry/s/https://sum-bocfob.github.io/" target="_blank" class="sns-btn">
         <img src="WebIcons/hatenabookmark_symbolmark.png" alt="はてなブックマーク" />
     </a>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const currentUrl = encodeURIComponent(window.location.href);
-
-        document.querySelectorAll(".sns-btn").forEach((btn) => {
-            const link = btn.getAttribute("href").replace("https://sum-bocfob.github.io/URL/", currentUrl);
-            btn.setAttribute("href", link);
-        });
-    });
-</script>
