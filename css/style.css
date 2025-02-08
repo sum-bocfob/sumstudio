@@ -131,6 +131,15 @@ aside {
     font-weight: bold;
 }
 
+/* 製品ページ */
+.productPage-btn {
+    transition: 0.2s;
+}
+
+.productPage-btn:hover {
+    transform: scale(1.1, 1.1);
+}
+
 /* 画像中央配置 白枠 */
 .imgContainer {
     display: flex;
@@ -159,6 +168,7 @@ aside {
     padding-left: 0;
     display: inline-block;
     line-height: 30px;
+    max-width: 80%;
 }
 
 .myListContent {
