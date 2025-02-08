@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Special Curves</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script>
+            function includeHTML(id, url) {
+                fetch(url)
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch((error) => console.error("Error loading HTML:", error));
+            }
+
+            // ページが読み込まれたらHTMLをインクルード
+            window.onload = function () {
+                includeHTML("carousel-container", "includes/carousel.html"); // カルーセルをインクルード
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents-container", "includes/tableOfContents_specialCurves.html"); // 目次をインクルード
+                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+            };
+        </script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents-container"></div>
+
+            <main>
+                <div id="carousel-container"></div>
+
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title"><i class="fa-brands fa-x-twitter fa-5x"></i>Special Curves</h1>
+
+                <div class="imgContainer" style="background: #efefef; padding: 10px 0">
+                    <a class="productPage-btn" href="https://blendermarket.com/products/special-curves" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                        <img src="WebIcons/Blender Market logo.png" alt="Quick Brush Selector Blender Market" style="width: 200px; height: auto; display: block" />
+                    </a>
+                    <a class="productPage-btn" href="https://sumsum.booth.pm/items/6525368" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
+                        <img src="WebIcons/BOOTH_Logo.png" alt="Quick Brush Selector BOOTH" style="width: 200px; height: auto; display: block" />
+                    </a>
+                </div>
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">
+                        さまざまなタイプのプロシージャルなカーブオブジェクトを利用できるようになるBlenderアドオンです。<br />
+                        カーブに応じて生成され、専用のパネルから簡単にパラメーターを変更することができます。
+                    </h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">以下の物が含まれています↓</h3>
+                    <h1 style="font-weight: bold; color: #f3f3f3">10種の鎖 / 3種の矢印 / 3種の植物 / 3種の道 / 旗 / 2種のホース / 稲妻 / 2種のパイプ / 3種の階段 / 縫い目 / ランダムワイヤー / シリンダーライン</h1>
+                    <h4 style="font-weight: bold; color: #f3f3f3">バージョン2.6以降は、Blender3.5以上にのみ対応です。</h4>
+                </div>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
+                <p class="defaultText">※BlenderのUI言語を日本語にすると、当アドオンの言語も日本語になります。</p>
+                <h1 id="section2_1" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">Easy Text</span>
+                </h1>
+                <!-- 作成 -->
+                <div id="section2_1_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>作成
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">3Dビューポート → Nパネル → EZTxtAnimタブを選択</li>
+                        <li class=".myListContent">入力欄に文字を入力して”Easy Textを作成”をクリック</li>
+                        <li class=".myListContent">改行したい場合は、改行したい場所に\nを入力</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
+                </div>
+                <!-- 編集 -->
+                <div id="section2_1_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>編集
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <p class="defaultText">上記の方法で作成されたオブジェクトを選択すると、パネルが編集用に変わります</p>
+                <h3 class="headline3">“Text”パネルではテキストの編集ができます</h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/TextPanel_JP.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">テキスト、マテリアル、フォント、サイズ、厚み、間隔、行揃え、縦揃えを編集できます</li>
+                        <li class=".myListContent">
+                            各行の最大幅は、テキストが複数の単語で構成されている場合の、改行までの長さです。<br />
+                            0は改行しません。(テキストに\nを入力した場合を除く)
+                        </li>
+                        <li class=".myListContent">スムーズシェードは、標準の”自動スムーズを使用”と同じです</li>
+                        <li class=".myListContent">
+                            "初期回転オブジェクト"には、テキストの各文字のアニメーションする前の回転を設定させるためのオブジェクトを指定します。<br />
+                            このオブジェクトの回転の値が、各文字に反映されます。
+                        </li>
+                        <li class=".myListContent">"Animation by Initial Object's Rotation"をオンにすると、回転後のローカル座標に応じてアニメーションします。オフにすると、ワールド座標に応じてアニメーションします。</li>
+                        <li class=".myListContent">"カーブに沿わせる"では、指定したカーブに沿ってテキストが配置されます。</li>
+                    </ul>
+                </div>
+                <h3 class="headline3">“1st Animation”パネルではキーフレーム無しで一つ目のアニメーションを作成できます</h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/1stAnimationPanel_JP.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">テキスト、マテリアル、フォント、サイズ、厚み、間隔、行揃え、縦揃えを編集できます</li>
+                        <li class=".myListContent">組み込みのプリセットまたは自身で作成したプリセットを選択できます</li>
+                    </ul>
+                </div>
+                <h3 class="headline3" style="max-width: 70%; border-width: 2px; font-weight: 550">上記に加えて、このパネルには”移動”、”スケール”、”回転”セクションがあります</h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Translate1stPanel_JP.png" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Scale1stPanel_JP.png" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Rotate1stPanel_JP.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; max-width: 70%">
+                        <li class=".myListContent">それぞれのセクションでアニメーション値(Value)、アニメーション値からもしくは、アニメーション値へのアニメートの切り替え(Animate FROM/TO)、イージングタイプ(Easing (Sub) Type)、イージング量(Easing Factor)を編集できます</li>
+                        <li class=".myListContent">“Scale” / ”Rotation”セクションでは、拡縮 / 回転の原点をバウンディングボックスまたはオフセットに設定できます</li>
+                    </ul>
+                </div>
+                <h3 class="headline3" style="max-width: 60%; border-width: 1px; font-weight: 500">バウンディングボックスはそれぞれの文字の境界を基準に、原点を設定します</h3>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; max-width: 60%">
+                        <li class=".myListContent">XZ方向に対して: Top Left(左上)、Top(上)、Top Right(右上)、Middle(中央)、Bottom Left(左下)、Bottom(下)、Borrom Right(右下)</li>
+                        <li class=".myListContent">Y方向に対して: Front(前)、Middle(中央)、Back(後ろ)</li>
+                    </ul>
+                </div>
+                <h3 class="headline3" style="max-width: 60%; border-width: 1px; font-weight: 500">オフセットはそれぞれの文字の中央から、設定した値の分移動したところに原点を設定します</h3>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; max-width: 60%">
+                        <li class=".myListContent">XZ方向に対して: Top Left(左上)、Top(上)、Top Right(右上)、Middle(中央)、Bottom Left(左下)、Bottom(下)、Borrom Right(右下)</li>
+                        <li class=".myListContent">Y方向に対して: Front(前)、Middle(中央)、Back(後ろ)</li>
+                    </ul>
+                </div>
+
+                <h3 class="headline3">
+                    “2nd Animation”パネルでは”1st Animation”終了後のアニメーションを設定できます<br />
+                    設定項目は同じです
+                </h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/2ndAnimationPanel_JP.png" class="imgBorder" />
+                </div>
+                <h3 class="headline3" style="max-width: 70%; border-width: 2px; font-weight: 550">“2nd Animation”の”移動”、”スケール”、”回転”セクションもほぼ”1st Animation”と同じですが、値へのアニメーション方法(アニメーション FROM/TO)に違いがあります</h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Translate2ndPanel_JP.png" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Scale2ndPanel_JP.png" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Rotate2ndPanel_JP.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; max-width: 70%">
+                        <li class=".myListContent">オフセットでは”1st Animation”が終わった後の状態から、どれだけ移動/拡縮/回転するかをValueで設定します</li>
+                        <li class=".myListContent">ターゲットでは”1st Animation”に関係なく、値に向かって移動/拡縮/回転します</li>
+                    </ul>
+                </div>
+                <h3 class="headline3">"カスタム"イージングタイプを好みに編集できます</h3>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">このアドオンで作られたオブジェクトを選択し、ジオメトリノードエディターを開きます</li>
+                        <li class=".myListContent">赤い枠で囲まれた"sum_EasingTypeSwitcher_2.5.1v"という名前のノードグループを選択し、Tabキーでグループの中へ入ります</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/CustomEasingNodeGroupPlace.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">“Custom”フレーム内の“Floatカーブ”ノードを好みのイージングになるように編集します</li>
+                        <li class=".myListContent">"移動","スケール","回転"セクションのイージングタイプがカスタムになっていれば、編集されたイージングが機能します</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/CustomEasingFloatCurvePlace.png" class="imgBorder" />
+                </div>
+
+                <!-- プリセット -->
+                <div id="section2_1_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>プリセット
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Slide In.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Roll.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Stretch In.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Typewriter.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Scale Bounce.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Scale Fade In Out.gif" class="imgBorder" />
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Grow.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Shrink.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Flip Up.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Get Up.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Back Flip.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Whirlwind.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Hop.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Fly Down Rotate.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 28%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Drop.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 28%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Fly In Twist.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 28%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Bounce.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Yo-Yo.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Pass By.gif" class="imgBorder" />
+                    </div>
+                </div>
+
+                <!-- マテリアル -->
+                <div id="section2_1_4" class="section2_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>マテリアル
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <p class="defaultText" style="font-weight: bold; color: #fff6a8">本アドオンで作成されたオブジェクトに対してマテリアルを設定する場合は、テキストパネルのマテリアルから設定してください</p>
+                <p class="defaultText" style="font-weight: bold; margin-bottom: 50px">プロパティのマテリアルタブから設定しても反映されません</p>
+                <h3 class="headline3">
+                    マテリアルで使用するための属性が、いくつか用意されています。<br />
+                    右のボタンからクリップボードにコピーできます。
+                </h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/AttributeForMaterialPanel_JP.png" class="imgBorder" />
+                </div>
+                <p class="defaultText">シェーダーエディター内で、属性ノードの名前に入力して使用する事ができます</p>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/AttributeNode_JP.png" class="imgBorder" />
+                </div>
+
+                <!-- タイマー -->
+                <h1 id="section2_2" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">タイマー</span>
+                </h1>
+                <!-- 作成 -->
+                <div id="section2_2_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>作成
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">3Dビューポート → Nパネル → EZTxtAnimタブを選択</li>
+                        <li class=".myListContent">”タイマーを作成”をクリック</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
+                </div>
+                <!-- 編集 -->
+                <div id="section2_2_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>編集
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <p class="defaultText">上記の方法で作成されたオブジェクトを選択すると、パネルが編集用に変わります</p>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/TimerPanel_JP.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">マテリアル、フォント、サイズ、厚み、行揃え、縦揃えをEasy Textと同様に変更できます</li>
+                        <li class=".myListContent">間隔は文字間にのみ作用します</li>
+                        <li class=".myListContent">タイプ：カウントアップ/カウントダウンを選べます</li>
+                        <li class=".myListContent">日/時/分/ミリ秒の、表示/非表示を変更できます。時間を表示せずに日を表示しないように制限されます</li>
+                        <li class=".myListContent">オフセット：日/時/分/秒に対してオフセットされた値から、タイマーがスタートします</li>
+                        <li class=".myListContent">開始/停止にフレームを使用：有効にすると、タイマーは開始に設定したフレームに開始し、停止に設定したフレームで停止します</li>
+                        <li class=".myListContent">タイムスケール：タイマーの時間の進み方。1だと通常通り、0.5だと半分の速度で、2だと倍速で進みます</li>
+                    </ul>
+                </div>
+
+                <!-- 注意事項 -->
+                <h1 id="section2_3" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">注意事項</span>
+                </h1>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">“1st Animation”で”Animate”を”FROM”に設定した場合、”2nd Animation”で”Animate”を “Offset”または”Target”に設定しても違いはありません。</li>
+                        <li class=".myListContent">新しくシーンを作成したい場合には”New”オプションを使用しないでください</li>
+                    </ul>
+                </div>
+                <div style="margin: 0 auto; text-align: center; margin-bottom: 50px">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/NewScene.png" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/NewScenePanel.png" class="imgBorder" />
+                    </div>
+                </div>
+                <!-- /////////////////////////////////////// -->
+
+                <!-- installation -->
+                <div id="installation-container"></div>
+
+                <!-- Update -->
+                <h2 id="section4" class="headline1 fontSize2">アップデート履歴</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.6.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>バグフィックス</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.6.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    マテリアルで使用できる属性を追加<br />
+                                    初期回転オブジェクトのバグを修正<br />
+                                    EasyText作成時に、上を向くようになりました
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.4</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Blender3.5.に対応<br />
+                                    "Max Width"パラメータを追加
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.3</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    モーションブラー使用時のバグを修正<br />
+                                    シェーディングの問題を修正
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Shade Smooth機能を追加</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ライセンス -->
+                <h2 id="section5" class="headline1 fontSize2">ライセンス</h2>
+                <p class="defaultText">
+                    CC-BY-SA<br />
+                    このアドオンに含まれているノードグループでは、<a style="color: #f3f3f3" href="https://bradley-animations.gumroad.com/" target="_blank" rel="noopener noreferrer">Bradley_Animations</a>によって作成された
+                    <a style="color: #f3f3f3" href="https://bradley-animations.gumroad.com/l/jSyDM" target="_blank" rel="noopener noreferrer">Free GN Presets</a>を使用しています
+                </p>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons-container"></div>
+            </main>
+
+            <aside>
+                <!-- 人気のアドオン -->
+                <div id="popularAddons-container"></div>
+
+                <div class="recomTut">
+                    <h2>おすすめのチュートリアル</h2>
+                    <div class="iframe-container">
+                        <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- フッター -->
+        <div id="footer-container"></div>
+
+        <!-- 再生リストの名前ごとにランダムな動画を取得-->
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script>
+            setRandomVideo("adddonTutorialList");
+        </script>
+
+        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
+        <script>
+            window.addEventListener("load", function () {
+                const currentUrl = encodeURIComponent(window.location.href);
+
+                function updateShareLinks() {
+                    document.querySelectorAll("#shareButtons-container a").forEach((link) => {
+                        if (link.href.includes("https://sum-bocfob.github.io/")) {
+                            link.href = link.href.replace("https://sum-bocfob.github.io/", currentUrl);
+                        }
+                    });
+                }
+
+                // 初回実行（すでにロードされている場合のため）
+                updateShareLinks();
+
+                // MutationObserverを使ってシェアボタンのHTMLが追加されたときに更新
+                const observer = new MutationObserver(updateShareLinks);
+                observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
+            });
+        </script>
+
+        <!-- カルーセルを読み込む -->
+        <script src="js/carousel.js"></script>
+    </body>
+</html>
