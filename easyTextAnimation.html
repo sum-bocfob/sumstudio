@@ -24,7 +24,7 @@
             // ページが読み込まれたらHTMLをインクルード
             window.onload = function () {
                 includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                // includeHTML("tableOfContents-container", "includes/tableOfContents_easyTextAnimation.html"); // 目次をインクルード
+                includeHTML("tableOfContents-container", "includes/tableOfContents_easyTextAnimation.html"); // 目次をインクルード
                 includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
                 includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
                 includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
@@ -64,11 +64,11 @@
                 <!-- 使用方法 -->
                 <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
                 <p class="defaultText">※BlenderのUI言語を日本語にすると、当アドオンの言語も日本語になります。</p>
-                <h1 class="fontSize3" style="padding: 10px; text-align: center">
+                <h1 id="section2_1" class="fontSize3" style="padding: 10px; text-align: center">
                     <span class="headline2">Easy Text</span>
                 </h1>
                 <!-- 作成 -->
-                <div class="section2_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                <div id="section2_1_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>作成
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
@@ -83,7 +83,7 @@
                     <img src="Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
                 </div>
                 <!-- 編集 -->
-                <div class="section2_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                <div id="section2_1_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>編集
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
@@ -193,7 +193,7 @@
                 </div>
 
                 <!-- プリセット -->
-                <div class="section2_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                <div id="section2_1_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>プリセット
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
@@ -268,7 +268,7 @@
                 </div>
 
                 <!-- マテリアル -->
-                <div class="section2_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                <div id="section2_1_4" class="section2_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>マテリアル
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
@@ -287,11 +287,11 @@
                 </div>
 
                 <!-- タイマー -->
-                <h1 class="fontSize3" style="padding: 10px; text-align: center">
+                <h1 id="section2_2" class="fontSize3" style="padding: 10px; text-align: center">
                     <span class="headline2">タイマー</span>
                 </h1>
                 <!-- 作成 -->
-                <div class="section2_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                <div id="section2_2_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>作成
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
@@ -305,7 +305,7 @@
                     <img src="Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
                 </div>
                 <!-- 編集 -->
-                <div class="section2_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                <div id="section2_2_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>編集
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
@@ -326,7 +326,7 @@
                 </div>
 
                 <!-- 注意事項 -->
-                <h1 class="fontSize3" style="padding: 10px; text-align: center">
+                <h1 id="section2_3" class="fontSize3" style="padding: 10px; text-align: center">
                     <span class="headline2">注意事項</span>
                 </h1>
                 <div class="myList-container">
@@ -349,7 +349,7 @@
                 <div id="installation-container"></div>
 
                 <!-- Update -->
-                <h2 id="section5" class="headline1 fontSize2">アップデート履歴</h2>
+                <h2 id="section4" class="headline1 fontSize2">アップデート履歴</h2>
                 <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
                     <table style="margin: auto; text-align: left; border-collapse: collapse">
                         <tbody>
@@ -397,6 +397,14 @@
                     </table>
                 </div>
 
+                <!-- ライセンス -->
+                <h2 id="section5" class="headline1 fontSize2">ライセンス</h2>
+                <p class="defaultText">
+                    CC-BY-SA<br />
+                    このアドオンに含まれているノードグループでは、<a style="color: #f3f3f3" href="https://bradley-animations.gumroad.com/" target="_blank" rel="noopener noreferrer">Bradley_Animations</a>によって作成された
+                    <a style="color: #f3f3f3" href="https://bradley-animations.gumroad.com/l/jSyDM" target="_blank" rel="noopener noreferrer">Free GN Presets</a>を使用しています
+                </p>
+
                 <!-- シェアボタン -->
                 <div id="shareButtons-container"></div>
             </main>
@@ -422,6 +430,7 @@
             setRandomVideo("adddonTutorialList");
         </script>
 
+        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
         <script>
             window.addEventListener("load", function () {
                 const currentUrl = encodeURIComponent(window.location.href);

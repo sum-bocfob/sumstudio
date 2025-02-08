@@ -325,5 +325,27 @@
         <script>
             setRandomVideo("adddonTutorialList");
         </script>
+
+        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
+        <script>
+            window.addEventListener("load", function () {
+                const currentUrl = encodeURIComponent(window.location.href);
+
+                function updateShareLinks() {
+                    document.querySelectorAll("#shareButtons-container a").forEach((link) => {
+                        if (link.href.includes("https://sum-bocfob.github.io/")) {
+                            link.href = link.href.replace("https://sum-bocfob.github.io/", currentUrl);
+                        }
+                    });
+                }
+
+                // 初回実行（すでにロードされている場合のため）
+                updateShareLinks();
+
+                // MutationObserverを使ってシェアボタンのHTMLが追加されたときに更新
+                const observer = new MutationObserver(updateShareLinks);
+                observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
+            });
+        </script>
     </body>
 </html>
