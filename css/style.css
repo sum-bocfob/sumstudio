@@ -63,11 +63,11 @@ aside {
 }
 
 .title {
+    font-size: 80px;
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
-    border-radius: 15px 15px 0 0;
 }
 
 /* 見出し */

@@ -11,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/carousel.css" />
         <script>
             function includeHTML(id, url) {
                 fetch(url)
@@ -44,10 +45,30 @@
             <div id="tableOfContents-container"></div>
 
             <main>
-                <div id="carousel-container"></div>
+                <!-- カルーセル -->
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slide"><img src="Addons/SpecialCurves/SpecialCurvesHeader.png" alt="Slide 1" /></div>
+                        <div class="slide"><img src="Addons/SpecialCurves/Header1.png" alt="Slide 2" /></div>
+                        <div class="slide"><img src="Addons/SpecialCurves/Header2.png" alt="Slide 3" /></div>
+                        <div class="slide"><img src="Addons/SpecialCurves/Header3.png" alt="Slide 4" /></div>
+                        <div class="slide"><img src="Addons/SpecialCurves/Header4.png" alt="Slide 5" /></div>
+                        <div class="slide"><img src="Addons/SpecialCurves/Header5.png" alt="Slide 6" /></div>
+                        <div class="slide"><img src="Addons/SpecialCurves/Header6.png" alt="Slide 7" /></div>
+                        <div class="slide"><img src="Addons/SpecialCurves/Header7.png" alt="Slide 8" /></div>
+                        <div class="slide"><img src="Addons/SpecialCurves/Header8.png" alt="Slide 9" /></div>
+                    </div>
+
+                    <!-- オーバーレイアイコン（初期状態は非表示） -->
+                    <div class="overlay-icon"></div>
+
+                    <!-- 矢印 -->
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
 
                 <!-- タイトル -->
-                <h1 id="section1" class="headline1 fontSize1 title"><i class="fa-brands fa-x-twitter fa-5x"></i>Special Curves</h1>
+                <h1 id="section1" class="headline1 title">Special Curves</h1>
 
                 <div class="imgContainer" style="background: #efefef; padding: 10px 0">
                     <a class="productPage-btn" href="https://blendermarket.com/products/special-curves" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
@@ -67,289 +88,668 @@
                     <h4 style="font-weight: bold; color: #f3f3f3">バージョン2.6以降は、Blender3.5以上にのみ対応です。</h4>
                 </div>
 
+                <!-- 動画カルーセル -->
+                <div class="video-carousel-container">
+                    <div class="video-carousel">
+                        <div class="video-slide">
+                            <iframe width="640" height="360" src="https://www.youtube.com/embed/oAYFLgmTQNE" title="Special Curves Introduce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-slide">
+                            <iframe width="640" height="360" src="https://www.youtube.com/embed/crv7yy44S3Y" title="Special Curves Version2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-slide">
+                            <iframe width="640" height="360" src="https://www.youtube.com/embed/Ef9PxaSXoqA" title="Special Curves Version3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <!-- 左右のナビゲーションボタン -->
+                    <button class="video_prev">&#10094;</button>
+                    <button class="video_next">&#10095;</button>
+                </div>
+
+                <p class="defaultText">※Blender3.5以上では、ArrowのRoundで、Shade Smoothがうまく機能しません。</p>
+                <p class="defaultText">
+                    ※それぞれのオブジェクトにより、カーブのループ可否、一つのオブジェクトに複数のスプラインを含むことの可否、UVの使用可否が異なります。 <br />
+                    詳しくは <a href="#correspondence_table" style="color: #f3f3f3">対応表</a> をご覧ください
+                </p>
+
                 <!-- 使用方法 -->
                 <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
-                <p class="defaultText">※BlenderのUI言語を日本語にすると、当アドオンの言語も日本語になります。</p>
-                <h1 id="section2_1" class="fontSize3" style="padding: 10px; text-align: center">
-                    <span class="headline2">Easy Text</span>
-                </h1>
                 <!-- 作成 -->
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">3Dビューポートで、追加 → Special Curvesから追加したいオブジェクトを選択</li>
+                        <li class=".myListContent">上記で作成したオブジェクトを選択していると、Nパネル → アイテム → Special Curvesにプロパティが表示されます</li>
+                        <li class=".myListContent">オブジェクトをメッシュに変換したい場合は、パネル内の”メッシュに変換”をクリックしてください</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/SpecialCurves/AddObject.png" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/SpecialCurves/ArrowPanel.png" class="imgBorder" />
+                </div>
+
+                <p class="defaultText">プリファレンスで、Blender のクラッシュを防ぐために、カーブ分割の最小距離(Minimum Distance) / 最大数(Maximum Count)を設定できます。</p>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/SpecialCurves/Preferences.png" class="imgBorder" />
+                </div>
+
+                <!-- パラメーター -->
+                <h2 id="section3" class="headline1 fontSize2">パラメーター</h2>
+                <div style="max-width: 80%; margin: 20px auto">
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/nLMk6xwQd_g" title="Special Curves version3.1 - Properties introduce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- Arrow -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_1">Arrow(矢印)</span>
+                </h1>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Type: 矢印のタイプ[Round(円柱状) / Rect1(四角形1) / Rect2(四角形2)]</li>
+                        <li class=".myListContent">Both Tip: 矢印を両側に伸ばすかどうか</li>
+                        <li class=".myListContent">Root Scale(Both Tipが0の場合): 根元のスケール(0~1)</li>
+                        <li class=".myListContent">Curve Resolution: 矢印のスムーズさ</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                        <li class=".myListContent">Material: オブジェクトのマテリアルを設定</li>
+                        <li class=".myListContent">Resolution(TypeがRoundの場合): 円柱の側面の頂点数</li>
+                        <li class=".myListContent">Radius(TypeがRoundの場合): 円柱の半径</li>
+                        <li class=".myListContent">Tip Radius Offset(TypeがRoundの場合): 矢印が広がる部分の、円柱の太さとの差 1でRadiusと同じになる</li>
+                        <li class=".myListContent">Tip Length(TypeがRoundまたはRect1の場合): 先端の長さ</li>
+                        <li class=".myListContent">Width / Height(TypeがRect1の場合): 幅 / 高さ</li>
+                        <li class=".myListContent">Tip Width / Tip Height / Tip Thickness(TypeがRect2の場合): 先端の幅 / 先端の高さ / 先端の厚さ</li>
+                        <li class=".myListContent">Both Side(TypeがRect2の場合)</li>
+                    </ul>
+                </div>
+
+                <!-- Chain -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">Chain(鎖)</span>
+                </h1>
+
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Type: 鎖のタイプ[Chain(ノーマルな鎖) / Round Chain(丸み付き) / Circular(円形) Rain(交差した円) / Rectangle(長方形) / Ball(ボールチェーン) / Circle(連続した円) Band(帯) / Cuban Link(キューバンリンクチェーン) / Custom Object(カスタムオブジェクト) ]</li>
+                        <li class=".myListContent">Size: それぞれのパーツのサイズ</li>
+                        <li class=".myListContent">Rotation: 隣のパーツとの角度</li>
+                        <li class=".myListContent">Start / End: カーブのトリム</li>
+                        <li class=".myListContent">Distance: それぞれのパーツ間の距離</li>
+                        <li class=".myListContent">Radius(TypeがBandまたはCustom Objectではない場合): 半径</li>
+                        <li class=".myListContent">Resolution(TypeがBandまたはCustom Objectではない場合): 頂点数</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                        <li class=".myListContent">Material: オブジェクトのマテリアルを設定</li>
+                        <li class=".myListContent">Circle Resolution(TypeがRound Chain, Circular, RainまたはCircleの場合): 円の頂点数</li>
+                        <li class=".myListContent">Width / Height(TypeがRound Chain, RectangleまたはBandの場合): 幅 / 高さ</li>
+                        <li class=".myListContent">Ball Subdivisions(TypeがBallの場合): ボールの細分化数</li>
+                        <li class=".myListContent">Thickness / Depth(TypeがBandの場合): 厚さ / 奥行き</li>
+                        <li class=".myListContent">Fillet Count / Fillet Radius(TypeがBandの場合): 角の面取り(Fillet Radiusはジオメトリが重ならないように制限されます)</li>
+                        <li class=".myListContent">Clip Shape(TypeがCuban Linkの場合): 上下の形を切り取る</li>
+                        <li class=".myListContent">Subdivide(TypeがCuban Linkの場合): 細分化数. UVはこの値が0の場合でのみ使用できます</li>
+                        <li class=".myListContent">Main/Start Point/End Point Object(TypeがCustom Objecの場合): 生成するオブジェクト</li>
+                        <li class=".myListContent">Use Custom Alignment(TypeがCustom Objecの場合): オンの場合、各オブジェクトの方向を、カーブに沿って手動で設定できます</li>
+                        <li class=".myListContent">オフの場合、すべてのオブジェクトは同じ方向を向きます</li>
+                        <li class=".myListContent">
+                            Align Direction(Use Custom Alignmentがオンの場合): カーブの法線と接線に対して、オブジェクトのどの軸を向けるか。<br />
+                            *** 法線と接線に同じ値を設定しないでください***
+                        </li>
+                        <li class=".myListContent">Rotation Axis(Use Custom Alignmentがオンの場合): Rotationの値が影響する軸</li>
+                    </ul>
+                </div>
+
+                <!-- Plant -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_3">Plant(植物)</span>
+                </h1>
+                <p class="defaultText">Type: 植物のタイプ[Thorn(棘) / Vine(つる) / Cactus(サボテン)]</p>
                 <div id="section2_1_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>作成
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>各タイプ共通
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
+
                 <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
-                        <li class=".myListContent">3Dビューポート → Nパネル → EZTxtAnimタブを選択</li>
-                        <li class=".myListContent">入力欄に文字を入力して”Easy Textを作成”をクリック</li>
-                        <li class=".myListContent">改行したい場合は、改行したい場所に\nを入力</li>
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
+                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます</li>
+                        <li class=".myListContent">オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Sync Resample(Vine以外): Stem(茎)のカーブ分割数とThorn(棘)の生成数を同期させる</li>
+                        <li class=".myListContent">Use UV</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
                     </ul>
                 </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
-                </div>
-                <!-- 編集 -->
-                <div id="section2_1_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>編集
+
+                <div id="section2_1_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Thorn
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
-                <p class="defaultText">上記の方法で作成されたオブジェクトを選択すると、パネルが編集用に変わります</p>
-                <h3 class="headline3">“Text”パネルではテキストの編集ができます</h3>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/TextPanel_JP.png" class="imgBorder" />
-                </div>
+
                 <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px">
-                        <li class=".myListContent">テキスト、マテリアル、フォント、サイズ、厚み、間隔、行揃え、縦揃えを編集できます</li>
-                        <li class=".myListContent">
-                            各行の最大幅は、テキストが複数の単語で構成されている場合の、改行までの長さです。<br />
-                            0は改行しません。(テキストに\nを入力した場合を除く)
+                    <ul class="myList">
+                        <li>
+                            <span style="font-weight: bold">Stem(茎)</span>
+
+                            <ul style="line-height: 30px; font-size: large">
+                                <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
+                                <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます</li>
+                                <li class=".myListContent">オフの場合、数によって決めます</li>
+                                <li class=".myListContent">Sync Resample(Vine以外): Stem(茎)のカーブ分割数とThorn(棘)の生成数を同期させる</li>
+                                <li class=".myListContent">Use UV</li>
+                                <li class=".myListContent">Shade Smooth</li>
+                                <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                            </ul>
                         </li>
-                        <li class=".myListContent">スムーズシェードは、標準の”自動スムーズを使用”と同じです</li>
-                        <li class=".myListContent">
-                            "初期回転オブジェクト"には、テキストの各文字のアニメーションする前の回転を設定させるためのオブジェクトを指定します。<br />
-                            このオブジェクトの回転の値が、各文字に反映されます。
+                        <br />
+                        <li>
+                            <span style="font-weight: bold">Thorn(棘)</span>
+
+                            <ul style="line-height: 30px; font-size: large">
+                                <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
+                                <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます</li>
+                                <li class=".myListContent">オフの場合、数によって決めます</li>
+                                <li class=".myListContent">Sync Resample(Vine以外): Stem(茎)のカーブ分割数とThorn(棘)の生成数を同期させる</li>
+                                <li class=".myListContent">Use UV</li>
+                                <li class=".myListContent">Shade Smooth</li>
+                                <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                            </ul>
                         </li>
-                        <li class=".myListContent">"Animation by Initial Object's Rotation"をオンにすると、回転後のローカル座標に応じてアニメーションします。オフにすると、ワールド座標に応じてアニメーションします。</li>
-                        <li class=".myListContent">"カーブに沿わせる"では、指定したカーブに沿ってテキストが配置されます。</li>
-                    </ul>
-                </div>
-                <h3 class="headline3">“1st Animation”パネルではキーフレーム無しで一つ目のアニメーションを作成できます</h3>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/1stAnimationPanel_JP.png" class="imgBorder" />
-                </div>
-                <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px">
-                        <li class=".myListContent">テキスト、マテリアル、フォント、サイズ、厚み、間隔、行揃え、縦揃えを編集できます</li>
-                        <li class=".myListContent">組み込みのプリセットまたは自身で作成したプリセットを選択できます</li>
-                    </ul>
-                </div>
-                <h3 class="headline3" style="max-width: 70%; border-width: 2px; font-weight: 550">上記に加えて、このパネルには”移動”、”スケール”、”回転”セクションがあります</h3>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Translate1stPanel_JP.png" class="imgBorder" />
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Scale1stPanel_JP.png" class="imgBorder" />
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Rotate1stPanel_JP.png" class="imgBorder" />
-                </div>
-                <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px; max-width: 70%">
-                        <li class=".myListContent">それぞれのセクションでアニメーション値(Value)、アニメーション値からもしくは、アニメーション値へのアニメートの切り替え(Animate FROM/TO)、イージングタイプ(Easing (Sub) Type)、イージング量(Easing Factor)を編集できます</li>
-                        <li class=".myListContent">“Scale” / ”Rotation”セクションでは、拡縮 / 回転の原点をバウンディングボックスまたはオフセットに設定できます</li>
-                    </ul>
-                </div>
-                <h3 class="headline3" style="max-width: 60%; border-width: 1px; font-weight: 500">バウンディングボックスはそれぞれの文字の境界を基準に、原点を設定します</h3>
-                <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px; max-width: 60%">
-                        <li class=".myListContent">XZ方向に対して: Top Left(左上)、Top(上)、Top Right(右上)、Middle(中央)、Bottom Left(左下)、Bottom(下)、Borrom Right(右下)</li>
-                        <li class=".myListContent">Y方向に対して: Front(前)、Middle(中央)、Back(後ろ)</li>
-                    </ul>
-                </div>
-                <h3 class="headline3" style="max-width: 60%; border-width: 1px; font-weight: 500">オフセットはそれぞれの文字の中央から、設定した値の分移動したところに原点を設定します</h3>
-                <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px; max-width: 60%">
-                        <li class=".myListContent">XZ方向に対して: Top Left(左上)、Top(上)、Top Right(右上)、Middle(中央)、Bottom Left(左下)、Bottom(下)、Borrom Right(右下)</li>
-                        <li class=".myListContent">Y方向に対して: Front(前)、Middle(中央)、Back(後ろ)</li>
                     </ul>
                 </div>
 
-                <h3 class="headline3">
-                    “2nd Animation”パネルでは”1st Animation”終了後のアニメーションを設定できます<br />
-                    設定項目は同じです
-                </h3>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/2ndAnimationPanel_JP.png" class="imgBorder" />
-                </div>
-                <h3 class="headline3" style="max-width: 70%; border-width: 2px; font-weight: 550">“2nd Animation”の”移動”、”スケール”、”回転”セクションもほぼ”1st Animation”と同じですが、値へのアニメーション方法(アニメーション FROM/TO)に違いがあります</h3>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Translate2ndPanel_JP.png" class="imgBorder" />
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Scale2ndPanel_JP.png" class="imgBorder" />
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Rotate2ndPanel_JP.png" class="imgBorder" />
-                </div>
-                <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px; max-width: 70%">
-                        <li class=".myListContent">オフセットでは”1st Animation”が終わった後の状態から、どれだけ移動/拡縮/回転するかをValueで設定します</li>
-                        <li class=".myListContent">ターゲットでは”1st Animation”に関係なく、値に向かって移動/拡縮/回転します</li>
-                    </ul>
-                </div>
-                <h3 class="headline3">"カスタム"イージングタイプを好みに編集できます</h3>
-                <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px">
-                        <li class=".myListContent">このアドオンで作られたオブジェクトを選択し、ジオメトリノードエディターを開きます</li>
-                        <li class=".myListContent">赤い枠で囲まれた"sum_EasingTypeSwitcher_2.5.1v"という名前のノードグループを選択し、Tabキーでグループの中へ入ります</li>
-                    </ul>
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/CustomEasingNodeGroupPlace.png" class="imgBorder" />
-                </div>
-                <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px">
-                        <li class=".myListContent">“Custom”フレーム内の“Floatカーブ”ノードを好みのイージングになるように編集します</li>
-                        <li class=".myListContent">"移動","スケール","回転"セクションのイージングタイプがカスタムになっていれば、編集されたイージングが機能します</li>
-                    </ul>
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/CustomEasingFloatCurvePlace.png" class="imgBorder" />
-                </div>
-
-                <!-- プリセット -->
-                <div id="section2_1_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>プリセット
+                <div id="section2_1_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Vine(つる)
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Slide In.gif" class="imgBorder" />
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Roll.gif" class="imgBorder" />
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Stretch In.gif" class="imgBorder" />
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Typewriter.gif" class="imgBorder" />
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Scale Bounce.gif" class="imgBorder" />
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Scale Fade In Out.gif" class="imgBorder" />
-                </div>
-                <div style="margin: 0 auto; text-align: center">
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Grow.gif" class="imgBorder" />
-                    </div>
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Shrink.gif" class="imgBorder" />
-                    </div>
-                </div>
-                <div style="margin: 0 auto; text-align: center">
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Flip Up.gif" class="imgBorder" />
-                    </div>
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Get Up.gif" class="imgBorder" />
-                    </div>
-                </div>
-                <div style="margin: 0 auto; text-align: center">
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Back Flip.gif" class="imgBorder" />
-                    </div>
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Whirlwind.gif" class="imgBorder" />
-                    </div>
-                </div>
-                <div style="margin: 0 auto; text-align: center">
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Hop.gif" class="imgBorder" />
-                    </div>
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Fly Down Rotate.gif" class="imgBorder" />
-                    </div>
-                </div>
-                <div style="margin: 0 auto; text-align: center">
-                    <div class="imgContainer" style="max-width: 28%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Drop.gif" class="imgBorder" />
-                    </div>
-                    <div class="imgContainer" style="max-width: 28%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Fly In Twist.gif" class="imgBorder" />
-                    </div>
-                    <div class="imgContainer" style="max-width: 28%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Bounce.gif" class="imgBorder" />
-                    </div>
-                </div>
-                <div style="margin: 0 auto; text-align: center">
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Yo-Yo.gif" class="imgBorder" />
-                    </div>
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Pass By.gif" class="imgBorder" />
-                    </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Use Curve’s Tilt: カーブの傾きをねじれに使用</li>
+                        <li class=".myListContent">Tilt: ねじれ(Use Curve’s Tiltがオフの場合に影響)</li>
+                        <li class=".myListContent">Radius: 全体の半径</li>
+                        <li class=".myListContent">Count: つるの数</li>
+                        <li class=".myListContent">Resolution: それぞれの断面の頂点数</li>
+                        <li class=".myListContent">Tip Shrink: 先端を中心にまとめる</li>
+                        <li class=".myListContent">Material: マテリアル</li>
+                    </ul>
                 </div>
 
-                <!-- マテリアル -->
-                <div id="section2_1_4" class="section2_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>マテリアル
+                <div class="myList-container">
+                    <ul class="myList">
+                        <li>
+                            <span style="font-weight: bold">Stem(茎)</span>
+
+                            <ul style="line-height: 30px; font-size: large">
+                                <li class=".myListContent">Distance(Resample By Distanceがオンの場合): メインの部分(茎)のカーブの分割間の距離</li>
+                                <li class=".myListContent">***値を小さくし過ぎるとBlenderがクラッシュする可能性があります***</li>
+                                <li class=".myListContent">これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                                <li class=".myListContent">Count(Resample By Distanceがオフの場合): メインの部分(茎)のカーブの分割数</li>
+                                <li class=".myListContent">***値を大きくし過ぎるとBlenderがクラッシュする可能性があります***</li>
+                                <li class=".myListContent">これを防ぐため、プリファレンスの”Maximum Count”によって制限されています</li>
+                                <li class=".myListContent">Radius: 茎の半径</li>
+                                <li class=".myListContent">Resolution: 茎の断面の突き出た部分の数</li>
+                                <li class=".myListContent">Inner Scale: 断面の内側の半径</li>
+                                <li class=".myListContent">Inflation: 茎の断面の膨張</li>
+                                <li class=".myListContent">Auto Shrink: 自動で先端を縮める</li>
+                                <li class=".myListContent">
+                                    Auto Shrinkがオフの場合
+                                    <ul>
+                                        <li>Minimum Radius: 一番細い部分の半径</li>
+                                        <li>Shrink From: 縮まり始める位置</li>
+                                        <li>Exponent: 縮まる形状</li>
+                                    </ul>
+                                </li>
+                                <li class=".myListContent">Material: 茎のマテリアル</li>
+                            </ul>
+                        </li>
+                        <br />
+                        <li>
+                            <span style="font-weight: bold">Thorn(棘)</span>
+
+                            <ul style="line-height: 30px; font-size: large">
+                                <li class=".myListContent">Distance(Resample By Distanceがオンの場合): 棘を生成するカーブの分割間の距離 <br />***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                                <li class=".myListContent">Count(Resample By Distanceがオフの場合): 棘を生成するカーブの分割数 <br />***値を大きくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Maximum Count”によって制限されています</li>
+                                <li class=".myListContent">Radius: 棘の半径</li>
+                                <li class=".myListContent">Length: 棘の長さ</li>
+                                <li class=".myListContent">Resolution: 棘の断面の頂点数</li>
+                                <li class=".myListContent">Offset: カーブの中心へのオフセット</li>
+                                <li class=".myListContent">Tip Delete Factor: 先端から削除する割合</li>
+                                <li class=".myListContent">Root Delete Factor: 根元から削除する割合</li>
+                                <li class=".myListContent">Material: 棘のマテリアル</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="section2_1_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Cactus(サボテン)
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
-                <p class="defaultText" style="font-weight: bold; color: #fff6a8">本アドオンで作成されたオブジェクトに対してマテリアルを設定する場合は、テキストパネルのマテリアルから設定してください</p>
-                <p class="defaultText" style="font-weight: bold; margin-bottom: 50px">プロパティのマテリアルタブから設定しても反映されません</p>
-                <h3 class="headline3">
-                    マテリアルで使用するための属性が、いくつか用意されています。<br />
-                    右のボタンからクリップボードにコピーできます。
-                </h3>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/AttributeForMaterialPanel_JP.png" class="imgBorder" />
-                </div>
-                <p class="defaultText">シェーダーエディター内で、属性ノードの名前に入力して使用する事ができます</p>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/AttributeNode_JP.png" class="imgBorder" />
-                </div>
 
-                <!-- タイマー -->
-                <h1 id="section2_2" class="fontSize3" style="padding: 10px; text-align: center">
-                    <span class="headline2">タイマー</span>
+                <!-- Road -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">Road(道)</span>
                 </h1>
-                <!-- 作成 -->
-                <div id="section2_2_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>作成
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
-                </div>
+
                 <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
-                        <li class=".myListContent">3Dビューポート → Nパネル → EZTxtAnimタブを選択</li>
-                        <li class=".myListContent">”タイマーを作成”をクリック</li>
-                    </ul>
-                </div>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
-                </div>
-                <!-- 編集 -->
-                <div id="section2_2_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>編集
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
-                </div>
-                <p class="defaultText">上記の方法で作成されたオブジェクトを選択すると、パネルが編集用に変わります</p>
-                <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/TimerPanel_JP.png" class="imgBorder" />
-                </div>
-                <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px">
-                        <li class=".myListContent">マテリアル、フォント、サイズ、厚み、行揃え、縦揃えをEasy Textと同様に変更できます</li>
-                        <li class=".myListContent">間隔は文字間にのみ作用します</li>
-                        <li class=".myListContent">タイプ：カウントアップ/カウントダウンを選べます</li>
-                        <li class=".myListContent">日/時/分/ミリ秒の、表示/非表示を変更できます。時間を表示せずに日を表示しないように制限されます</li>
-                        <li class=".myListContent">オフセット：日/時/分/秒に対してオフセットされた値から、タイマーがスタートします</li>
-                        <li class=".myListContent">開始/停止にフレームを使用：有効にすると、タイマーは開始に設定したフレームに開始し、停止に設定したフレームで停止します</li>
-                        <li class=".myListContent">タイムスケール：タイマーの時間の進み方。1だと通常通り、0.5だと半分の速度で、2だと倍速で進みます</li>
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Type: Road type[Cobblestone(石畳) / Brick(レンガ) / Railroad(線路)]</li>
+                        <li class=".myListContent">Width: 幅</li>
+                        <li class=".myListContent">Depth: 高さ</li>
+                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます <br />オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                        <li class=".myListContent">Count(Resample By Distanceがオンの場合)</li>
+                        <li class=".myListContent">Road Material: 道(メインの部分)</li>
+                        <li class=".myListContent">Stone Material(タイプがRailroadではない場合): 石のマテリアル</li>
+                        <li class=".myListContent">Rail Material(タイプがRailroadの場合): レールのマテリアル</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                        <li class=".myListContent">Width Count(タイプがCobblestoneまたはBrickがオンの場合): 幅方向の数</li>
+                        <li class=".myListContent">Gap(タイプがCobblestoneがオンの場合): 隙間の大きさ</li>
+                        <li class=".myListContent">Scale(タイプがCobblestoneがオンの場合): 石の形状が変化する際のベースノイズオクターブのスケール <br />値が大きいほど、形状の変化が細かくなります</li>
+                        <li class=".myListContent">Seed(タイプがCobblestoneがオンの場合): ランダムのシード値</li>
+                        <li class=".myListContent">Stone Depth(タイプがCobblestoneまたはBrickの場合): 石の高さ</li>
+                        <li class=".myListContent">Factor(タイプがCobblestoneの場合): 形状変化の影響</li>
+                        <li class=".myListContent">Boundary Type(タイプがCobblestoneの場合): 境界のタイプ</li>
+                        <li class=".myListContent">Gap1 / Gap2(タイプがBrickの場合): それぞれの軸方向の隙間の大きさ</li>
+                        <li class=".myListContent">Offset(タイプがBrickの場合): 各列のずれ</li>
+                        <li class=".myListContent">Radius(タイプがRailroadの場合): 枕木の半径.</li>
+                        <li class=".myListContent">Resolution(タイプがRailroadの場合): 枕木の頂点数</li>
+                        <li class=".myListContent">Bevel Count / Radius(タイプがRailroadの場合): 角の面取り(Fillet Radiusはジオメトリが重ならないように制限されます)</li>
+                        <li class=".myListContent">Rotation(タイプがRailroadの場合): 枕木の角度</li>
+                        <li class=".myListContent">Rail Scale(タイプがRailroadの場合): レールのスケール</li>
+                        <li class=".myListContent">Rail Width Offset(タイプがRailroadの場合): レール間の距離</li>
+                        <li class=".myListContent">Rail Height Offset(タイプがRailroadの場合): レールの高さのオフセット</li>
+                        <li class=".myListContent">
+                            Show Rail Shape Settings(タイプがRailroadの場合): オンの場合、以下のパラメータを使用してレールの形状を手動で変更できます
+                            <ul>
+                                <li>Width / Height / Height Offset 1,2,3,4,5 / Width Scale 1,2,3</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- 注意事項 -->
-                <h1 id="section2_3" class="fontSize3" style="padding: 10px; text-align: center">
-                    <span class="headline2">注意事項</span>
+                <!-- Cable -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">Cable(ケーブル)</span>
                 </h1>
+
                 <div class="myList-container">
-                    <ul class="myList" style="line-height: 30px">
-                        <li class=".myListContent">“1st Animation”で”Animate”を”FROM”に設定した場合、”2nd Animation”で”Animate”を “Offset”または”Target”に設定しても違いはありません。</li>
-                        <li class=".myListContent">新しくシーンを作成したい場合には”New”オプションを使用しないでください</li>
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます <br />オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                        <li class=".myListContent">Count(Resample By Distanceがオフの場合)</li>
+                        <li class=".myListContent">Cable Count: ケーブルの数</li>
+                        <li class=".myListContent">Radius: ケーブルの半径</li>
+                        <li class=".myListContent">Resolution: ケーブルの断面の頂点数</li>
+                        <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
+                        <li class=".myListContent">Location Offset: 各ケーブルの初期位置のオフセット</li>
+                        <li class=".myListContent">Noise Offset: 中心がノイズに合わせてどのくらい動くか</li>
+                        <li class=".myListContent">Noise Strength: ノイズの強さ</li>
+                        <li class=".myListContent">Noise Scale: 値が大きいほど、形状の変化が細かくなります。</li>
+                        <li class=".myListContent">Noise Detail</li>
+                        <li class=".myListContent">Noise Similarity: 0だとすべてのケーブルが同じになります</li>
+                        <li class=".myListContent">W: ノイズを評価するテクスチャ座標</li>
+                        <li class=".myListContent">Pinch: 両端がノイズの影響を受けるか</li>
+                        <li class=".myListContent">Pinch Range:ノイズの影響を受ける範囲</li>
+                        <li class=".myListContent">Pinch Offset</li>
+                        <li class=".myListContent">Cyclic UV: カーブがループしていて、UV の x を使用する場合は、オンにします。</li>
+                        <li class=".myListContent">Material</li>
                     </ul>
                 </div>
-                <div style="margin: 0 auto; text-align: center; margin-bottom: 50px">
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/NewScene.png" class="imgBorder" />
-                    </div>
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/NewScenePanel.png" class="imgBorder" />
-                    </div>
+
+                <!-- Flag -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">Flag(旗)</span>
+                </h1>
+
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">
+                            Resample By Distance: オンの場合、カーブの分割数は距離によって決めます <br />
+                            オフの場合、数によって決めます
+                        </li>
+                        <li class=".myListContent">
+                            String Res Distance / Flag Count by Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />
+                            これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています
+                        </li>
+                        <li class=".myListContent">String Res Count / Flag Count(Resample By Distanceがオフの場合)</li>
+                        <li class=".myListContent">Resolution: 紐の断面の頂点数</li>
+                        <li class=".myListContent">Radius: 紐の半径</li>
+                        <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
+                        <li class=".myListContent">Material</li>
+                        <li class=".myListContent">Width: 旗の幅.</li>
+                        <li class=".myListContent">Length: 旗の長さ</li>
+                        <li class=".myListContent">Tip Scale: 先端の辺のスケール <br />0なら旗は三角形になります</li>
+                        <li class=".myListContent">Remove Both Tip: カーブの両端の旗を削除</li>
+                        <li class=".myListContent">Fit along Curve: 旗が曲線に沿わない場合に使用する機能 <br />旗の根元の頂点をカーブに合わせます <br />String Res Distance / Sting Res Count の値を小さく/大きくすると、よりフィットするようになります。</li>
+                        <li class=".myListContent">Resolution: 旗の分割数</li>
+                    </ul>
                 </div>
-                <!-- /////////////////////////////////////// -->
+
+                <!-- Hose -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">Hose(ホース)</span>
+                </h1>
+
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Type</li>
+                        <li class=".myListContent">Resample By Distance:オンの場合、カーブの分割数は距離によって決めます <br />オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                        <li class=".myListContent">Count(Resample By Distanceがオフの場合)</li>
+                        <li class=".myListContent">Resolution: 断面の頂点数</li>
+                        <li class=".myListContent">Radius: 半径</li>
+                        <li class=".myListContent">Radius Offset: 太い部分の半径のオフセット</li>
+                        <li class=".myListContent">
+                            Step: オフセットするポイント間の間隔<br />
+                            2 の場合、オフセットする場所とオフセットしない場所が交互になります
+                        </li>
+                        <li class=".myListContent">Step Offset</li>
+                        <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
+                        <li class=".myListContent">Numerator(when Type is 1): この値を大きくするとオフセットポイントが広がります <br />ステップの値以上になるとくっつきます</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                        <li class=".myListContent">Material</li>
+                    </ul>
+                </div>
+
+                <!-- Lightning(稲妻) -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">Lightning(稲妻)</span>
+                </h1>
+
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Noise W: ノイズを評価するテクスチャ座標</li>
+                        <li class=".myListContent">Seed: 分岐のランダム値のシード</li>
+                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます <br />オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                        <li class=".myListContent">Material</li>
+                        <li class=".myListContent">
+                            Trim
+                            <ul>
+                                <li class=".myListContent">Start: 0から1まで、根元から先端まで消えていきます</li>
+                                <li class=".myListContent">End: 1から0まで、先端から根元まで消えていきます</li>
+                                <li class=".myListContent">Without Wiggle: 1から0まで、先端から根元まで揺れることなく消えていきます</li>
+                            </ul>
+                        </li>
+
+                        <li class=".myListContent">
+                            Main Noise(メインのノイズ) / Fine Tune Noise(微調整のノイズ)
+                            <ul>
+                                <li class=".myListContent">Scale: 稲妻の形状が変化する際のベースノイズオクターブのスケール</li>
+                                <li class=".myListContent">値が大きいほど、形状の変化が細かくなります。</li>
+                                <li class=".myListContent">Boost: ノイズの強さ</li>
+                            </ul>
+                        </li>
+                        <li class=".myListContent">
+                            Fork1 / Fork2 (フォーク1はメインの稲妻から生成され、フォーク2はフォーク1から生成されます)
+                            <ul>
+                                <li class=".myListContent">Probability:生成割合</li>
+                                <li class=".myListContent">Radius: 半径</li>
+                                <li class=".myListContent">Length: 長さ</li>
+                                <li class=".myListContent">Noise Scale: 稲妻の形状が変化する際のベースノイズオクターブのスケール</li>
+                                <li class=".myListContent">値が大きいほど、形状の変化が細かくなります。</li>
+                                <li class=".myListContent">Noise Boost: ノイズの強さ</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pipe(パイプ) -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">Pipe(パイプ) </span>
+                </h1>
+                <p class="defaultText" style="font-weight: bold">コントロールポイントの位置にコネクターが生成されます</p>
+
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Type</li>
+                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます <br />オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                        <li class=".myListContent">Resolution: 断面の頂点数</li>
+                        <li class=".myListContent">Radius: 半径</li>
+                        <li class=".myListContent">Radius Random: 半径をランダムに</li>
+                        <li class=".myListContent">Seed: Radius Randomize.のシード値</li>
+                        <li class=".myListContent">Material</li>
+                        <li class=".myListContent">
+                            Connector
+                            <ul>
+                                <li class=".myListContent">Depth: 厚さ</li>
+                                <li class=".myListContent">Hide Start / End: カーブの始点 / 終点のコネクターを隠す</li>
+                                <li class=".myListContent">Material</li>
+                                <li class=".myListContent">
+                                    [PipeのTypeが0の場合]
+                                    <ul>
+                                        <li class=".myListContent">Type</li>
+                                        <li class=".myListContent">Resolution: 断面の頂点数</li>
+                                        <li class=".myListContent">Radius Offset: パイプの半径からのオフセット</li>
+                                        <li class=".myListContent">
+                                            [コネクターのTypeが1の場合]
+                                            <ul>
+                                                <li class=".myListContent">Extrude: 押し出す量</li>
+                                                <li class=".myListContent">Step: 面を押し出す間隔</li>
+                                                <li class=".myListContent">Offset1</li>
+                                                <li class=".myListContent">Offset2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class=".myListContent">
+                                    [PipeのTypeが1の場合]
+                                    <ul>
+                                        <li class=".myListContent">Width: 幅</li>
+                                        <li class=".myListContent">Height: 高さ</li>
+                                        <li class=".myListContent">Thickness: 厚さ</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=".myListContent">
+                            Bolt(PipeのTypeとコネクターのTypeが0の場合)
+                            <ul>
+                                <li class=".myListContent">Count: ボルトの数</li>
+                                <li class=".myListContent">円形に並びます</li>
+                                <li class=".myListContent">Radius: 半径</li>
+                                <li class=".myListContent">Depth: 厚さ</li>
+                                <li class=".myListContent">Position Offset: コネクターの半径からのオフセット</li>
+                                <li class=".myListContent">Material</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Stair(階段) -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">Stair(階段) </span>
+                </h1>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Type</li>
+                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます <br />オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                        <li class=".myListContent">Width: 幅</li>
+                        <li class=".myListContent">Material</li>
+                        <li class=".myListContent">
+                            Handrail(手すり)
+                            <ul>
+                                <li class=".myListContent">Resolution: 断面の頂点数</li>
+                                <li class=".myListContent">Width: 幅</li>
+                                <li class=".myListContent">Radius: 半径</li>
+                                <li class=".myListContent">Z Offset: Baluster(欄干)の上部からのZ方向のオフセット</li>
+                                <li class=".myListContent">Tilt: 傾き</li>
+                                <li class=".myListContent">Tip Extrude: 両端の押し出し</li>
+                                <li class=".myListContent">Shape Scale: 断面の形状のスケール</li>
+                                <li class=".myListContent">Material</li>
+                            </ul>
+                        </li>
+                        <li class=".myListContent">
+                            Baluster(欄干)
+                            <ul>
+                                <li class=".myListContent">Type</li>
+                                <li class=".myListContent">Resolution: 断面の頂点数</li>
+                                <li class=".myListContent">Resolution along Z: Z方向の頂点数</li>
+                                <li class=".myListContent">Depth: 高さ</li>
+                                <li class=".myListContent">Radius: 半径</li>
+                                <li class=".myListContent">Z Offset: 踏板からのZ方向のオフセット</li>
+                                <li class=".myListContent">Material</li>
+                            </ul>
+                        </li>
+                        <li class=".myListContent">
+                            Stringer(側桁)(StairのTypeが の場合0)
+                            <ul>
+                                <li class=".myListContent">Depth: 高さ</li>
+                                <li class=".myListContent">Thickness: 厚さ</li>
+                                <li class=".myListContent">Z Offset: Z方向のオフセット</li>
+                                <li class=".myListContent">Material</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Stitches(縫い目) -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">Stitches(縫い目) </span>
+                </h1>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Type: 縫い目のカーブのタイプ(Bevel / Bezier)</li>
+                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます <br />オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                        <li class=".myListContent">Count(Resample By Distanceがオフの場合)</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                        <li class=".myListContent">Resolution: 縫い目の断面の頂点数</li>
+                        <li class=".myListContent">Radius: 半径</li>
+                        <li class=".myListContent">Width: 縫い目の幅</li>
+                        <li class=".myListContent">Height Offset: 高さのオフセット</li>
+                        <li class=".myListContent">Center Distance(TypeがBevelの場合): 中央の2点間の距離</li>
+                        <li class=".myListContent">Center Radius Factor(TypeがBevelの場合): 中央の2点の半径</li>
+                        <li class=".myListContent">Bevel Count(TypeがBevelの場合): 2つの角のベベル数 <br />値を上げるほど、滑らかになります</li>
+                        <li class=".myListContent">Bevel Radius(TypeがBevelの場合): ベベルの半径 <br />値を上げるほど、滑らかになります</li>
+                        <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
+                        <li class=".myListContent">Use UV: これをオンにすると、各 UV 属性を使用できます <br />これにより、PC の速度が遅くなる可能性があります</li>
+                        <li class=".myListContent">Angle: 縫い目のカーブに対する角度</li>
+                        <li class=".myListContent">Random Angle: 角度のランダムさ</li>
+                        <li class=".myListContent">Random Seed: ランダムさのシード値</li>
+                        <li class=".myListContent">ZigZag: 縫い目をジグザグ状に配置</li>
+                        <li class=".myListContent">Cross: 縫い目を交差させる</li>
+                        <li class=".myListContent">Material</li>
+                        <li class=".myListContent">Center Handle Width(TypeがBezierの場合): Bezierは 3 つの制御点によって縫い目の形を制御します。</li>
+                        <li class=".myListContent">Tip Handle Width(TypeがBezierの場合)</li>
+                        <li class=".myListContent">Tip Handle Height(TypeがBezierの場合)</li>
+                    </ul>
+                </div>
+
+                <!-- RandomWire -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">RandomWire </span>
+                </h1>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます <br />オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                        <li class=".myListContent">Count(Resample By Distanceがオフの場合)</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                        <li class=".myListContent">Line:1本のラインからワイヤーを作成します</li>
+                        <li class=".myListContent">Curve Radius: ベースとなるカーブの半径</li>
+                        <li class=".myListContent">Curve Resolution: ベースとなるカーブの断面の頂点数</li>
+                        <li class=".myListContent">Triangulate: ベースとなるカーブの面を三角形化</li>
+                        <li class=".myListContent">Delete Geo Factor: ジオメトリを削除する割合</li>
+                        <li class=".myListContent">Delete Geo Seed: ジオメトリを削除する割合のシード値</li>
+                        <li class=".myListContent">Merge Distance: 頂点を距離で統合</li>
+                        <li class=".myListContent">
+                            Noise
+                            <ul>
+                                <li class=".myListContent">Scale</li>
+                                <li class=".myListContent">W</li>
+                                <li class=".myListContent">Size</li>
+                                <li class=".myListContent">Seed</li>
+                            </ul>
+                        </li>
+                        <li class=".myListContent">
+                            Wire(ワイヤー)
+                            <ul>
+                                <li class=".myListContent">Radius: 半径</li>
+                                <li class=".myListContent">Resolution: 断面の頂点数</li>
+                                <li class=".myListContent">Material</li>
+                            </ul>
+                        </li>
+                        <li class=".myListContent">
+                            Sphere(球体)
+                            <ul>
+                                <li class=".myListContent">Radius: 半径</li>
+                                <li class=".myListContent">Subdivision: 分割数</li>
+                                <li class=".myListContent">Material</li>
+                            </ul>
+                        </li>
+
+                        <li class=".myListContent">
+                            Face
+                            <ul>
+                                <li class=".myListContent">Has Thickness: 面が厚みを持つか</li>
+                                <li class=".myListContent">Material</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CylinderLine -->
+                <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                    <span class="headline2" id="section3_2">CylinderLine </span>
+                </h1>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large">
+                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます <br />オフの場合、数によって決めます</li>
+                        <li class=".myListContent">Distance: ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります*** <br />これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています</li>
+                        <li class=".myListContent">Count(Resample By Distanceがオフの場合)</li>
+                        <li class=".myListContent">Shade Smooth</li>
+                        <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                        <li class=".myListContent">Resolution: 各円柱の頂点数</li>
+                        <li class=".myListContent">Radius: 半径</li>
+                        <li class=".myListContent">Fillet Count: ベベルの数</li>
+                        <li class=".myListContent">Fillet Radius: ベベルの半径</li>
+                        <li class=".myListContent">Thickness: 厚さ</li>
+                        <li class=".myListContent">reverse: 並び順を反転</li>
+                        <li class=".myListContent">回転とスケールは並び順によって影響されます</li>
+                        <li class=".myListContent">Material</li>
+                        <li class=".myListContent">
+                            Rotaiton
+                            <ul>
+                                <li class=".myListContent">Type(Index / Object): 並び順または指定されたオブジェクトまでの距離に従って回転します</li>
+                                <li class=".myListContent">Initial Rotation: 全体の回転</li>
+                                <li class=".myListContent">Rotation: TypeがIndexの場合、最後の円柱がこの値の分回転します</li>
+                                <li class=".myListContent">TypeがObjectの場合、 指定されたオブジェクトまでの距離が 0 である円柱が、この値の分回転します。</li>
+                                <li class=".myListContent">Random Value: ランダムさ</li>
+                                <li class=".myListContent">Random Seed: ランダムさのシード値</li>
+                                <li class=".myListContent">Affect 1st: 最初の円柱にRotationの影響を与えるか</li>
+                                <li class=".myListContent">Index Factor(TypeがIndexの場合): 並び順の影響度</li>
+                                <li class=".myListContent">Object(TypeがObjectの場合): このオブジェクトとそれぞれの円柱の距離が、回転に影響を与えます</li>
+                                <li class=".myListContent">オブジェクトのスケールが、回転の範囲に影響を与えます</li>
+                                <li class=".myListContent">Flip Influence: オブジェクトが遠ざかるほど、回転が大きくなります。</li>
+                            </ul>
+                        </li>
+                        <li class=".myListContent">
+                            Scale
+                            <ul>
+                                <li class=".myListContent">Type(Radius / Index / Object): カーブの半径、並び順、またはオブジェクトまでの距離に応じてスケールします</li>
+                                <li class=".myListContent">Scale</li>
+                                <li class=".myListContent">Random Value: ランダムさ</li>
+                                <li class=".myListContent">Random Seed: ランダムさのシード値</li>
+                                <li class=".myListContent">Affect All Axis: これをオンにすると、スケールは厚さにも影響します</li>
+                                <li class=".myListContent">Index Factor(TypeがIndexの場合): 並び順の影響度</li>
+                                <li class=".myListContent">Object(TypeがObjectの場合): このオブジェクトとそれぞれの円柱の距離が、スケールに影響を与えます</li>
+                                <li class=".myListContent">Flip Influence: オブジェクトが遠ざかるほど、スケールが大きくなります</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ////////////////////////////? -->
 
                 <!-- installation -->
                 <div id="installation-container"></div>
@@ -460,5 +860,6 @@
 
         <!-- カルーセルを読み込む -->
         <script src="js/carousel.js"></script>
+        <script src="js/carousel_video.js"></script>
     </body>
 </html>
