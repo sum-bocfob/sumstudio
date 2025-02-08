@@ -14,6 +14,11 @@
         font-style: normal;
         text-decoration: none;
         color: #216582;
+        transition: 0.2s;
+    }
+
+    .headerMyName:hover {
+        transform: scale(1.1, 1.1);
     }
 
     /* ナビゲーション */
@@ -35,6 +40,24 @@
         padding: 10px 10px;
         text-decoration: none;
         color: #216582;
+        position: relative; /* 擬似要素の基準位置 */
+    }
+
+    nav ul li a::after {
+        content: ""; /* 擬似要素を作成 */
+        position: absolute;
+        left: 0;
+        bottom: -2px; /* 下線の位置調整 */
+        width: 100%;
+        height: 1px; /* 下線の太さ */
+        background-color: #216582; /* 下線の色 */
+        transform: scaleX(0); /* 初期状態では下線を非表示 */
+        transform-origin: left;
+        transition: transform 0.2s ease-in-out; /* アニメーション */
+    }
+
+    nav ul li a:hover::after {
+        transform: scaleX(1); /* ホバー時に下線を表示 */
     }
 }
 

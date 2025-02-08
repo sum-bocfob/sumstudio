@@ -16,6 +16,14 @@ footer div {
     margin: 20px 0;
 }
 
+footer div a {
+    transition: 0.2s;
+}
+
+footer div a:hover {
+    transform: scale(1.1, 1.1);
+}
+
 .footer_x_btn img {
     border-radius: 25%;
     width: 30px;
