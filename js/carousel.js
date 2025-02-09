@@ -5,10 +5,12 @@ const nextBtn = document.querySelector(".next");
 
 let index = 0;
 const totalSlides = slides.length;
-const slideWidth = slides[0].clientWidth;
-let autoSlideInterval;
+let autoSlideTimeout; // 初回呼び出し用タイマー
+let autoSlideInterval; // 以降の間隔用タイマー
 
 function updateSlide() {
+    // 毎回最新のスライド幅を取得
+    const slideWidth = slides[0].clientWidth;
     slider.style.transform = `translateX(${-index * slideWidth}px)`;
 }
 
@@ -22,31 +24,41 @@ function prevSlide() {
     updateSlide();
 }
 
-function startAutoSlide() {
-    autoSlideInterval = setInterval(nextSlide, 3000);
+/**
+ * 自動スライドを開始する関数
+ * @param {number} initialDelay - 最初の自動スライドまでの遅延（ミリ秒）
+ *                              初期読み込み時は3000ms、マウス離脱時は例として500ms
+ */
+function startAutoSlide(initialDelay = 3000) {
+    // まず初回呼び出し用タイマーを設定
+    autoSlideTimeout = setTimeout(() => {
+        nextSlide();
+        // 初回呼び出し後、以降は通常の間隔で呼び出す
+        autoSlideInterval = setInterval(nextSlide, 3000);
+    }, initialDelay);
 }
 
 function stopAutoSlide() {
+    clearTimeout(autoSlideTimeout);
     clearInterval(autoSlideInterval);
 }
 
-/* オーバーレイアイコンを表示する関数
-   icon には "▶"（再生）や "❚❚"（一時停止）などの文字を指定 */
+/* オーバーレイアイコン表示用の関数 */
 function showOverlayIcon(icon) {
     const overlay = document.querySelector(".overlay-icon");
     overlay.textContent = icon;
     overlay.style.opacity = 1;
-    // 1秒後にフェードアウト
+    // 500ms後にフェードアウト（必要に応じて調整）
     setTimeout(() => {
         overlay.style.opacity = 0;
     }, 500);
 }
 
-// 既存のボタン操作時のイベント（クリック時は自動スライドのリセット）
+// ボタン操作時の処理（クリックで自動スライドのリセット）
 nextBtn.addEventListener("click", () => {
     nextSlide();
     stopAutoSlide();
-    startAutoSlide();
+    startAutoSlide(); // デフォルトは3000ms初回遅延
 });
 
 prevBtn.addEventListener("click", () => {
@@ -55,35 +67,32 @@ prevBtn.addEventListener("click", () => {
     startAutoSlide();
 });
 
-// slider のマウスエンター時（※ relatedTarget が左右ボタンの場合は何も表示しない）
+// slider のマウスエンター時（関連要素が左右ボタンの場合はアイコン表示をスキップ）
 slider.addEventListener("mouseenter", (event) => {
-    // もしマウスが .prev あるいは .next の要素から移動してきたなら、アイコン表示をスキップ
     if (event.relatedTarget && (event.relatedTarget.closest(".prev") || event.relatedTarget.closest(".next"))) {
         stopAutoSlide();
         return;
     }
     stopAutoSlide();
-    showOverlayIcon("❚❚"); // 通常は一時停止アイコンを表示
+    showOverlayIcon("❚❚"); // 一時停止状態のアイコン
 });
 
-// slider のマウスリーブ時（※ relatedTarget が左右ボタンの場合はアイコン表示しない）
+// slider のマウスリーブ時（関連要素が左右ボタンの場合はアイコン表示をスキップ）
+// ※ここで、初回遅延を短く（例：500ms）して自動スライドを再開
 slider.addEventListener("mouseleave", (event) => {
-    // もしマウスが .prev あるいは .next の要素へ移動する場合、アイコン表示をスキップ
     if (event.relatedTarget && (event.relatedTarget.closest(".prev") || event.relatedTarget.closest(".next"))) {
         return;
     }
-    startAutoSlide();
-    showOverlayIcon("▶"); // 通常は再生アイコンを表示
+    startAutoSlide(500); // 初回の自動スライドまでの遅延を500msに設定
+    showOverlayIcon("▶"); // 再生状態のアイコン
 });
 
-// ボタンホバーでも自動スライド停止（必要に応じて追加）
+// ボタンホバー時にも自動スライド停止
 prevBtn.addEventListener("mouseenter", stopAutoSlide);
 nextBtn.addEventListener("mouseenter", stopAutoSlide);
 
-// ウィンドウサイズ変更時の調整
-window.addEventListener("resize", () => {
-    updateSlide();
-});
+// ウィンドウサイズ変更時に位置調整
+window.addEventListener("resize", updateSlide);
 
-// 初期化
+// 初期化（ページ読み込み時は通常3000msの遅延）
 startAutoSlide();
