@@ -41,6 +41,7 @@
     pointer-events: none; /* ホバーされるまでクリックを無効に */
     z-index: 1000;
     overflow-y: auto;
+    max-height: 80vh;
 }
 
 /* ホバー時にのみアニメーションを適用 */
