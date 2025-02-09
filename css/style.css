@@ -196,3 +196,16 @@ aside {
 .numberedFunc-container div {
     padding: 20px 20px;
 }
+
+/* テーブル */
+.blenderAddon_item {
+    transition: 0.2s;
+}
+
+.blenderAddon_item:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.myTable tr td {
+    width: 10%;
+}
