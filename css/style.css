@@ -209,3 +209,79 @@ aside {
 .myTable tr td {
     width: 10%;
 }
+
+.watchOnYouTube {
+    padding-top: 5px;
+    margin: 0;
+    padding-top: 20px;
+    height: 40px;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+}
+
+/* コンテナ（画像と背景）のラッパー */
+.tutorial-overlay {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.tutorial-overlay:hover {
+    transform: scale(1.05, 1.05);
+}
+
+/* 疑似要素でオーバーレイ（初期は透明） */
+.tutorial-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明な色。必要に応じて変更 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none; /* クリックをブロックしない */
+}
+
+/* コンテナにホバーしたらオーバーレイ表示 */
+.tutorial-overlay:hover::before {
+    opacity: 1;
+}
+
+/* 画像は下層に配置 */
+.tutorial-overlay a > img {
+    display: block;
+    width: 100%;
+    /* border-radius: 15px 15px 0 0;  */
+    position: relative;
+    z-index: 0;
+}
+
+/* テキストはオーバーレイより上に配置（z-indexを高めに設定） */
+.tutorial-overlay > .overlay_imgAndTxt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin: 0;
+    color: #f8f8f8;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+}
+
+.tutorial-overlay:hover .overlay_imgAndTxt {
+    opacity: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 列を等分 */
+    gap: 10px;
+    max-width: 95%;
+    margin: 0 auto;
+}
