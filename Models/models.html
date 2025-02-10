@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>sum studio 3Dモデル一覧</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/blenderAddons.css" />
+        <script>
+            function includeHTML(id, url) {
+                fetch(url)
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch((error) => console.error("Error loading HTML:", error));
+            }
+
+            // ページが読み込まれたらHTMLをインクルード
+            window.onload = function () {
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+            };
+        </script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <main style="width: 80%; margin: 0 auto">
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 title" style="font-family: 'Noto Sans JP', serif; font-optical-sizing: auto; font-weight: 900">3Dモデル</h1>
+
+                <!-- グリッド -->
+                <div class="grid-container" style="margin-top: 30px">
+                    <div class="blenderAddon_item">
+                        <div style="text-align: center; background-color: #3d3d3d; border-radius: 15px 15px 0 0">
+                            <a href="Models/lowpolyDinosaurs.html" style="text-decoration: none; display: block"
+                                ><p style="color: #f8f8f8; font-weight: bold; padding-top: 5px; height: 40px"><span style="font-size: 1.15rem">Lowpoly Dinosaurs: Animated</span><br />ローポリ恐竜モデル</p>
+                                <img src="Models/Dinosaurs.png" style="width: 100%; display: block" />
+                            </a>
+                        </div>
+                        <div style="display: flex; justify-content: center; gap: 20px; align-items: center; background-color: #f7f7f7; padding: 10px; border-radius: 0 0 15px 15px">
+                            <a class="productPage-btn" href="https://blendermarket.com/products/lowpoly-dinosaurs-animated" target="_blank" rel="noopener noreferrer" style="width: 35%">
+                                <img src="WebIcons/Blender Market logo.png" alt="Blender Market" style="width: 100%; display: block" />
+                            </a>
+                            <a class="productPage-btn" href="https://sumsum.booth.pm/items/3348076" target="_blank" rel="noopener noreferrer" style="width: 35%">
+                                <img src="WebIcons/BOOTH_Logo.png" alt="BOOTH" style="width: 100%; display: block" />
+                            </a>
+                            <a class="productPage-btn" href="https://assetstore.unity.com/packages/3d/characters/animals/low-poly-dinosaurs-animated-201597" target="_blank" rel="noopener noreferrer" style="width: 35%; font-size: 15px; font-weight: bold; background-color: #111111; padding: 8px; color: #f3f3f3; text-align: center; text-decoration: none"
+                                >Unity Asset Store
+                            </a>
+                        </div>
+                    </div>
+                    <div class="blenderAddon_item">
+                        <div style="text-align: center; background-color: #3d3d3d; border-radius: 15px 15px 0 0">
+                            <a href="Addons/FastSculptAndPaintAssistant/fastSculptAndPaintAssistant.html" style="text-decoration: none; display: block"
+                                ><p style="color: #f8f8f8; font-weight: bold; padding-top: 5px; height: 40px"><span style="font-size: 1.15rem">Low Poly Aquatic Animals</span><br />ローポリ海の生き物モデル</p>
+                                <img src="Models/AquaticAnimals.png" style="width: 100%; display: block" />
+                            </a>
+                        </div>
+                        <div style="display: flex; justify-content: center; gap: 20px; align-items: center; background-color: #f7f7f7; padding: 10px; border-radius: 0 0 15px 15px">
+                            <a class="productPage-btn" href="https://blendermarket.com/products/low-poly-aquatic-animals" target="_blank" rel="noopener noreferrer" style="width: 35%">
+                                <img src="WebIcons/Blender Market logo.png" alt="Blender Market" style="width: 100%; display: block" />
+                            </a>
+                            <a class="productPage-btn" href="https://sumsum.booth.pm/items/6582035" target="_blank" rel="noopener noreferrer" style="width: 35%">
+                                <img src="WebIcons/BOOTH_Logo.png" alt="BOOTH" style="width: 100%; display: block" />
+                            </a>
+                            <a class="productPage-btn" href="https://assetstore.unity.com/packages/3d/characters/animals/fish/low-poly-aquatic-animals-237106" target="_blank" rel="noopener noreferrer" style="width: 35%; font-size: 15px; font-weight: bold; background-color: #111111; padding: 8px; color: #f3f3f3; text-align: center; text-decoration: none"
+                                >Unity Asset Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons-container"></div>
+            </main>
+        </div>
+        <!-- フッター -->
+        <div id="footer-container"></div>
+
+        <!-- 再生リストの名前ごとにランダムな動画を取得-->
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script>
+            setRandomVideo("adddonTutorialList");
+        </script>
+
+        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
+        <script>
+            window.addEventListener("load", function () {
+                const currentUrl = encodeURIComponent(window.location.href);
+
+                function updateShareLinks() {
+                    document.querySelectorAll("#shareButtons-container a").forEach((link) => {
+                        if (link.href.includes("https://sum-bocfob.github.io/")) {
+                            link.href = link.href.replace("https://sum-bocfob.github.io/", currentUrl);
+                        }
+                    });
+                }
+
+                // 初回実行（すでにロードされている場合のため）
+                updateShareLinks();
+
+                // MutationObserverを使ってシェアボタンのHTMLが追加されたときに更新
+                const observer = new MutationObserver(updateShareLinks);
+                observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
+            });
+        </script>
+    </body>
+</html>
