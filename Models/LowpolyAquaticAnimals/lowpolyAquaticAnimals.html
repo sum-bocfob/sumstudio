@@ -2,7 +2,7 @@
 <html>
     <head>
         <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio   -->
-        <base href="https://sum-bocfob.github.io/sumstudio" />
+        <!-- <base href="" /> -->
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="css/style.css" />
         <script>
             function includeHTML(id, url) {
                 fetch(url)
@@ -23,12 +23,12 @@
 
             // ページが読み込まれたらHTMLをインクルード
             window.onload = function () {
-                includeHTML("header-container", "/includes/header.html"); // ヘッダーをインクルード
-                includeHTML("tableOfContents_lowpolyAquaticAnimals-container", "/includes/tableOfContents_lowpolyAquaticAnimals.html"); // 目次をインクルード
-                includeHTML("installation-container", "/includes/installation.html"); // インストール方法をインクルード
-                includeHTML("shareButtons-container", "/includes/shareButtons.html"); // シェアボタンをインクルード
-                includeHTML("popularAddons-container", "/includes/popularAddons.html"); // 人気のアドオンをインクルード
-                includeHTML("footer-container", "/includes/footer.html"); // フッターをインクルード
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents_lowpolyAquaticAnimals-container", "includes/tableOfContents_lowpolyAquaticAnimals.html"); // 目次をインクルード
+                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
             };
         </script>
     </head>
@@ -48,10 +48,10 @@
 
                 <div class="imgContainer" style="background: #efefef; padding: 10px 20px; display: flex; justify-content: space-evenly; align-items: center">
                     <a class="productPage-btn" href="https://blendermarket.com/products/low-poly-aquatic-animals" target="_blank" rel="noopener noreferrer" style="width: 25%">
-                        <img src="/WebIcons/Blender Market logo.png" alt="Easy Text Animation Blender Market" style="width: 100%; height: auto; display: block" />
+                        <img src="WebIcons/Blender Market logo.png" alt="Easy Text Animation Blender Market" style="width: 100%; height: auto; display: block" />
                     </a>
                     <a class="productPage-btn" href="https://sumsum.booth.pm/items/6582035" target="_blank" rel="noopener noreferrer" style="width: 25%">
-                        <img src="/WebIcons/BOOTH_Logo.png" alt="Easy Text Animation BOOTH" style="width: 100%; height: auto; display: block" />
+                        <img src="WebIcons/BOOTH_Logo.png" alt="Easy Text Animation BOOTH" style="width: 100%; height: auto; display: block" />
                     </a>
                     <a class="productPage-btn" href="https://assetstore.unity.com/packages/3d/characters/animals/fish/low-poly-aquatic-animals-237106" target="_blank" rel="noopener noreferrer" style="width: 25%; font-size: 20px; font-weight: bold; background-color: #111111; padding: 3% 8px; color: #f3f3f3; text-align: center; text-decoration: none">
                         Unity Asset Store
@@ -77,7 +77,7 @@
                         <div class="myList-container">
                             <p class="defaultText">遊泳</p>
                         </div>
-                        <div class="imgContainer" style="max-width: 80%"><img src="/Models/LowpolyAquaticAnimals/BarredKnifejaw.png" class="imgBorder" style="margin: -20px auto" /></div>
+                        <div class="imgContainer" style="max-width: 80%"><img src="Models/LowpolyAquaticAnimals/BarredKnifejaw.png" class="imgBorder" style="margin: -20px auto" /></div>
                     </div>
                     <div>
                         <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
@@ -88,7 +88,7 @@
                             <p class="defaultText">遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/BluefinTuna.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/BluefinTuna.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -100,7 +100,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/BlueTang.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/BlueTang.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -112,7 +112,7 @@
                             <p class="defaultText">遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/BlueWhale.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/BlueWhale.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -124,7 +124,7 @@
                             <p class="defaultText">遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/BottlenoseDolphin.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/BottlenoseDolphin.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -136,7 +136,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/Catfish.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/Catfish.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -148,7 +148,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/Clownfish.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/Clownfish.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -160,7 +160,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/Dolphinfish.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/Dolphinfish.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -172,7 +172,7 @@
                             <p class="defaultText">遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/GreatWhiteShark.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/GreatWhiteShark.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -184,7 +184,7 @@
                             <p class="defaultText">遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/GreenTurtle.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/GreenTurtle.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -197,7 +197,7 @@
                         </div>
 
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/JapaneseHorseMackerel.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/JapaneseHorseMackerel.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -209,7 +209,7 @@
                             <p class="defaultText">遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/KillerWhale.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/KillerWhale.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -221,7 +221,7 @@
                             <p class="defaultText">歩行 / 遊泳 / 食事 / 匍匐</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/KingPenguin.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/KingPenguin.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -233,7 +233,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/LargeToothFlounders.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/LargeToothFlounders.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -245,7 +245,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/LiveSharkSucker.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/LiveSharkSucker.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -257,7 +257,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/MoorishIdol.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/MoorishIdol.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -269,7 +269,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/NapoleonFish.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/NapoleonFish.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -281,7 +281,7 @@
                             <p class="defaultText">歩行 / 遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/NileCrocodile.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/NileCrocodile.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -293,7 +293,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/Piranha.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/Piranha.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -305,7 +305,7 @@
                             <p class="defaultText">遊泳 / 攻撃</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/SawShark.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/SawShark.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -317,7 +317,7 @@
                             <p class="defaultText">遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/ScallopedHammerhead.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/ScallopedHammerhead.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -329,7 +329,7 @@
                             <p class="defaultText">歩行 / 速足 / 襲歩 / 遊泳 / 食事 / あくび</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/SmallClawedOtter.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/SmallClawedOtter.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -341,7 +341,7 @@
                             <p class="defaultText">遊泳</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/Stingray.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/Stingray.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -353,7 +353,7 @@
                             <p class="defaultText">遊泳 / 食事 / 攻撃</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/StripedMarlin.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/StripedMarlin.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -365,7 +365,7 @@
                             <p class="defaultText">遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/Sunfish.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/Sunfish.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                     <div>
@@ -377,7 +377,7 @@
                             <p class="defaultText">遊泳 / 食事</p>
                         </div>
                         <div class="imgContainer" style="max-width: 80%">
-                            <img src="/Models/LowpolyAquaticAnimals/WhaleShark.png" class="imgBorder" style="margin: -20px auto" />
+                            <img src="Models/LowpolyAquaticAnimals/WhaleShark.png" class="imgBorder" style="margin: -20px auto" />
                         </div>
                     </div>
                 </div>
@@ -470,7 +470,7 @@
         <div id="footer-container"></div>
 
         <!-- 再生リストの名前ごとにランダムな動画を取得-->
-        <script src="/GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
         <script>
             setRandomVideo("adddonTutorialList");
         </script>
