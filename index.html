@@ -2,7 +2,7 @@
 <html>
     <head>
         <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
-        <base href="https://sum-bocfob.github.io/sumstudio/" />
+        <base href="https://sum-bocfob.github.io/sumstudio" />
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="/css/style.css" />
         <!-- <link rel="stylesheet" href="css/style.css" /> -->
         <script>
             function includeHTML(id, url) {
@@ -24,10 +24,10 @@
 
             // ページが読み込まれたらHTMLをインクルード
             window.onload = function () {
-                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
-                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
-                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+                includeHTML("header-container", "/includes/header.html"); // ヘッダーをインクルード
+                includeHTML("shareButtons-container", "/includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "/includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "/includes/footer.html"); // フッターをインクルード
             };
         </script>
     </head>
@@ -67,7 +67,7 @@
         <div id="footer-container"></div>
 
         <!-- 再生リストの名前ごとにランダムな動画を取得-->
-        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script src="/GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
         <script>
             setRandomVideo("adddonTutorialList");
         </script>

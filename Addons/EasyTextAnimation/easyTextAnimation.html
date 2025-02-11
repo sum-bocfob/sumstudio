@@ -2,7 +2,7 @@
 <html>
     <head>
         <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
-        <base href="https://sum-bocfob.github.io/sumstudio/" />
+        <base href="https://sum-bocfob.github.io/sumstudio" />
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="/css/style.css" />
         <script>
             function includeHTML(id, url) {
                 fetch(url)
@@ -23,12 +23,12 @@
 
             // ページが読み込まれたらHTMLをインクルード
             window.onload = function () {
-                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                includeHTML("tableOfContents_easyTextAnimation-container", "includes/tableOfContents_easyTextAnimation.html"); // 目次をインクルード
-                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
-                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
-                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
-                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+                includeHTML("header-container", "/includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents_easyTextAnimation-container", "/includes/tableOfContents_easyTextAnimation.html"); // 目次をインクルード
+                includeHTML("installation-container", "/includes/installation.html"); // インストール方法をインクルード
+                includeHTML("shareButtons-container", "/includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "/includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "/includes/footer.html"); // フッターをインクルード
             };
         </script>
     </head>
@@ -48,10 +48,10 @@
 
                 <div class="imgContainer" style="background: #efefef; padding: 10px 0">
                     <a class="productPage-btn" href="https://blendermarket.com/products/easy-text-animation" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
-                        <img src="WebIcons/Blender Market logo.png" alt="Easy Text Animation Blender Market" style="width: 200px; height: auto; display: block" />
+                        <img src="/WebIcons/Blender Market logo.png" alt="Easy Text Animation Blender Market" style="width: 200px; height: auto; display: block" />
                     </a>
                     <a class="productPage-btn" href="https://sumsum.booth.pm/items/3721621" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
-                        <img src="WebIcons/BOOTH_Logo.png" alt="Easy Text Animation BOOTH" style="width: 200px; height: auto; display: block" />
+                        <img src="/WebIcons/BOOTH_Logo.png" alt="Easy Text Animation BOOTH" style="width: 200px; height: auto; display: block" />
                     </a>
                 </div>
                 <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
@@ -80,7 +80,7 @@
                     </ul>
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
                 </div>
                 <!-- 編集 -->
                 <div id="section2_1_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
@@ -90,7 +90,7 @@
                 <p class="defaultText">上記の方法で作成されたオブジェクトを選択すると、パネルが編集用に変わります</p>
                 <h3 class="headline3">“Text”パネルではテキストの編集ができます</h3>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/TextPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/TextPanel_JP.png" class="imgBorder" />
                 </div>
                 <div class="myList-container">
                     <ul class="myList" style="line-height: 30px">
@@ -110,7 +110,7 @@
                 </div>
                 <h3 class="headline3">“1st Animation”パネルではキーフレーム無しで一つ目のアニメーションを作成できます</h3>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/1stAnimationPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/1stAnimationPanel_JP.png" class="imgBorder" />
                 </div>
                 <div class="myList-container">
                     <ul class="myList" style="line-height: 30px">
@@ -120,13 +120,13 @@
                 </div>
                 <h3 class="headline3" style="max-width: 70%; border-width: 2px; font-weight: 550">上記に加えて、このパネルには”移動”、”スケール”、”回転”セクションがあります</h3>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Translate1stPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/Translate1stPanel_JP.png" class="imgBorder" />
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Scale1stPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/Scale1stPanel_JP.png" class="imgBorder" />
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Rotate1stPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/Rotate1stPanel_JP.png" class="imgBorder" />
                 </div>
                 <div class="myList-container">
                     <ul class="myList" style="line-height: 30px; max-width: 70%">
@@ -154,17 +154,17 @@
                     設定項目は同じです
                 </h3>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/2ndAnimationPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/2ndAnimationPanel_JP.png" class="imgBorder" />
                 </div>
                 <h3 class="headline3" style="max-width: 70%; border-width: 2px; font-weight: 550">“2nd Animation”の”移動”、”スケール”、”回転”セクションもほぼ”1st Animation”と同じですが、値へのアニメーション方法(アニメーション FROM/TO)に違いがあります</h3>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Translate2ndPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/Translate2ndPanel_JP.png" class="imgBorder" />
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Scale2ndPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/Scale2ndPanel_JP.png" class="imgBorder" />
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/Rotate2ndPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/Rotate2ndPanel_JP.png" class="imgBorder" />
                 </div>
                 <div class="myList-container">
                     <ul class="myList" style="line-height: 30px; max-width: 70%">
@@ -180,7 +180,7 @@
                     </ul>
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/CustomEasingNodeGroupPlace.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/CustomEasingNodeGroupPlace.png" class="imgBorder" />
                 </div>
                 <div class="myList-container">
                     <ul class="myList" style="line-height: 30px">
@@ -189,7 +189,7 @@
                     </ul>
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/CustomEasingFloatCurvePlace.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/CustomEasingFloatCurvePlace.png" class="imgBorder" />
                 </div>
 
                 <!-- プリセット -->
@@ -198,72 +198,72 @@
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Slide In.gif" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/PresetGIFs/Slide In.gif" class="imgBorder" />
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Roll.gif" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/PresetGIFs/Roll.gif" class="imgBorder" />
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Stretch In.gif" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/PresetGIFs/Stretch In.gif" class="imgBorder" />
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Typewriter.gif" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/PresetGIFs/Typewriter.gif" class="imgBorder" />
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Scale Bounce.gif" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/PresetGIFs/Scale Bounce.gif" class="imgBorder" />
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/PresetGIFs/Scale Fade In Out.gif" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/PresetGIFs/Scale Fade In Out.gif" class="imgBorder" />
                 </div>
                 <div style="margin: 0 auto; text-align: center">
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Grow.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Grow.gif" class="imgBorder" />
                     </div>
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Shrink.gif" class="imgBorder" />
-                    </div>
-                </div>
-                <div style="margin: 0 auto; text-align: center">
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Flip Up.gif" class="imgBorder" />
-                    </div>
-                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Get Up.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Shrink.gif" class="imgBorder" />
                     </div>
                 </div>
                 <div style="margin: 0 auto; text-align: center">
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Back Flip.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Flip Up.gif" class="imgBorder" />
                     </div>
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Whirlwind.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Get Up.gif" class="imgBorder" />
                     </div>
                 </div>
                 <div style="margin: 0 auto; text-align: center">
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Hop.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Back Flip.gif" class="imgBorder" />
                     </div>
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Fly Down Rotate.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Whirlwind.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Hop.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Fly Down Rotate.gif" class="imgBorder" />
                     </div>
                 </div>
                 <div style="margin: 0 auto; text-align: center">
                     <div class="imgContainer" style="max-width: 28%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Drop.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Drop.gif" class="imgBorder" />
                     </div>
                     <div class="imgContainer" style="max-width: 28%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Fly In Twist.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Fly In Twist.gif" class="imgBorder" />
                     </div>
                     <div class="imgContainer" style="max-width: 28%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Bounce.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Bounce.gif" class="imgBorder" />
                     </div>
                 </div>
                 <div style="margin: 0 auto; text-align: center">
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Yo-Yo.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Yo-Yo.gif" class="imgBorder" />
                     </div>
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/PresetGIFs/Pass By.gif" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/PresetGIFs/Pass By.gif" class="imgBorder" />
                     </div>
                 </div>
 
@@ -279,11 +279,11 @@
                     右のボタンからクリップボードにコピーできます。
                 </h3>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/AttributeForMaterialPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/AttributeForMaterialPanel_JP.png" class="imgBorder" />
                 </div>
                 <p class="defaultText">シェーダーエディター内で、属性ノードの名前に入力して使用する事ができます</p>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/AttributeNode_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/AttributeNode_JP.png" class="imgBorder" />
                 </div>
 
                 <!-- タイマー -->
@@ -302,7 +302,7 @@
                     </ul>
                 </div>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/CreatePanel_JP.png" class="imgBorder" />
                 </div>
                 <!-- 編集 -->
                 <div id="section2_2_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
@@ -311,7 +311,7 @@
                 </div>
                 <p class="defaultText">上記の方法で作成されたオブジェクトを選択すると、パネルが編集用に変わります</p>
                 <div class="imgContainer" style="max-width: 80%">
-                    <img src="Addons/EasyTextAnimation/TimerPanel_JP.png" class="imgBorder" />
+                    <img src="/Addons/EasyTextAnimation/TimerPanel_JP.png" class="imgBorder" />
                 </div>
                 <div class="myList-container">
                     <ul class="myList" style="line-height: 30px">
@@ -337,10 +337,10 @@
                 </div>
                 <div style="margin: 0 auto; text-align: center; margin-bottom: 50px">
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/NewScene.png" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/NewScene.png" class="imgBorder" />
                     </div>
                     <div class="imgContainer" style="max-width: 40%; display: inline-block">
-                        <img src="Addons/EasyTextAnimation/NewScenePanel.png" class="imgBorder" />
+                        <img src="/Addons/EasyTextAnimation/NewScenePanel.png" class="imgBorder" />
                     </div>
                 </div>
                 <!-- /////////////////////////////////////// -->
@@ -416,7 +416,7 @@
                 <div class="recomTut">
                     <h2>おすすめのチュートリアル</h2>
                     <div class="iframe-container">
-                        <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id="videoIframe" src="/https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </aside>
@@ -425,7 +425,7 @@
         <div id="footer-container"></div>
 
         <!-- 再生リストの名前ごとにランダムな動画を取得-->
-        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script src="/GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
         <script>
             setRandomVideo("adddonTutorialList");
         </script>

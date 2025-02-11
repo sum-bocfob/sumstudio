@@ -2,7 +2,7 @@
 <html>
     <head>
         <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
-        <base href="https://sum-bocfob.github.io/sumstudio/" />
+        <base href="https://sum-bocfob.github.io/sumstudio" />
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,8 +10,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/blenderAddons.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/blenderAddons.css" />
         <script>
             function includeHTML(id, url) {
                 fetch(url)
@@ -24,9 +24,9 @@
 
             // ページが読み込まれたらHTMLをインクルード
             window.onload = function () {
-                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
-                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+                includeHTML("header-container", "/includes/header.html"); // ヘッダーをインクルード
+                includeHTML("shareButtons-container", "/includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("footer-container", "/includes/footer.html"); // フッターをインクルード
             };
         </script>
     </head>
@@ -45,17 +45,17 @@
                 <div class="grid-container" style="margin-top: 30px">
                     <div class="blenderAddon_item">
                         <div style="text-align: center; background-color: #3d3d3d; border-radius: 15px 15px 0 0">
-                            <a href="Models/lowpolyDinosaurs.html" style="text-decoration: none; display: block"
+                            <a href="/Models/LowpolyDinosaurs/lowpolyDinosaurs.html" style="text-decoration: none; display: block"
                                 ><p style="color: #f8f8f8; font-weight: bold; padding-top: 5px; height: 40px"><span style="font-size: 1.15rem">Lowpoly Dinosaurs: Animated</span><br />ローポリ恐竜モデル</p>
-                                <img src="Models/Dinosaurs.png" style="width: 100%; display: block" />
+                                <img src="/Models/LowpolyDinosaurs/Dinosaurs.png" style="width: 100%; display: block" />
                             </a>
                         </div>
                         <div style="display: flex; justify-content: center; gap: 20px; align-items: center; background-color: #f7f7f7; padding: 10px; border-radius: 0 0 15px 15px">
                             <a class="productPage-btn" href="https://blendermarket.com/products/lowpoly-dinosaurs-animated" target="_blank" rel="noopener noreferrer" style="width: 35%">
-                                <img src="WebIcons/Blender Market logo.png" alt="Blender Market" style="width: 100%; display: block" />
+                                <img src="/WebIcons/Blender Market logo.png" alt="Blender Market" style="width: 100%; display: block" />
                             </a>
                             <a class="productPage-btn" href="https://sumsum.booth.pm/items/3348076" target="_blank" rel="noopener noreferrer" style="width: 35%">
-                                <img src="WebIcons/BOOTH_Logo.png" alt="BOOTH" style="width: 100%; display: block" />
+                                <img src="/WebIcons/BOOTH_Logo.png" alt="BOOTH" style="width: 100%; display: block" />
                             </a>
                             <a class="productPage-btn" href="https://assetstore.unity.com/packages/3d/characters/animals/low-poly-dinosaurs-animated-201597" target="_blank" rel="noopener noreferrer" style="width: 35%; font-size: 15px; font-weight: bold; background-color: #111111; padding: 8px; color: #f3f3f3; text-align: center; text-decoration: none"
                                 >Unity Asset Store
@@ -64,21 +64,38 @@
                     </div>
                     <div class="blenderAddon_item">
                         <div style="text-align: center; background-color: #3d3d3d; border-radius: 15px 15px 0 0">
-                            <a href="Addons/FastSculptAndPaintAssistant/fastSculptAndPaintAssistant.html" style="text-decoration: none; display: block"
+                            <a href="/Models/LowpolyAquaticAnimals/lowpolyAquaticAnimals.html" style="text-decoration: none; display: block"
                                 ><p style="color: #f8f8f8; font-weight: bold; padding-top: 5px; height: 40px"><span style="font-size: 1.15rem">Low Poly Aquatic Animals</span><br />ローポリ海の生き物モデル</p>
-                                <img src="Models/AquaticAnimals.png" style="width: 100%; display: block" />
+                                <img src="/Models/LowpolyAquaticAnimals/AquaticAnimals.png" style="width: 100%; display: block" />
                             </a>
                         </div>
                         <div style="display: flex; justify-content: center; gap: 20px; align-items: center; background-color: #f7f7f7; padding: 10px; border-radius: 0 0 15px 15px">
                             <a class="productPage-btn" href="https://blendermarket.com/products/low-poly-aquatic-animals" target="_blank" rel="noopener noreferrer" style="width: 35%">
-                                <img src="WebIcons/Blender Market logo.png" alt="Blender Market" style="width: 100%; display: block" />
+                                <img src="/WebIcons/Blender Market logo.png" alt="Blender Market" style="width: 100%; display: block" />
                             </a>
                             <a class="productPage-btn" href="https://sumsum.booth.pm/items/6582035" target="_blank" rel="noopener noreferrer" style="width: 35%">
-                                <img src="WebIcons/BOOTH_Logo.png" alt="BOOTH" style="width: 100%; display: block" />
+                                <img src="/WebIcons/BOOTH_Logo.png" alt="BOOTH" style="width: 100%; display: block" />
                             </a>
                             <a class="productPage-btn" href="https://assetstore.unity.com/packages/3d/characters/animals/fish/low-poly-aquatic-animals-237106" target="_blank" rel="noopener noreferrer" style="width: 35%; font-size: 15px; font-weight: bold; background-color: #111111; padding: 8px; color: #f3f3f3; text-align: center; text-decoration: none"
                                 >Unity Asset Store
                             </a>
+                        </div>
+                    </div>
+                    <div class="blenderAddon_item">
+                        <div style="text-align: center; background-color: #3d3d3d; border-radius: 15px 15px 0 0">
+                            <a href="/Models/ExtremeLowpolyPack/extremeLowpolyPack.html" style="text-decoration: none; display: block"
+                                ><p style="color: #f8f8f8; font-weight: bold; padding-top: 5px; height: 40px"><span style="font-size: 1.15rem">Extreme Lowpoly Pack</span><br />多種多様なローポリ3Dモデル</p>
+                                <img src="/Models/ExtremeLowpolyPack/CoverImage.png" style="width: 100%; display: block" />
+                            </a>
+                        </div>
+                        <div style="display: flex; justify-content: center; gap: 20px; align-items: center; background-color: #f7f7f7; padding: 10px; border-radius: 0 0 15px 15px">
+                            <a class="productPage-btn" href="https://blendermarket.com/products/extreme-lowpoly-pack" target="_blank" rel="noopener noreferrer" style="width: 35%">
+                                <img src="/WebIcons/Blender Market logo.png" alt="Blender Market" style="width: 100%; display: block" />
+                            </a>
+                            <a class="productPage-btn" href="https://sumsum.booth.pm/items/2857761" target="_blank" rel="noopener noreferrer" style="width: 35%">
+                                <img src="/WebIcons/BOOTH_Logo.png" alt="BOOTH" style="width: 100%; display: block" />
+                            </a>
+                            <a class="productPage-btn" href="https://assetstore.unity.com/packages/3d/props/extreme-lowpoly-pack-189187" target="_blank" rel="noopener noreferrer" style="width: 35%; font-size: 15px; font-weight: bold; background-color: #111111; padding: 8px; color: #f3f3f3; text-align: center; text-decoration: none">Unity Asset Store </a>
                         </div>
                     </div>
                 </div>
@@ -91,7 +108,7 @@
         <div id="footer-container"></div>
 
         <!-- 再生リストの名前ごとにランダムな動画を取得-->
-        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script src="/GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
         <script>
             setRandomVideo("adddonTutorialList");
         </script>
