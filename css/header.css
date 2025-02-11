@@ -6,7 +6,7 @@
     }
 
     .headerMyName {
-        padding: 0 0 0 100px;
+        margin-left: 100px;
         font-size: xx-large;
         font-family: "Montserrat", serif;
         font-optical-sizing: auto;
