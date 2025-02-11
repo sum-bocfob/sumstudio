@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio   -->
         <base href="https://sum-bocfob.github.io/sumstudio" />
 
         <meta charset="utf-8" />
@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="css/style.css" />
         <script>
             function includeHTML(id, url) {
                 fetch(url)
@@ -23,12 +23,12 @@
 
             // ページが読み込まれたらHTMLをインクルード
             window.onload = function () {
-                includeHTML("header-container", "/includes/header.html"); // ヘッダーをインクルード
-                includeHTML("tableOfContents_quickBrushSelector-container", "/includes/tableOfContents_quickBrushSelector.html"); // 目次をインクルード
-                includeHTML("installation-container", "/includes/installation.html"); // インストール方法をインクルード
-                includeHTML("shareButtons-container", "/includes/shareButtons.html"); // シェアボタンをインクルード
-                includeHTML("popularAddons-container", "/includes/popularAddons.html"); // 人気のアドオンをインクルード
-                includeHTML("footer-container", "/includes/footer.html"); // フッターをインクルード
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents_quickBrushSelector-container", "includes/tableOfContents_quickBrushSelector.html"); // 目次をインクルード
+                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
             };
         </script>
     </head>
@@ -48,10 +48,10 @@
 
                 <div class="imgContainer" style="background: #efefef; padding: 10px 0">
                     <a class="productPage-btn" href="https://blendermarket.com/products/sculpt-brush-toolset" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
-                        <img src="/WebIcons/Blender Market logo.png" alt="Quick Brush Selector Blender Market" style="width: 200px; height: auto; display: block" />
+                        <img src="WebIcons/Blender Market logo.png" alt="Quick Brush Selector Blender Market" style="width: 200px; height: auto; display: block" />
                     </a>
                     <a class="productPage-btn" href="https://sumsum.booth.pm/items/6535509" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
-                        <img src="/WebIcons/BOOTH_Logo.png" alt="Quick Brush Selector BOOTH" style="width: 200px; height: auto; display: block" />
+                        <img src="WebIcons/BOOTH_Logo.png" alt="Quick Brush Selector BOOTH" style="width: 200px; height: auto; display: block" />
                     </a>
                 </div>
                 <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
@@ -59,14 +59,14 @@
                     <h3 style="font-weight: bold; color: #f3f3f3">異なる.blendファイル間でも、保存したメニューを使用できます。</h3>
                     <h4 style="font-weight: bold; color: #f3f3f3">バージョン1.6.1以上は、Blender3.4以上対応です。</h4>
                     <div class="imgContainer">
-                        <img class="imgBorder" src="/Addons/QuickBrushSelector/Menu.png" style="max-width: 80%" />
+                        <img class="imgBorder" src="Addons/QuickBrushSelector/Menu.png" style="max-width: 80%" />
                     </div>
                     <br />
                     <h5 style="color: #f3f3f3">Sculpt Brush Toolsetの機能が改良されたため、製品名がQuick Brush Selectorに変更されました。</h5>
                     <iframe
                         width="640px%"
                         height="360px"
-                        src="/https://www.youtube.com/embed/CgvLfXqV9BY"
+                        src="https://www.youtube.com/embed/CgvLfXqV9BY"
                         title="Sculpt Brush Toolset is now compatible with Blender4.3【Blender Addon】"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -92,7 +92,7 @@
                 <h2 id="section3" class="headline1 fontSize2">使用方法</h2>
                 <p class="defaultText">スカルプトモード / テクスチャペイントモード / ドローモード（グリースペンシル）でNパネルのQBSを選択します</p>
                 <div class="imgContainer">
-                    <img src="/Addons/QuickBrushSelector/NPanel1_Ja.png" class="imgBorder" />
+                    <img src="Addons/QuickBrushSelector/NPanel1_Ja.png" class="imgBorder" />
                 </div>
 
                 <div style="margin: 16px auto; text-align: center; color: #f3f3f3">
@@ -106,7 +106,7 @@
                         <span class="fontAccent">「ツールセットを追加」</span>ボタンから、ツールセットを追加できます。
                     </p>
                     <div class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/AddToolset_JP.gif" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/AddToolset_JP.gif" class="imgBorder" />
                     </div>
                     <br />
                     <br />
@@ -115,7 +115,7 @@
                         各モードのアセットシェルフからは、各モード毎のライブラリにブラシを追加します。
                     </p>
                     <div class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/AddBrush_JP.gif" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/AddBrush_JP.gif" class="imgBorder" />
                     </div>
                     <br />
                     <br />
@@ -125,7 +125,7 @@
                         <span class="fontAccent">”アクティブなツールをアクティブなツールセット/新しいツールセットへ追加”</span>を押します。
                     </p>
                     <div class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/AddTool_JP.gif" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/AddTool_JP.gif" class="imgBorder" />
                     </div>
                     <br />
                     <br />
@@ -134,7 +134,7 @@
                         また、<span class="fontAccent">複数のブラシをまとめて追加</span>することもできます。
                     </p>
                     <div class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/FromAssetBrowser_JP.gif" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/FromAssetBrowser_JP.gif" class="imgBorder" />
                     </div>
                     <!-- Select Toolset / Brush -->
                     <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
@@ -145,7 +145,7 @@
                         アイコンの上にマウスを持っていくと、ブラシ名が表示され、<span class="fontAccent">クリックするとそのブラシをアクティブにします</span>。
                     </p>
                     <div class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/SelectBrush.gif" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/SelectBrush.gif" class="imgBorder" />
                     </div>
                     <br />
                     <br />
@@ -154,13 +154,13 @@
                         また、<span class="fontAccent">ブラシセレクター上部の四角形をクリック</span>しても変更可能です。
                     </p>
                     <div class="imgContainer" class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/SelectToolset.gif" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/SelectToolset.gif" class="imgBorder" />
                     </div>
                     <br />
                     <br />
                     <p class="defaultText">開いたときと同じキー(デフォルトではY)を押すか、マウスを遠くに持っていくとブラシセレクターが閉じます。</p>
                     <div class="imgContainer" class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/CloseMenu.gif" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/CloseMenu.gif" class="imgBorder" />
                     </div>
                     <p class="defaultText">
                         ブラシは、上から時計回りに配置されます。<br />
@@ -172,7 +172,7 @@
                     </h1>
                     <p class="defaultText">インポート / エクスポートメニューには、3種類のメニューが存在します。</p>
                     <div class="imgContainer" class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/ImportExportMenu_JP.png" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/ImportExportMenu_JP.png" class="imgBorder" />
                     </div>
                     <p class="defaultText">
                         <span style="font-weight: bold">グローバルライブラリ</span>は、異なるBlenderファイル間で、すべてのツールセットの保存 / 読み込みをします。<br />
@@ -193,7 +193,7 @@
                     </h1>
                     <p class="defaultText">設定にはいくつかの調整可能なパラメータがあります。</p>
                     <div class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/Settings_JP.png" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/Settings_JP.png" class="imgBorder" />
                     </div>
                     <br />
                     <p class="defaultText">
@@ -202,7 +202,7 @@
                         ブラシは左上から下に配置されます。
                     </p>
                     <div class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/SimplePanel.png" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/SimplePanel.png" class="imgBorder" />
                     </div>
                     <br />
                     <br />
@@ -211,13 +211,13 @@
                     <br />
                     <p class="defaultText">Toolset Settingsでは、ツールセットの名前と順序を変更できます。</p>
                     <div class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/ToolsetSettings.png" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/ToolsetSettings.png" class="imgBorder" />
                     </div>
                     <br />
                     <br />
                     <p class="defaultText">プリファレンス → アドオン → Quick Brush Selectorから、ショートカットキーなどを変更できます。</p>
                     <div class="imgContainer">
-                        <img src="/Addons/QuickBrushSelector/Preferences_JP.png" class="imgBorder" />
+                        <img src="Addons/QuickBrushSelector/Preferences_JP.png" class="imgBorder" />
                     </div>
                     <p class="defaultText">プリファレンスの<span class="fontAccent">「グローバルライブラリを自動で読み込む」</span>をオンにしていれば(デフォルトでオン)、新しい.blendファイルでも自動で読み込まれます。</p>
 
@@ -321,7 +321,7 @@
         <div id="footer-container"></div>
 
         <!-- 再生リストの名前ごとにランダムな動画を取得-->
-        <script src="/GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
         <script>
             setRandomVideo("adddonTutorialList");
         </script>
