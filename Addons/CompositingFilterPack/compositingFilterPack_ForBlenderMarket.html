@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
         <script>
             function includeHTML(id, url) {
                 fetch(url)
@@ -23,22 +23,19 @@
 
             // ページが読み込まれたらHTMLをインクルード
             window.onload = function () {
-                includeHTML("tableOfContents_compositingFilterPack-container", "includes/tableOfContents_compositingFilterPack.html"); // 目次をインクルード
+                includeHTML("tableOfContents_compositingFilterPack_ForBlenderMarket-container", "includes/tableOfContents_compositingFilterPack_ForBlenderMarket.html"); // 目次をインクルード
                 includeHTML("installation_EN-container", "includes/installation_EN.html"); // インストール方法をインクルード
                 includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
-                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+                includeHTML("footer-container", "includes/footer_ForBlenderMarket.html"); // フッターをインクルード
             };
         </script>
     </head>
 
     <body>
-        <!-- ヘッダー -->
-        <div id="header-container"></div>
-
         <!-- コンテンツとサイドバー -->
-        <div class="container">
+        <div class="container" style="width: 650px">
             <!-- 目次 -->
-            <div id="tableOfContents_compositingFilterPack-container"></div>
+            <div id="tableOfContents_compositingFilterPack_ForBlenderMarket-container"></div>
 
             <main>
                 <!-- タイトル -->
@@ -69,7 +66,7 @@
                 <br />
 
                 <!-- フィルター -->
-                <h2 id="section3" class="headline1 fontSize2">フィルター</h2>
+                <h2 id="section3" class="headline1 fontSize2">Filters</h2>
 
                 <div id="section3_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
                     <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>IG (some of Instagram filters' imitation)
@@ -139,7 +136,7 @@
 
                 <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
                     <img src="Addons/CompositingFilterPack/Halftone.png" class="imgBorder" />
-                    <img src="Addons/CompositingFilterPack/HalftoneSetting.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/HalftoneSetting.png" class="imgBorder" style="width: 280px" />
                 </div>
 
                 <div id="section3_8" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
@@ -149,7 +146,7 @@
 
                 <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
                     <img src="Addons/CompositingFilterPack/Displace.png" class="imgBorder" />
-                    <img src="Addons/CompositingFilterPack/DisplaceSetting.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/DisplaceSetting.png" class="imgBorder" style="width: 280px" />
                 </div>
                 <p class="defaultText">If image doesn't change after tweak parameters, you should go into Displace nodegroup by select and press tab,then go back.</p>
 
@@ -160,7 +157,7 @@
 
                 <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
                     <img src="Addons/CompositingFilterPack/OldFilm.png" class="imgBorder" />
-                    <img src="Addons/CompositingFilterPack/OldFilmSetting.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/OldFilmSetting.png" class="imgBorder" style="width: 280px" />
                 </div>
 
                 <div id="section3_10" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
@@ -170,7 +167,7 @@
 
                 <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
                     <img src="Addons/CompositingFilterPack/Vignette.png" class="imgBorder" />
-                    <img src="Addons/CompositingFilterPack/VignetteSetting.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/VignetteSetting.png" class="imgBorder" style="width: 280px" />
                 </div>
 
                 <div id="section3_11" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
@@ -180,7 +177,7 @@
 
                 <div class="imgContainer" style="max-width: 60%; align-items: flex-end; margin-bottom: 100px">
                     <img src="Addons/CompositingFilterPack/LensFlare.png" class="imgBorder" />
-                    <img src="Addons/CompositingFilterPack/LensFlareSetting.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/LensFlareSetting.png" class="imgBorder" style="width: 280px" />
                 </div>
 
                 <!-- installation -->

@@ -1,0 +1,50 @@
+/* フッター */
+footer {
+    color: #216582;
+    text-align: center;
+    padding-top: 10px;
+    font-family: "Montserrat", serif;
+    font-size: large;
+    font-weight: 800;
+    background: #efefef;
+    width: 650px;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer div a {
+    transition: 0.2s;
+}
+
+footer div a:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.footer_x_btn img {
+    border-radius: 25%;
+    width: 20px;
+    height: auto;
+    background: #2c2c2c;
+    padding: 10px;
+    position: relative;
+    top: -5px;
+}
+
+.footer_youtube_btn img {
+    width: auto;
+    height: 20px;
+    position: relative;
+    top: 5px;
+}
+
+.footer_blenderMarket_btn img,
+.footer_booth_btn img {
+    width: auto;
+    height: 30px;
+}

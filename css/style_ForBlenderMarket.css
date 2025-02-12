@@ -1,0 +1,287 @@
+/* 全体のリセット */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    /* margin: 0;
+    padding: 0; */
+}
+
+.defaultText {
+    text-align: center;
+    color: #f3f3f3;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* レイアウト */
+body {
+    font-family: "Noto Sans JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    width: 650px;
+}
+
+/* メインコンテンツとサイドバーのコンテナ */
+.container {
+    display: flex;
+    /* padding: 30px 30px; */
+    background: #3d3d3d;
+    border-radius: 15px;
+}
+
+/* メインコンテンツ */
+main {
+    background: #2c2c2c;
+    border-radius: 15px;
+    color: #f3f3f3;
+    overflow: hidden;
+}
+
+/* サイドバー */
+aside {
+    background: #efefef;
+    margin-left: 20px;
+    border-radius: 15px;
+    width: 30%;
+    min-width: 200px;
+    height: 80vh;
+    position: sticky;
+    top: 20px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.recomTut h2 {
+    margin: 20px 0;
+    color: #216582;
+}
+
+.title {
+    font-size: 80px;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* 見出し */
+.headline1 {
+    margin: 0;
+    padding: 30px;
+    /* 上下左右のバランスを調整 */
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right, #8ec5fc, #a1acff, #e0c3fc);
+    color: #363636;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headline2 {
+    display: inline-block;
+    width: 90%;
+    padding: 25px 20px;
+    border-radius: 200px;
+    color: #2c2c2c;
+    background: linear-gradient(to right, #fff75e 0%, #ffd53e 50%, #fdb833 100%);
+    text-align: center;
+}
+
+.headline3 {
+    position: relative;
+    padding-left: 15px;
+    border-left: 5px solid #f3f3f3;
+    text-align: left;
+    color: #f3f3f3;
+    max-width: 80%;
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; */
+    margin: 20px auto;
+}
+
+.fontSize1 {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.fontSize2 {
+    font-size: xxx-large;
+    font-weight: bold;
+}
+
+.fontSize3 {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.fontSize4 {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.fontAccent {
+    font-weight: bold;
+}
+
+/* 製品ページ */
+.productPage-btn {
+    transition: 0.2s;
+}
+
+.productPage-btn:hover {
+    transform: scale(1.1, 1.1);
+}
+
+/* 画像中央配置 白枠 */
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px auto;
+    /* background: #818181; */
+    /* padding: 10px 0; */
+}
+
+.imgBorder {
+    border-color: #818181;
+    border-width: 1px;
+    border-style: solid;
+    max-width: 90%;
+}
+
+/* リスト */
+.myList-container {
+    display: flex;
+    justify-content: center; /* リスト全体を中央に配置 */
+    text-align: left; /* リスト内のテキストを左揃え */
+}
+
+.myList {
+    padding-left: 0;
+    display: inline-block;
+    line-height: 30px;
+    max-width: 80%;
+}
+
+.myListContent {
+    list-style-position: inside; /* リストマーカーをテキストと揃える */
+    padding-left: 0; /* 余計な左側の余白をなくす */
+}
+
+.iframe-container {
+    position: relative;
+    width: 80%; /* 幅を親要素の80%に設定 */
+    padding-top: 45%; /* 高さを16:9の比率に設定 (9 / 16 * 100 = 56.25%) */
+    margin: 0 auto; /* 中央に配置 */
+    margin-bottom: 20px;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* 幅を親要素に合わせる */
+    height: 100%; /* 高さを親要素に合わせる */
+}
+
+/* Fast Sculpt and Paint Assistant */
+.numberedFunc-container div {
+    padding: 20px 20px;
+}
+
+/* テーブル */
+.blenderAddon_item {
+    transition: 0.2s;
+}
+
+.blenderAddon_item:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.myTable tr td {
+    width: 10%;
+}
+
+.watchOnYouTube {
+    padding-top: 5px;
+    margin: 0;
+    padding-top: 20px;
+    height: 40px;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+}
+
+/* コンテナ（画像と背景）のラッパー */
+.tutorial-overlay {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.tutorial-overlay:hover {
+    transform: scale(1.05, 1.05);
+}
+
+/* 疑似要素でオーバーレイ（初期は透明） */
+.tutorial-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明な色。必要に応じて変更 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none; /* クリックをブロックしない */
+}
+
+/* コンテナにホバーしたらオーバーレイ表示 */
+.tutorial-overlay:hover::before {
+    opacity: 1;
+}
+
+/* 画像は下層に配置 */
+.tutorial-overlay a > img {
+    display: block;
+    width: 100%;
+    /* border-radius: 15px 15px 0 0;  */
+    position: relative;
+    z-index: 0;
+}
+
+/* テキストはオーバーレイより上に配置（z-indexを高めに設定） */
+.tutorial-overlay > .overlay_imgAndTxt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin: 0;
+    color: #f8f8f8;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+}
+
+.tutorial-overlay:hover .overlay_imgAndTxt {
+    opacity: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 列を等分 */
+    gap: 10px;
+    max-width: 95%;
+    margin: 0 auto;
+}
