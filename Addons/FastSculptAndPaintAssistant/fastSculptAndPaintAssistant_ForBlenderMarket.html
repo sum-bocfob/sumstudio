@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fast Sculpt and Paint Assistant</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
+        <script>
+            function includeHTML(id, url) {
+                fetch(url)
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch((error) => console.error("Error loading HTML:", error));
+            }
+
+            // ページが読み込まれたらHTMLをインクルード
+            window.onload = function () {
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents_fastSculptAndPaintAssistant_ForBlenderMarket-container", "Addons/FastSculptAndPaintAssistant/tableOfContents_fastSculptAndPaintAssistant_ForBlenderMarket.html"); // 目次をインクルード
+                includeHTML("installation_EN-container", "includes/installation_EN.html"); // インストール方法をインクルード
+                includeHTML("shareButtons_EN-container", "includes/shareButtons_EN.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer_ForBlenderMarket-container", "includes/footer_ForBlenderMarket.html"); // フッターをインクルード
+            };
+        </script>
+    </head>
+
+    <body>
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_fastSculptAndPaintAssistant_ForBlenderMarket-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Fast Sculpt and Paint Assistant</h1>
+
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">This addon makes using various sculpt and paint operation easy in one key.</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">Remove tedious moving finger process across keyboard.</h3>
+                    <h4 style="font-weight: bold; color: #f3f3f3">
+                        This is especially effective for pen tablet users.<br />
+                        While the number of shortcut buttons on the pen tab is limited, you will be able to sculpt and paint without taking your left and right hands off the pen tablet as much as possible.
+                    </h4>
+                    <h4 style="font-weight: bold; color: #f3f3f3">There are menus for <span style="color: rgb(245, 232, 117)">Sculpt mesh, Texture Paint, Vertex Paint, Weight Paint, Sculpt Curves, and objects created from the sculpt menu.</span></h4>
+
+                    <a href="https://sum-bocfob.github.io/sumstudio/Addons/FastSculptAndPaintAssistant/fastSculptAndPaintAssistant.html" target="_blank" rel="noreferrer noopener"> <p class="default" style="text-decoration: underline; color: #f3f3f3">日本語のドキュメント</p></a>
+                </div>
+
+                <div style="background: #111111; margin: 20px auto; text-align: center; padding: 20px 0">
+                    <h2>New feature creating measure in version1.8!!!</h2>
+                    <div class="imgContainer">
+                        <img class="imgBorder" src="Addons/FastSculptAndPaintAssistant/Measure.gif" style="max-width: 80%" ; />
+                    </div>
+                </div>
+
+                <!-- how to use -->
+                <h2 id="section2" class="headline1 fontSize2">How to use</h2>
+                <div style="margin: 16px auto; text-align: center; color: #f3f3f3">
+                    <h1 id="section2_1" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Sculpt mesh</span>
+                    </h1>
+                    <p class="defaultText" style="margin: 30px auto">
+                        In sculpt mode, menu will open when you press "Shift + U" key (by default, you're able to change from preferences).<br /><br />
+                        Press same key or click empty area to close with do nothing.
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Menu_Sculpt.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <p style="margin: 30px auto; text-align: center; color: #f3f3f3; max-width: 80%">The menu is separated from some section as below.</p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Description1.png" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Description2.png" class="imgBorder" />
+                    </div>
+                    <br />
+
+                    <!-- 番号別それぞれの機能 -->
+                    <div class="numberedFunc-container">
+                        <div style="background: #222222">
+                            <p class="defaultText">1: Change brush radius / 2: Change brush strength / 3: Change Smooth brush strength</p>
+                        </div>
+                        <div>
+                            <p class="defaultText">4: Open view pie / 5: Open brush settings / 6: Open brush texture / 7 Open brush stroke / 8: Open brush falloff/ 9: Open brush context / 10: Open face sets pie / 11: Open set pivot pie / 12: Open auto masking pie / 13: Open remesh panel / 14: Open Symmetry Panel</p>
+                        </div>
+                        <div style="background: #155328">
+                            <p class="defaultText">15: Invert mask / 16: Grow and Shrink mask / 17: Smooth and Sharpen mask / 18: Clear mask</p>
+                        </div>
+                        <div style="background: #222222">
+                            <p class="defaultText">19: Save file / 20: Add mirror modifier / 21: Symmetrize / 22: Zoom Region / 23: Toggle Front Face Only / 24: Toggle Falloff Shape</p>
+                        </div>
+                        <div style="background: #6d803c">
+                            <p class="defaultText">25: Lock Z Axis / 26: Lock Y Axis / 27: Lock X Axise</p>
+                        </div>
+                        <div style="background: #121e44">
+                            <p class="defaultText">28: Invert Visible / 29: Show all topology / 30: Hide topology by bounding box / 31: Hide topology by mask</p>
+                        </div>
+                        <div style="background: #5c451c">
+                            <p class="defaultText">
+                                32: Remesh with initial size(editable from preferences) / 33: Remesh / 34: Sample detail size and remesh / 35: Remesh with voxel size times multiplier2(editable from preferences) / 36: Remesh with voxel size times multiplier1(editable from preferences) / 37: Remesh with voxel size divided by multiplier1 / 38: Remesh with voxel
+                                size divided by multiplier2 / 39: Smart Multires
+                            </p>
+                        </div>
+                        <div style="background: #2c5264">
+                            <p class="defaultText">40: Create new primitive object(some paraneters are editable from preferences) / 41: Join Objects / 42: Make backup / 43: Transfer mode / 44: Switch mode</p>
+                        </div>
+                        <div style="background: #222222">
+                            <p class="defaultText">45: Toggle erase alpha</p>
+                        </div>
+                        <div style="background: #551818">
+                            <p class="defaultText">
+                                46: Next matcap / 47: Previous matcap / 48: Toggle favorite matcap / 49: Show or hide Wireframe of active object / 50: X-ray / 51: Toggle Silhouette / 52: Flip Matcap / 53: Toggle Shade Smooth / 54: Show or hide active object / 55: Show or hide collection set by UI / 56: Change opacity of images in collection set by UI
+                            </p>
+                        </div>
+                        <div style="background: #222222">
+                            <p class="defaultText">57: Create Measure / 58: Show All Measure / 59: Hide All Measure / 60: Delete All Measure</p>
+                        </div>
+                    </div>
+
+                    <br />
+                    <hr style="max-width: 90%" />
+                    <br />
+
+                    <!-- 細かい説明 -->
+                    <h3 class="headline3">Clicking "16: Grow and Shrink mask" and "17: Smooth and Sharpen mask" will allow you to edit the mask by moving the mouse.</h3>
+                    <div style="margin: 0px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <ul style="padding-left: 0; display: inline-block">
+                            <li style="text-align: left">Move the mouse to the right to Smooth/Grow, and to the left to Sharpen/Shrink.</li>
+                            <li style="text-align: left">Confirm with left click, right click, enter key or Esc key.</li>
+                            <li style="text-align: left">This operation cannot be canceled, so if you wish to do so, please undo after confirming.</li>
+                            <li style="text-align: left">The amount of mouse movement to change the value can be changed from Preferences.</li>
+                        </ul>
+                    </div>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/MaskModal.gif" class="imgBorder" style="max-width: 50%" />
+                    </div>
+                    <br />
+
+                    <h3 class="headline3">39: Smart Multires is for when there are too many vertices and getting your Blender slow.</h3>
+                    <p class="defaultText" style="margin-bottom: 0px">The following operations will be performed automatically:</p>
+                    <div style="margin: 0px auto; text-align: center; color: #f3f3f3; max-width: 80%">
+                        <ul style="padding-left: 0; display: inline-block">
+                            <li style="text-align: left">First,system duplicates active object.</li>
+                            <li style="text-align: left">
+                                Remesh the duplicated object.(Be careful that it is remeshed with current voxel size.<br />
+                                Need to set voxel size to more large than active object's one.)
+                            </li>
+                            <li style="text-align: left">Then, automatically added multiresolution and shrinkwrap modifier.(Default subdivision of multiresolution is 2.)</li>
+                        </ul>
+                    </div>
+                    <br />
+                    <p class="defaultText" style="margin-top: 0px">
+                        If you are satisfied, you will apply shrinkwrap modifier.<br />
+                        If not, subdvide more or redo with different voxel size before apply.
+                    </p>
+                    <p class="defaultText">It may be fast your Blender.</p>
+
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Multires.gif" class="imgBorder" style="max-width: 60%" />
+                    </div>
+                    <br />
+                    <h3 class="headline3">When you press "41: Make backup", active object duplicated and move to collection named OBJECTNAME_backup that is automatically created and hide from viewport.</h3>
+                    <br />
+                    <h3 class="headline3">When you press "41: Make backup", active object duplicated and move to collection named OBJECTNAME_backup that is automatically created and hide from viewport.</h3>
+                    <br />
+                    <h3 class="headline3">"44: Toggle erase alpha" is switch between active blending mode and erase alpha. This only works when active brush is Paint.</h3>
+                    <br />
+                    <h3 class="headline3">To set favorite matcap for "47: Toggle favorite matcap", press "SetFavMatcap1" and "SetFavMatcap2" from viewport shading panel after changing matcap you want to register.</h3>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/SetFavMatcap.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <h3 class="headline3">To set collection for "54: Show or hide collection set by UI", in outliner, right click on collection you want to set and press Set to Show/Hide Collection button.</h3>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/SetToShowHideCollection.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <h3 class="headline3">To set collection for "55: Change opacity of images in collection set by UI", in outliner, right click on collection you want to set and press Set to Image Collection button.</h3>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/SetToImageCollection.png" class="imgBorder" />
+                    </div>
+                    <br />
+
+                    <h1 id="section2_2" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Creating base mesh from New Object panel</span>
+                    </h1>
+                    <p class="defaultText">In the new Object panel, the three items in the red box in the image below are for creating your own base meshes, and the other items are for adding primitive meshes.</p>
+                    <br />
+                    <p class="defaultText" style="font-size: 14px">(The New Object panel can be opened by pressing the shortcut key in Object mode, or by pressing the shortcut and selecting "New Object" in Sculpt mode.)</p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/NewObjPanelEdited.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText">When you press the "Shift + U" keys (which can be changed from the settings) in edit mode for an object created with the three items in the red frame, the corresponding menu will open.</p>
+
+                    <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                        <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Curve
+                        <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                    </div>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Curve_UI.png" class="imgBorder" />
+                    </div>
+
+                    <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                        <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Round Skin
+                        <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                    </div>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/RoundSkin_UI.png" class="imgBorder" />
+                    </div>
+
+                    <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                        <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Skin
+                        <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                    </div>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Skin_UI.png" class="imgBorder" />
+                    </div>
+                    <div class="iframe-container">
+                        <iframe src="https://www.youtube.com/embed/Oyu_rcaZS4E" title="Fast Sculpt Assistant - Base mesh from new new object panel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- テクスチャペイント -->
+                    <h1 id="section2_3" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Texture Paint</span>
+                    </h1>
+                    <p class="defaultText" style="margin: 30px auto">
+                        In Texture Paint Mode, menu will open when you press "Shift + U" key (by default, you're able to change from preferences).<br /><br />
+                        Press same key or click empty area to close with do nothing.<br /><br />
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Menu_TexturePaint.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText">The menu is separated from some section as below.</p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/TexturePaint_Description1.png" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/TexturePaint_Description2.png" class="imgBorder" />
+                    </div>
+                </div>
+
+                <!-- 番号別それぞれの機能 -->
+                <div class="numberedFunc-container">
+                    <div>
+                        <p class="defaultText">1: Change brush radius / 2: Change brush strength</p>
+                    </div>
+                    <div style="background: #222222">
+                        <p class="defaultText">
+                            3: Draw Tool / 4: Soften / 5: Smear / 6: Clone / 7: Fill / 8: Mask<br />
+                            Note: In Blender 4.3 and above, these are buttons to access each brush rather than tools.
+                        </p>
+                    </div>
+                    <div style="background: #551818">
+                        <p class="defaultText">
+                            9: Toggle Paint Mask / 10: Invert Selection / 11: Select All / 12: Deselect All<br />
+                            (10, 11, and 12 go to Edit Mode, change the selection, and return to Texture Paint Mode.)
+                        </p>
+                    </div>
+                    <div style="background: #6d803c">
+                        <p class="defaultText">13: Swap primary and secondary brush colors / 14: Change primary brush color to white / 15: Change primary brush color to black / 16: Toggle between Erase Alpha and current blend mode</p>
+                    </div>
+                    <div style="background: #121e44">
+                        <p class="defaultText">17: Toggle between single color and gradient / 18: Switch to Linear Gradient / 19: Switch to Radial Gradient / 20: Flip gradient colors / 21: Reset gradient colors</p>
+                    </div>
+                    <div>
+                        <p class="defaultText">Switch Blend Mode to</p>
+                        <p class="defaultText">
+                            22: Mix / 23: Darken / 24: Multiply / 25: Color Burn / 26: Linear Burn / 27: Lighten / 28: Screen / 29: Color Dodge / 30: Add / 31: Overlay / 32: Soft Light / 33: Hard Light / 34: Vivid Light / 35: Linear Light / 36: Pin Light / 37: Difference / 38: Exclusion / 39: Subtract / 40: Hue / 41: Saturation / 42: Color / 43: Value / 44:
+                            Erase Alpha / 45: Add Alpha
+                        </p>
+                    </div>
+
+                    <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                        <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Color Palette
+                        <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                    </div>
+                    <p class="defaultText headline3" style="margin-bottom: 30px">You can check the active palette from N Panel > Tool > Brush Settings > Color Palette.</p>
+                    <p class="defaultText headline3" style="margin-bottom: 30px">Colors are added to the Color History when you perform an action such as painting after changing the Primary or Secondary Color.</p>
+                    <p class="defaultText headline3" style="margin-bottom: 30px">If you turn on "Add an existing color to History" in Preferences, colors that have already been added to History will be added in the order they were used.</p>
+                    <p class="defaultText headline3" style="margin-bottom: 30px">If brush color usage is Gradient, a list of gradient colors will be displayed at the top of the 3D Viewport.</p>
+                    <p class="defaultText">These are simplifications and <span style="color: rgb(252, 62, 62); font-weight: bold">do not accurately represent the position on the color ramp.</span></p>
+                    <div class="imgContainer" style="margin-top: -10px; margin-bottom: -10px">
+                        <img src="Addons/FastSculptAndPaintAssistant/ViewportHeader_Gradient.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText">If you want to change the details, change the color ramp in N Panel > Tool > Brush Settings > Color Picker.</p>
+
+                    <br />
+                    <p class="defaultText headline3">When you drag on the Color Palette, a rectangle will appear over the selected color.</p>
+                    <p class="defaultText">When you release the mouse in this state, the following will happen depending on the brush color usage:</p>
+                    <br />
+                    <p class="defaultText">Single Color: Set selected color to secondaty color</p>
+                    <div class="imgContainer" style="margin-top: -10px; margin-bottom: -10px">
+                        <img src="Addons/FastSculptAndPaintAssistant/SetSecondary.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <p class="defaultText">Gradient: Open panel for set selected color to secondary or one of gradient</p>
+                    <div class="imgContainer" style="margin-top: -10px; margin-bottom: -10px">
+                        <img src="Addons/FastSculptAndPaintAssistant/OpenGradientPanel.gif" class="imgBorder" />
+                    </div>
+
+                    <!-- 頂点ペイント -->
+                    <h1 id="section2_4" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Vertex Paint</span>
+                    </h1>
+                    <p class="defaultText" style="margin: 30px auto">
+                        In Vertex Paint Mode, menu will open when you press "Shift + U" key (by default, you're able to change from preferences).<br /><br />
+                        Press same key or click empty area to close with do nothing.
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Menu_VertexPaint.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText" style="margin: 30px auto">
+                        Most of them are the same as Texture Paint.<br /><br />
+                        Since gradients cannot be used in Vertex Paint, that part has been removed and the tools have been changed to those used in Vertex Paint.<br /><br />
+                        Note: In Blender 4.3 and above, these are buttons to access each brush rather than tools.
+                    </p>
+
+                    <!-- ウェイトペイント -->
+                    <h1 id="section2_5" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Weight Paint</span>
+                    </h1>
+                    <p class="defaultText" style="margin: 30px auto">
+                        In Weight Paint Mode, menu will open when you press "Shift + U" key (by default, you're able to change from preferences).<br /><br />
+                        Press same key or click empty area to close with do nothing.
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Menu_WeightPaint_UI.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText" style="margin: 30px auto">
+                        Most of them are the same as Vertex Paint.<br /><br />
+                        Since you cannot use color in Weight Paint, that part is missing and the tool has been changed to that of Weight Paint.<br /><br />
+                        The donut-shaped part that changes the strength has the upper half changing the strength and the lower half changing the weight.<br /><br />
+                        Note: In Blender 4.3 and above, these are buttons to access each brush rather than tools.
+                    </p>
+
+                    <!-- カーブスカルプト -->
+                    <h1 id="section2_6" class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Sculpt Curves</span>
+                    </h1>
+                    <p class="defaultText" style="margin: 30px auto">
+                        In Sculpt Mode for curves, menu will open when you press "Shift + U" key (by default, you're able to change from preferences).<br /><br />
+                        Press same key or click empty area to close with do nothing.
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/FastSculptAndPaintAssistant/Menu_SculptCurves_UI.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText" style="margin: 30px auto">
+                        The outermost parts, clockwise from the top right, are "Toggle Select Mode", "Select All", "Deselect All", "Invert Selection", "Grow Selection" and "Toggle Falloff Shape".<br /><br />
+                        Note: In Blender 4.3 and above, these are buttons to access each brush rather than tools.
+                    </p>
+                </div>
+
+                <!-- 設定 -->
+                <h2 id="section3" class="headline1 fontSize2">Settings</h2>
+                <p class="defaultText" style="margin-top: 30px">In preferences, there are some parameters.</p>
+                <div class="imgContainer">
+                    <img src="Addons/FastSculptAndPaintAssistant/Preferences.png" class="imgBorder" />
+                </div>
+                <p class="defaultText" style="margin-top: 30px">
+                    In sculpt mode, the following appears in the top header.<br />
+                    Mirror Alert Axis / Falloff Shape / Lock Axis / Front Face Only
+                </p>
+                <div class="imgContainer">
+                    <img src="Addons/FastSculptAndPaintAssistant/MirrorAlert.png" class="imgBorder" />
+                </div>
+                <!-- /////////////////////// -->
+
+                <!-- installation -->
+                <div id="installation_EN-container"></div>
+
+                <!-- Update -->
+                <h2 id="section5" class="headline1 fontSize2" style="margin-bottom: 20px">Update</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: auto; margin-bottom: 30px; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>3.0.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed an issue where an error would occur when in non-paint mode.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>3.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Supports various paint modes.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed issue that icons turn pink.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Compatible with Blender4.3.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.3</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed bug of menu doesn't open in version 2.0.2.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>All icon images are now linked.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Compatible with Blender 4.2.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Added menu for sculpt curves.<br />
+                                    - Added Multires function.<br />
+                                    - Fixed Radius display misalignment.<br />
+                                    - Fixed an issue where the function to change the matcap was unable to select an added matcap.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.8.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed small bug.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.8.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed bug when create round skin in Blender4.0 and over.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.8.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Added measure functions.<br />
+                                    Compatible with japanese.<br />
+                                    Fixed bug when blender ui is not english.<br />
+                                    From this version, it is compatible with Blender 3.1 or higher.<br />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="margin: 0 auto; text-align: center">
+                    <a class="defaultText" style="color: #f3f3f3" href="https://www.flaticon.com/free-icons/sculpt" target="_blank" rel="noopener noreferrer">Sculpt icons created by Freepik - Flaticon</a>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <a class="defaultText" style="color: #f3f3f3" href="https://www.flaticon.com/free-icons/painting" target="_blank" rel="noopener noreferrer">Painting icons created by Freepik - Flaticon</a>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <a class="defaultText" style="color: #f3f3f3" href="https://www.flaticon.com/free-icons/paint-brush" target="_blank" rel="noopener noreferrer">Paint brush icons created by Freepik - Flaticon</a>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons_EN-container"></div>
+            </main>
+        </div>
+        <!-- フッター -->
+        <div id="footer_ForBlenderMarket-container"></div>
+    </body>
+</html>
