@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Render Multi Objects</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script>
+            function includeHTML(id, url) {
+                fetch(url)
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch((error) => console.error("Error loading HTML:", error));
+            }
+
+            // ページが読み込まれたらHTMLをインクルード
+            window.onload = function () {
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents_renderMultiObjects-container", "includes/tableOfContents_renderMultiObjects.html"); // 目次をインクルード
+                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+            };
+        </script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_renderMultiObjects-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Render Multi Objects</h1>
+
+                <div class="imgContainer" style="background: #efefef; padding: 10px 0">
+                    <a class="productPage-btn" href="https://blendermarket.com/products/render-multi-objects" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                        <img src="WebIcons/Blender Market logo.png" alt="Easy Text Animation Blender Market" style="width: 200px; height: auto; display: block" />
+                    </a>
+                    <a class="productPage-btn" href="https://sumsum.booth.pm/items/6529083" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
+                        <img src="WebIcons/BOOTH_Logo.png" alt="Easy Text Animation BOOTH" style="width: 200px; height: auto; display: block" />
+                    </a>
+                </div>
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">レンダリングを繰り返し、複数のオブジェクトに対して、一度で複数の画像/動画を出力します。</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">複数のオブジェクトをレンダリングしたいとき ”レンダリング→カメラを移動→レンダリング…”を何度も繰り返すのは非常に面倒です。</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">このアドオンを使用すれば、一度で大量のオブジェクトを個別にレンダリングできます。</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ApZQ94SktGQ" title="Render Multi Objects_Introduce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <h4 style="font-weight: bold; color: #f3f3f3">※バージョン1.0.1以上は、Blender3.2以降のみ対応</h4>
+                </div>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
+
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">カメラを配置し、出力パスなどのレンダリングをします。(ビューポートレンダリングをする場合でも、カメラの向きが使用されます。)</li>
+                        <li class=".myListContent">レンダリングしたいオブジェクトを選択します。(アクティブなコレクションを使用する場合は必要ありません。)</li>
+                        <li class=".myListContent">カメラの位置の基準となるオブジェクトをアクティブにします。(それぞれこのオブジェクトとカメラの位置関係を維持しながらレンダリングされます。)</li>
+                        <li class=".myListContent">レンダー→Render Multi Objectsをクリックします。</li>
+                        <li class=".myListContent">ポップアップでオプションを選択し、OKを押してレンダリングを開始します。</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/RenderMultiObjects/Popup.png" class="imgBorder" />
+                </div>
+                <br />
+                <p class="defaultText">
+                    レンダリングを途中でキャンセルしたいときには、<span style="font-weight: bold">画像エディター(レンダリングを開始すると立ち上がるウィンドウ)の上のメニューに表示される”Cancel Render”ボタン</span>をクリックしてください。 <br />
+                    このボタンは、レンダリングを繰り返す工程を止めますが、現在進行中のレンダリングは止めることができません。<br />
+                    <span style="font-weight: bold">現在進行中のレンダリングを止めたい場合は、Escキーを押してください。</span>
+                </p>
+
+                <!-- 設定項目 -->
+                <h1 class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">設定項目</span>
+                </h1>
+
+                <div class="myList-container" style="max-width: 80%; margin: 0 auto">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent">
+                            <span style="font-size: large; font-weight: bold">Object Select Type</span>
+                            <ul>
+                                <li>Selected: 選択しているオブジェクトをレンダリングします。</li>
+                                <li>Active Collection: アクティブなコレクション内のすべてのオブジェクトをレンダリングします。 アクティブなコレクションのアイコンは、ハイライトされています。 コレクションをクリックすることで変更できます。</li>
+                            </ul>
+                        </li>
+                        <li style="list-style-type: none">
+                            <div class="imgContainer" style="max-width: 80%">
+                                <img src="Addons/RenderMultiObjects/ActiveCollection.png" class="imgBorder" />
+                            </div>
+                        </li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Solo Each Object:</span> ほかのオブジェクトを隠し、現在レンダリング中のオブジェクトのみ表示します。(Object Select Typeによってレンダリング予定のオブジェクトにのみ適用されます。)</li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Fit Selection to Camera Frame:</span> カメラの向きはそのままに、オブジェクトがカメラ枠内に収まるようになります。</li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Render Viewport:</span> レンダービューではなく、ビューポートをレンダリングします。</li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Render Animation</span></li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Fix Camera:</span> 通常カメラは、アクティブオブジェクトとのオフセットを、それぞれのオブジェクトに適用しますが、これをオンにすると、カメラは固定されます。</li>
+                        <li class=".myListAContent" style="padding: 5px 0">
+                            <span style="line-height: 30px; font-size: large; font-weight: bold">Base Name:</span> レンダリングされたファイルのベースとなる名前。
+                            <ul>
+                                <li><span style="line-height: 30px; font-size: large; font-weight: bold">Object Name:</span> オブジェクト名を使用します。</li>
+                                <li><span style="line-height: 30px; font-size: large; font-weight: bold">Index:</span> 0から始まる番号が割り当てられます。 これは、オブジェクトの選択順やアウトライナーでの順番ではありません。</li>
+                            </ul>
+                        </li>
+                        <li class=".myListContent" style="padding: 5px 0">Use Prefix / Suffix: Base Nameの前後に、文字を追加します。</li>
+                    </ul>
+                </div>
+
+                <!-- installation -->
+                <div id="installation-container"></div>
+
+                <!-- Update -->
+                <h2 id="section3" class="headline1 fontSize2">アップデート履歴</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    以下の機能を追加 <br />
+                                    - レンダリングのキャンセル <br />
+                                    - アニメーションのレンダリング<br />
+                                    - Base Nameの変更<br />
+                                    - Prefix / Suffixの追加<br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.0.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>カメラオブジェクト名とカメラ名が異なる場合にエラーが発生する問題を修正しました</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.0.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>複数のBlenderバージョンに対応 ビューポートレンダリングを追加</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons-container"></div>
+            </main>
+
+            <aside>
+                <!-- 人気のアドオン -->
+                <div id="popularAddons-container"></div>
+
+                <div class="recomTut">
+                    <h2>おすすめのチュートリアル</h2>
+                    <div class="iframe-container">
+                        <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- フッター -->
+        <div id="footer-container"></div>
+
+        <!-- 再生リストの名前ごとにランダムな動画を取得-->
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script>
+            setRandomVideo("adddonTutorialList");
+        </script>
+
+        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
+        <script>
+            window.addEventListener("load", function () {
+                const currentUrl = encodeURIComponent(window.location.href);
+
+                function updateShareLinks() {
+                    document.querySelectorAll("#shareButtons-container a").forEach((link) => {
+                        if (link.href.includes("https://sum-bocfob.github.io/")) {
+                            link.href = link.href.replace("https://sum-bocfob.github.io/", currentUrl);
+                        }
+                    });
+                }
+
+                // 初回実行（すでにロードされている場合のため）
+                updateShareLinks();
+
+                // MutationObserverを使ってシェアボタンのHTMLが追加されたときに更新
+                const observer = new MutationObserver(updateShareLinks);
+                observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
+            });
+        </script>
+    </body>
+</html>

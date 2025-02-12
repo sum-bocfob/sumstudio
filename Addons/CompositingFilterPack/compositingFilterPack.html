@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Compositing Filter Pack</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/carousel.css" />
+        <script>
+            function includeHTML(id, url) {
+                fetch(url)
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch((error) => console.error("Error loading HTML:", error));
+            }
+
+            // ページが読み込まれたらHTMLをインクルード
+            window.onload = function () {
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents_compositingFilterPack-container", "includes/tableOfContents_compositingFilterPack.html"); // 目次をインクルード
+                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+            };
+        </script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_compositingFilterPack-container"></div>
+
+            <main>
+                <!-- カルーセル -->
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slide"><img src="Addons/CompositingFilterPack/HeaderMain.png" alt="Slide 1" /></div>
+                        <div class="slide"><img src="Addons/CompositingFilterPack/Header1.png" alt="Slide 2" /></div>
+                        <div class="slide"><img src="Addons/CompositingFilterPack/Header2.png" alt="Slide 3" /></div>
+                        <div class="slide"><img src="Addons/CompositingFilterPack/Header3.png" alt="Slide 4" /></div>
+                        <div class="slide"><img src="Addons/CompositingFilterPack/Header4.png" alt="Slide 5" /></div>
+                        <div class="slide"><img src="Addons/CompositingFilterPack/HeaderOthers1_2.png" alt="Slide 6" /></div>
+                        <div class="slide"><img src="Addons/CompositingFilterPack/HeaderOthers2.png" alt="Slide 7" /></div>
+                    </div>
+
+                    <!-- オーバーレイアイコン（初期状態は非表示） -->
+                    <div class="overlay-icon"></div>
+
+                    <!-- 矢印 -->
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Compositing Filter Pack</h1>
+
+                <div class="imgContainer" style="background: #efefef; padding: 10px 0">
+                    <a class="productPage-btn" href="https://blendermarket.com/products/compositing-filter-pack" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                        <img src="WebIcons/Blender Market logo.png" alt="Easy Text Animation Blender Market" style="width: 200px; height: auto; display: block" />
+                    </a>
+                    <a class="productPage-btn" href="https://sumsum.booth.pm/items/6524673" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
+                        <img src="WebIcons/BOOTH_Logo.png" alt="Easy Text Animation BOOTH" style="width: 200px; height: auto; display: block" />
+                    </a>
+                </div>
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">コンポジターでのフィルター(ノードグループ)を多数含んでいるアドオンです。</h3>
+                </div>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
+
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">コンポジターを開き、”ノードを使用”にチェックを入れる</li>
+                        <li class=".myListContent">Nパネル → Comp Filterから追加したいフィルターをクリック</li>
+                        <li class=".myListContent">追加されたノードグループをリンクの間に配置する</li>
+                        <li class=".myListContent">アクティブなフィルター(ノードグループ)のパラメーターがNパネルに表示されます</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/CompositingFilterPack/CompositorSS.png" class="imgBorder" />
+                </div>
+                <br />
+                <p class="defaultText">
+                    レンダリングを途中でキャンセルしたいときには、<span style="font-weight: bold">画像エディター(レンダリングを開始すると立ち上がるウィンドウ)の上のメニューに表示される”Cancel Render”ボタン</span>をクリックしてください。 <br />
+                    このボタンは、レンダリングを繰り返す工程を止めますが、現在進行中のレンダリングは止めることができません。<br />
+                    <span style="font-weight: bold">現在進行中のレンダリングを止めたい場合は、Escキーを押してください。</span>
+                </p>
+
+                <!-- フィルター -->
+                <h2 id="section3" class="headline1 fontSize2">フィルター</h2>
+
+                <div id="section3_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>IG(インスタグラムのフィルターの再現)
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <p class="defaultText">1977, Aden, Ashby, Brooklyn, Charmes, Crema, Dogpatch, Gingham, Ginza, Hefe, Helena, Inkwell, Juno, Kelvin, Lark,Lofi,Ludwig,Maven, Moon, Nashville, Perpetua, Reyes, Sierra, Skyline, Slumber, Stinson, Valencia,Vesper,Walden and Willow.</p>
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/IG.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/IGSetting.png" class="imgBorder" />
+                </div>
+
+                <div id="section3_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Glitch
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/Glitch.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/GlitchSetting.png" class="imgBorder" />
+                </div>
+
+                <div id="section3_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Mosaic
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/Mosaic.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/MosaicSetting.png" class="imgBorder" />
+                </div>
+
+                <div id="section3_4" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Pixelate
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/Pixelate.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/PixelateSetting.png" class="imgBorder" />
+                </div>
+
+                <div id="section3_5" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Night Vision
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/NightVision.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/NightVisionSetting.png" class="imgBorder" />
+                </div>
+
+                <div id="section3_6" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Abstract Paint
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/AbstractPaint.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/AbstractPaintSetting.png" class="imgBorder" />
+                </div>
+
+                <div id="section3_7" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Halftone
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/Halftone.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/HalftoneSetting.png" class="imgBorder" />
+                </div>
+
+                <div id="section3_8" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Displace
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/Displace.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/DisplaceSetting.png" class="imgBorder" />
+                </div>
+                <p class="defaultText">パラメータを微調整した後も画像が変化しない場合は、選択して Tab キーを押して Displace ノードグループに移動し、戻ってください。</p>
+
+                <div id="section3_9" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Old Film
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/OldFilm.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/OldFilmSetting.png" class="imgBorder" />
+                </div>
+
+                <div id="section3_10" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Vignette
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end">
+                    <img src="Addons/CompositingFilterPack/Vignette.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/VignetteSetting.png" class="imgBorder" />
+                </div>
+
+                <div id="section3_11" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Lens Flare
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+
+                <div class="imgContainer" style="max-width: 60%; align-items: flex-end; margin-bottom: 100px">
+                    <img src="Addons/CompositingFilterPack/LensFlare.png" class="imgBorder" />
+                    <img src="Addons/CompositingFilterPack/LensFlareSetting.png" class="imgBorder" />
+                </div>
+
+                <!-- installation -->
+                <div id="installation-container"></div>
+
+                <!-- Update -->
+                <h2 id="section4" class="headline1 fontSize2">アップデート履歴</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Halftone, Displace, Old Film, Vignette, Lens Flareを追加</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons-container"></div>
+            </main>
+
+            <aside>
+                <!-- 人気のアドオン -->
+                <div id="popularAddons-container"></div>
+
+                <div class="recomTut">
+                    <h2>おすすめのチュートリアル</h2>
+                    <div class="iframe-container">
+                        <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- フッター -->
+        <div id="footer-container"></div>
+
+        <!-- 再生リストの名前ごとにランダムな動画を取得-->
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script>
+            setRandomVideo("adddonTutorialList");
+        </script>
+
+        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
+        <script>
+            window.addEventListener("load", function () {
+                const currentUrl = encodeURIComponent(window.location.href);
+
+                function updateShareLinks() {
+                    document.querySelectorAll("#shareButtons-container a").forEach((link) => {
+                        if (link.href.includes("https://sum-bocfob.github.io/")) {
+                            link.href = link.href.replace("https://sum-bocfob.github.io/", currentUrl);
+                        }
+                    });
+                }
+
+                // 初回実行（すでにロードされている場合のため）
+                updateShareLinks();
+
+                // MutationObserverを使ってシェアボタンのHTMLが追加されたときに更新
+                const observer = new MutationObserver(updateShareLinks);
+                observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
+            });
+        </script>
+
+        <!-- カルーセルを読み込む -->
+        <script src="js/carousel.js"></script>
+    </body>
+</html>

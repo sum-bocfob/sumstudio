@@ -16,6 +16,7 @@
     font-size: 20px;
     font-weight: bold;
     transition: opacity 0.3s;
+    z-index: 1000;
 }
 
 /* 目次が表示されたらボタンを隠す */
