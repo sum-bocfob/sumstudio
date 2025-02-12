@@ -8,6 +8,7 @@ footer {
     font-weight: 800;
     background: #efefef;
     width: 650px;
+    border-radius: 0 0 15px 15px;
 }
 
 footer div {
