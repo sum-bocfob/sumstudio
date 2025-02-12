@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Node Utilities</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script>
+            function includeHTML(id, url) {
+                fetch(url)
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch((error) => console.error("Error loading HTML:", error));
+            }
+
+            // ページが読み込まれたらHTMLをインクルード
+            window.onload = function () {
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents_nodeUtilities-container", "includes/tableOfContents_nodeUtilities.html"); // 目次をインクルード
+                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+            };
+        </script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_nodeUtilities-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Node Utilities</h1>
+
+                <div class="imgContainer" style="background: #efefef; padding: 10px 0">
+                    <a class="productPage-btn" href="https://blendermarket.com/products/node-utilities" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                        <img src="WebIcons/Blender Market logo.png" alt="Easy Text Animation Blender Market" style="width: 200px; height: auto; display: block" />
+                    </a>
+                    <a class="productPage-btn" href="https://sumsum.booth.pm/items/6560406" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
+                        <img src="WebIcons/BOOTH_Logo.png" alt="Easy Text Animation BOOTH" style="width: 200px; height: auto; display: block" />
+                    </a>
+                </div>
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">このアドオンは、ノードに関する多数の機能をまとめたものです。</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">整列、反転、等間隔に配置、ノード検索、色設定などの幅広い機能があります。</h3>
+                    <h4 style="font-weight: bold; color: #f3f3f3">バージョン1.6.1以上は、Blender3.4以上対応です。</h4>
+                    <h4 style="font-weight: bold; color: #f3f3f3">BlenderのUIを日本語にしていると、このアドオンのUIも日本語になります。</h4>
+                </div>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
+
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 2; font-size: large; font-weight: bold">
+                        <li class=".myListContent">
+                            コンポジター、シェーダーエディター、ジオメトリノードエディターのいずれかを開きます。
+                            <ul>
+                                <li>Dキーでユーティリティメニューを開き、Eキーで選択メニューを開きます。</li>
+                                <li>Shift Zキー、Shift Xキーで選択中のノードの幅を変更します。</li>
+                                <li>Shift Ctrl Alt Dキーで、選択中のノードをフレームから外して複製します。</li>
+                            </ul>
+                        </li>
+                        <br />
+                        <li class=".myListContent">ジオメトリノードエディター上でShift Eキーで、ビューワーのオンオフを切り替えます。</li>
+                    </ul>
+                </div>
+
+                <br />
+                <p class="defaultText" style="margin-bottom: 50px">パラメーターを調整するパネルが消えてしまった場合、他の操作をする前ならF9キーで再表示できます。</p>
+
+                <!-- 搭載機能 -->
+                <h2 id="section3" class="headline1 fontSize2">搭載機能</h2>
+
+                <h1 class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">ノードユーティリティパイメニュー</span>
+                </h1>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/UtilitiesPie_JP.png" class="imgBorder" />
+                </div>
+                <p class="defaultText">使用可能な機能は、ノードとフレームの選択状態によって変わります。</p>
+
+                <!-- 整列 / 反転 / 等間隔に配置 -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>整列 / 反転 / 等間隔に配置
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/AlignFlipDist.gif" class="imgBorder" />
+                </div>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent"><span style="font-weight: bold">X軸方向に整列:</span> 選択しているノードをX軸方向に整列させます(S → X → 0と同様です)。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Y軸方向に整列:</span> 選択しているノードをY軸方向に整列させます(S → Y → 0と同様です)。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">X軸方向に反転:</span> 選択しているノードの位置をX軸方向に反転させます(S → X → -1と同様です)。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Y軸方向に反転:</span> 選択しているノードの位置をY軸方向に反転させます(S → Y → -1と同様です)。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">X軸方向に等間隔:</span> 選択しているノードをX軸方向に等間隔に配置させます。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Y軸方向に等間隔:</span> 選択しているノードをY軸方向に等間隔に配置させます。</li>
+                    </ul>
+                </div>
+
+                <!-- 色設定 -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>色設定
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/Color.gif" class="imgBorder" />
+                </div>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent"><span style="font-weight: bold">お気に入りの色に設定:</span> 選択しているノードとフレームを、プリファレンスで設定したお気に入りの色に変更します。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">カラーをオフ:</span> 選択しているノードとフレームのカラーをオフにします。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">カラーインプット:</span> 選択しているノードとフレームの、その色に変更します。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">アクティブなノードの色を貼り付け:</span> アクティブなノードまたはフレームの色を、選択中のノードとフレームに適用します。</li>
+                    </ul>
+                </div>
+
+                <!-- ラベリング -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>ラベリング
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/LabelWithName.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/LabelSize.gif" class="imgBorder" />
+                </div>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent">
+                            <span style="font-weight: bold">ノード名から名前を変更:</span> ノードのラベルを、その名前もしくはその処理に応じて変更します。<br />
+                            数式、ベクトル演算、ブール演算、比較、カラーミックスが、その処理に応じたラベルに変更されます。
+                        </li>
+                        <li class=".myListContent">
+                            <span style="font-weight: bold">ラベルサイズ:</span> 選択しているフレームのラベルの大きさを変更します。<br />
+                            最小: 8に変更 / 半分: 36に変更 / 最大: 64に変更 / 数字: その数に変更
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 最後のノードをアウトプットに接続 (ジオメトリノードエディターのみ) -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>最後のノードをアウトプットに接続 (ジオメトリノードエディターのみ)
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/ConnectLast.gif" class="imgBorder" />
+                </div>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent">
+                            <span style="font-weight: bold">指定したノードをアウトプットに接続</span><br />
+                            ノードグループが大きくなっている場合、Shift Alt 左クリックで途中の状態を確認することがあるかと思います。<br />
+                            その状態から、最後のノードを再びアウトプットにつなげなおすのに役立ちます。
+                        </li>
+                        <li class=".myListContent"><span style="font-weight: bold">アクティブなノードを最終ノードに設定:</span> アクティブなノードを、最後のノードとして設定します。</li>
+                    </ul>
+                </div>
+
+                <!-- ノードを検索 -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>ノードを検索
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/Search.gif" class="imgBorder" />
+                </div>
+                <p class="defaultText">
+                    <span style="font-weight: bold">ノードを検索:</span> 名前と、つながっているアウトプットの名前から、ノードを検索します。<br />
+                    グループインプットが複数ある場合、つながっているアウトプットの名前から、検索するのが役立ちます。
+                </p>
+
+                <!-- ズーム -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>ズーム
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/Zoom.gif" class="imgBorder" />
+                </div>
+                <p class="defaultText">
+                    ズーム: 選択しているノードまたはフレームに対して、プリファレンスで設定されたレベルでズームします。<br />
+                    Blender標準のピリオドキーでのズームは、ノードを一つだけ選択しているとズームしてくれないので、これが役立ちます。<br />
+                    プリファレンスで設定した値に正確にズームするわけではないことに注意してください。
+                </p>
+
+                <!-- 同タイプのノードに対する接続されていないソケットを隠す -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>同タイプのノードに対する接続されていないソケットを隠す
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/HideUnconnected.gif" class="imgBorder" />
+                </div>
+                <p class="defaultText">
+                    同タイプのノードに対する接続されていないソケットを隠す: アクティブなノードと同じタイプのノードの、つながっていないソケットを隠します。<br />
+                    複数のグループインプットがある場合に特に便利です。
+                </p>
+                <br />
+                <h1 id="section2_1" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">選択パイメニュー</span>
+                </h1>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/SelectPie_JP.png" class="imgBorder" />
+                </div>
+                <p class="defaultText">
+                    キーが押された時点でのマウスの位置を基準に、それぞれの方向にあるノードを選択します。<br />
+                    "フレームも選択"をオンにすると、フレームも選択されるようになります。
+                </p>
+                <br />
+                <h1 id="section2_1" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">その他</span>
+                </h1>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent">
+                            <span style="font-weight: bold">ノードの幅を増減:</span> Shift X、Shift Zキーで選択しているノードの幅を変更します。<br />
+                            ショートカットキーと増減の量は、プリファレンスで変更できます。
+                        </li>
+                        <li class=".myListContent">
+                            <span style="font-weight: bold">ビューワーのオンオフ切り替え:</span> Shift Eキーで、ビューワーのオンオフを切り替えます。<br />
+                            ビューワーが一つだけあるときのみ有効です。
+                        </li>
+                        <li class=".myListContent"><span style="font-weight: bold">フレームから外して複製:</span> Shift Ctrl Alt Dキーで、選択中のノードをフレームから外して複製します。</li>
+                    </ul>
+                </div>
+
+                <!-- プリファレンス -->
+                <h2 id="section4" class="headline1 fontSize2">プリファレンス</h2>
+                <p class="defaultText">ショートカットキーを変更できます。</p>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/Pref1_JP.png" class="imgBorder" />
+                </div>
+                <br />
+                <p class="defaultText" style="margin-bottom: -10px">その他設定から、以下を変更できます</p>
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent"><span style="font-weight: bold">変更幅:</span> ノードの幅を増減する量。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">お気に入りの色:</span> "お気に入りの色に設定"で使用する色。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">自動ズーム:</span> ノードを検索した後に、自動でそのノードにズームするか。</li>
+                        <li class=".myListContent"><span style="font-weight: bold">ズームレベル:</span> 値が大きいほどズームします。</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%; margin-bottom: 100px">
+                    <img src="Addons/NodeUtilities/Pref2_JP.png" class="imgBorder" />
+                </div>
+
+                <!-- installation -->
+                <div id="installation-container"></div>
+
+                <!-- Update -->
+                <h2 id="section5" class="headline1 fontSize2">アップデート履歴</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>フレームから外して複製は複数のノードに対して有効になりました</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    UIを変更しました<br />
+                                    X軸方向に整列、Y軸方向に整列の向きが変わりました<br />
+                                    ノードユーティリティパイメニューのデフォルトのショートカットキーがDになりました。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.6.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>細かいバグ修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.6.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    ビューワーのオンオフ機能を追加<br />
+                                    ノードの幅を変更機能が複数のノードに対して有効になりました
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.5.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>ノード検索が、ノードグループに対して有効になりました</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.5.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    バグ修正<br />
+                                    ノード検索機能を追加<br />
+                                    最後のノードをアウトプットに接続機能を追加
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.4.3</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>選択パイメニューがノードエディターでのみ有効になりました</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.4.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>色変更のバグ修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.4.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    お気に入りの色に設定とカラーインプットが複数のノードに対して有効になりました<br />
+                                    細かいバグ修正
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons-container"></div>
+            </main>
+
+            <aside>
+                <!-- 人気のアドオン -->
+                <div id="popularAddons-container"></div>
+
+                <div class="recomTut">
+                    <h2>おすすめのチュートリアル</h2>
+                    <div class="iframe-container">
+                        <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- フッター -->
+        <div id="footer-container"></div>
+
+        <!-- 再生リストの名前ごとにランダムな動画を取得-->
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script>
+            setRandomVideo("adddonTutorialList");
+        </script>
+
+        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
+        <script>
+            window.addEventListener("load", function () {
+                const currentUrl = encodeURIComponent(window.location.href);
+
+                function updateShareLinks() {
+                    document.querySelectorAll("#shareButtons-container a").forEach((link) => {
+                        if (link.href.includes("https://sum-bocfob.github.io/")) {
+                            link.href = link.href.replace("https://sum-bocfob.github.io/", currentUrl);
+                        }
+                    });
+                }
+
+                // 初回実行（すでにロードされている場合のため）
+                updateShareLinks();
+
+                // MutationObserverを使ってシェアボタンのHTMLが追加されたときに更新
+                const observer = new MutationObserver(updateShareLinks);
+                observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
+            });
+        </script>
+    </body>
+</html>
