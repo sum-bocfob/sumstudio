@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Camera Pie Menu</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script>
+            function includeHTML(id, url) {
+                fetch(url)
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch((error) => console.error("Error loading HTML:", error));
+            }
+
+            // ページが読み込まれたらHTMLをインクルード
+            window.onload = function () {
+                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
+                includeHTML("tableOfContents_cameraPieMenu-container", "includes/tableOfContents_cameraPieMenu.html"); // 目次をインクルード
+                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
+                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
+                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+            };
+        </script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_cameraPieMenu-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Camera Pie Menu</h1>
+
+                <div class="imgContainer" style="background: #efefef; padding: 10px 0">
+                    <a class="productPage-btn" href="https://blendermarket.com/products/camera-pie-menu" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                        <img src="WebIcons/Blender Market logo.png" alt="Easy Text Animation Blender Market" style="width: 200px; height: auto; display: block" />
+                    </a>
+                    <a class="productPage-btn" href="https://sumsum.booth.pm/items/6524399" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
+                        <img src="WebIcons/BOOTH_Logo.png" alt="Easy Text Animation BOOTH" style="width: 200px; height: auto; display: block" />
+                    </a>
+                </div>
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">
+                        カメラに関する複数の機能をまとめたパイメニューを表示するアドオンです。<br />
+                        以下はBlenderの言語を日本語に設定した場合です。
+                    </h3>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/CameraPieMenu/Menu_JP.png" class="imgBorder" />
+                </div>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
+
+                <h3 class="defaultText">3Dビューポート上で、Ctrl + Wキー(デフォルト)</h3>
+                <h4 class="defaultText">カメラを選択しているかどうかで、使用できる機能が異なります</h4>
+
+                <!-- 搭載機能 -->
+                <h2 id="section3" class="headline1 fontSize2">搭載機能</h2>
+
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 2; font-size: large; font-weight: bold">
+                        <li class=".myListContent">カメラ視点</li>
+                        <li class=".myListContent">現在の視点をカメラに合わせる</li>
+                        <li class=".myListContent">カメラをビューにロック</li>
+                        <li class=".myListContent">アクティブなカメラを選択</li>
+                        <li class=".myListContent">シーン上の全カメラを選択</li>
+                        <li class=".myListContent">次/前のカメラを選択</li>
+                        <li class=".myListContent">ビューに沿ってカメラを作成</li>
+                        <li class=".myListContent">外枠の表示/非表示(外枠の透明度はプリファレンスで変更できます)</li>
+                        <li class=".myListContent">カメラの境界に収める</li>
+                        <li class=".myListContent">
+                            トラック/減衰トラック<br />
+                            <span style="font-weight: normal">
+                                選択したカメラに”トラック”または”減衰トラック”コンストレイントを追加します。<br />
+                                <span style="color: yellow">オブジェクト→カメラの順に選択</span>し、パイメニューから”トラック”もしくは”減衰トラック”をクリック
+                            </span>
+                        </li>
+                        <li class=".myListContent">コンポジションガイド</li>
+                    </ul>
+                </div>
+
+                <!-- プリファレンス -->
+                <h2 id="section4" class="headline1 fontSize2">プリファレンス</h2>
+                <h3 class="defaultText">プリファレンスから以下の設定を変更できます</h3>
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 2; font-size: large; font-weight: bold">
+                        <li class=".myListContent">外枠の透明度</li>
+                        <li class=".myListContent">選択順序 : <span style="font-weight: normal">“次/前のカメラを選択”をクリックした際の選択順序。名前順もしくはインデックス順を指定可能</span></li>
+                        <li class=".myListContent">大文字と小文字を区別せずに次/前を選択 : <span style="font-weight: normal">選択順序が名前順の場合にのみ有効</span></li>
+                        <li class=".myListContent">次/前を選択後にカメラビューに移動</li>
+                        <li class=".myListContent">ショートカット : <span style="font-weight: normal">ショートカットキーを変更できます</span></li>
+                    </ul>
+                </div>
+
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/CameraPieMenu/Pref_JP.png" class="imgBorder" />
+                </div>
+
+                <!-- installation -->
+                <div id="installation-container"></div>
+
+                <!-- Update -->
+                <h2 id="section5" class="headline1 fontSize2">アップデート履歴</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.5</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>間違ったアイコンが表示される問題を修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.4</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>日本語のテキストを修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.3</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>選択の問題点を修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    選択の問題点を修正<br />
+                                    Blender3.5に対応
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>トラックの問題点を修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    複数の問題点を修正<br />
+                                    “次/前のカメラを選択”機能を追加
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>カメラがシーンに存在しない場合にメニューが表示されない問題を修正</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>コンポジションガイドに対応</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons-container"></div>
+            </main>
+
+            <aside>
+                <!-- 人気のアドオン -->
+                <div id="popularAddons-container"></div>
+
+                <div class="recomTut">
+                    <h2>おすすめのチュートリアル</h2>
+                    <div class="iframe-container">
+                        <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- フッター -->
+        <div id="footer-container"></div>
+
+        <!-- 再生リストの名前ごとにランダムな動画を取得-->
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script>
+            setRandomVideo("adddonTutorialList");
+        </script>
+
+        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
+        <script>
+            window.addEventListener("load", function () {
+                const currentUrl = encodeURIComponent(window.location.href);
+
+                function updateShareLinks() {
+                    document.querySelectorAll("#shareButtons-container a").forEach((link) => {
+                        if (link.href.includes("https://sum-bocfob.github.io/")) {
+                            link.href = link.href.replace("https://sum-bocfob.github.io/", currentUrl);
+                        }
+                    });
+                }
+
+                // 初回実行（すでにロードされている場合のため）
+                updateShareLinks();
+
+                // MutationObserverを使ってシェアボタンのHTMLが追加されたときに更新
+                const observer = new MutationObserver(updateShareLinks);
+                observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
+            });
+        </script>
+    </body>
+</html>
