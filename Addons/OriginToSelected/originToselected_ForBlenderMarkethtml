@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Origin to Selected</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
+
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header_ForBlenderMarket-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_originToselected_ForBlenderMarket-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Origin to Selected</h1>
+
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">This addon let you to change object's origin to selected.</h3>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/OriginToSelected/Example.gif" class="imgBorder" />
+                </div>
+                <a href="https://sum-bocfob.github.io/sumstudio/Addons/OriginToSelected/originToselected.html" target="_blank" rel="noreferrer noopener" style="text-align: center"> <p class="default" style="text-decoration: underline; color: #f3f3f3">日本語のドキュメント</p></a>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">How to use</h2>
+
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 2; font-size: large; font-weight: bold">
+                        <li class=".myListContent">Select object(mesh, curve, surface, armature, or lattice).</li>
+                        <li class=".myListContent">Go to Edit mode.</li>
+                        <li class=".myListContent">Select any vertex/edge/face you want to move origin to.</li>
+                        <li class=".myListContent">Press Shift+Q (default).</li>
+                    </ul>
+                </div>
+
+                <p class="defaultText" style="margin-bottom: 50px">If you turn on "Auto Clear Location" in preferences, object will move to world origin by object's new origin.</p>
+                <p class="defaultText" style="margin-bottom: 50px">If you turn on "Auto Go to Object Mode" in preferences, it will automatically go to Object Mode.</p>
+                <p class="defaultText" style="margin-bottom: 50px">You can change shortcut in preferences.</p>
+
+                <!-- installation -->
+                <div id="installation_ForBlenderMarket-container"></div>
+
+                <!-- Update -->
+                <h2 id="section3" class="headline1 fontSize2">Update</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    3D cursor now maintains its original position.<br />
+                                    Fixed few bugs.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Supported curve, Surface, Armature and Lattice.<br />
+                                    Added "Auto Go to Object Mode" feature.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons_ForBlenderMarket-container"></div>
+            </main>
+        </div>
+        <!-- フッター -->
+        <div id="footer_ForBlenderMarket-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements_ForBlenderMarket();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_originToselected_ForBlenderMarket-container", url: "Addons/OriginToSelected/tableOfContents_originToselected_ForBlenderMarket.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
+    </body>
+</html>
