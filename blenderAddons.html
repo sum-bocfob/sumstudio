@@ -28,6 +28,7 @@
             window.onload = function () {
                 includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
                 includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+                // シェアボタンをインクルード
                 includeHTML("shareButtons-container", "includes/shareButtons.html", function () {
                     // インクルードされた後に、setCurrentURLToShareButtons() を実行
                     if (typeof setCurrentURLToShareButtons === "function") {

@@ -11,26 +11,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css" />
-        <script>
-            function includeHTML(id, url) {
-                fetch(url)
-                    .then((response) => response.text())
-                    .then((data) => {
-                        document.getElementById(id).innerHTML = data;
-                    })
-                    .catch((error) => console.error("Error loading HTML:", error));
-            }
 
-            // ページが読み込まれたらHTMLをインクルード
-            window.onload = function () {
-                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                includeHTML("tableOfContents_bounceKeyframe-container", "includes/tableOfContents_bounceKeyframe.html"); // 目次をインクルード
-                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
-                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
-                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
-                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
-            };
-        </script>
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
     </head>
 
     <body>
@@ -66,7 +52,6 @@
 
                 <div class="myList-container" style="margin: 0 auto; width: 80%">
                     <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
-                        <li class=".myListContent">二つのキーフレームでアニメーションを作成</li>
                         <li class=".myListContent">タイムラインまたはグラフエディターを開く</li>
                         <li class=".myListContent">
                             バウンドさせたい二つのキーフレームを選択<br />
@@ -118,12 +103,18 @@
                         <tbody>
                             <tr>
                                 <td style="padding-right: 1rem; vertical-align: top">
-                                    <div style="display: flex; align-items: baseline"><span>1.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                    <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
                                 </td>
                                 <td>
                                     複数のBlenderバージョンに対応<br />
                                     いくつかのバグを修正
                                 </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>初期リリース</td>
                             </tr>
                         </tbody>
                     </table>
@@ -148,32 +139,24 @@
         <!-- フッター -->
         <div id="footer-container"></div>
 
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_bounceKeyframe-container", url: "Addons/BounceKeyframe/tableOfContents_bounceKeyframe.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
+
         <!-- 再生リストの名前ごとにランダムな動画を取得-->
         <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
         <script>
             setRandomVideo("adddonTutorialList");
-        </script>
-
-        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
-        <script>
-            window.addEventListener("load", function () {
-                const currentUrl = encodeURIComponent(window.location.href);
-
-                function updateShareLinks() {
-                    document.querySelectorAll("#shareButtons-container a").forEach((link) => {
-                        if (link.href.includes("https://sum-bocfob.github.io/")) {
-                            link.href = link.href.replace("https://sum-bocfob.github.io/", currentUrl);
-                        }
-                    });
-                }
-
-                // 初回実行（すでにロードされている場合のため）
-                updateShareLinks();
-
-                // MutationObserverを使ってシェアボタンのHTMLが追加されたときに更新
-                const observer = new MutationObserver(updateShareLinks);
-                observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
-            });
         </script>
     </body>
 </html>

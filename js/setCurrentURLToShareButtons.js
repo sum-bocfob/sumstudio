@@ -4,6 +4,7 @@ function setCurrentURLToShareButtons() {
 
     // TwitterのシェアURLを生成
     var twitterShareUrl = "https://twitter.com/share?url=" + currentUrl;
+    console.log(twitterShareUrl);
     var twitterBtn = document.querySelector(".share_twitter");
     if (twitterBtn) {
         twitterBtn.href = twitterShareUrl;
@@ -16,6 +17,7 @@ function setCurrentURLToShareButtons() {
     var facebookBtn = document.querySelector(".share_facebook");
     if (facebookBtn) {
         facebookBtn.href = facebookShareUrl;
+        console.log(facebookShareUrl);
     } else {
         console.error("Facebook share button not found.");
     }
