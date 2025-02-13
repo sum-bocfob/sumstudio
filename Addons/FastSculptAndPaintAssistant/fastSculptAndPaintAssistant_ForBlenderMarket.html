@@ -11,36 +11,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
-        <script>
-            function includeHTML(id, url, callback) {
-                fetch(url)
-                    .then((response) => response.text())
-                    .then((data) => {
-                        document.getElementById(id).innerHTML = data;
-                        if (callback) callback();
-                    })
-                    .catch((error) => console.error("Error loading HTML:", error));
-            }
 
-            // ページが読み込まれたらHTMLをインクルード
-            window.onload = function () {
-                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                includeHTML("tableOfContents_fastSculptAndPaintAssistant_ForBlenderMarket-container", "Addons/FastSculptAndPaintAssistant/tableOfContents_fastSculptAndPaintAssistant_ForBlenderMarket.html"); // 目次をインクルード
-                includeHTML("installation_EN-container", "includes/installation_EN.html"); // インストール方法をインクルード
-                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
-                includeHTML("footer_ForBlenderMarket-container", "includes/footer_ForBlenderMarket.html"); // フッターをインクルード
-                // シェアボタンをインクルード
-                includeHTML("shareButtons_EN-container", "includes/shareButtons_EN.html", function () {
-                    // インクルードされた後に、setCurrentURLToShareButtons() を実行
-                    if (typeof setCurrentURLToShareButtons === "function") {
-                        setCurrentURLToShareButtons();
-                    } else {
-                        console.error("setCurrentURLToShareButtons() is not defined.");
-                    }
-                });
-            };
-        </script>
-        <!-- setCurrentURLToShareButtons.js を読み込む -->
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
         <script src="js/setCurrentURLToShareButtons.js"></script>
     </head>
 
@@ -387,7 +362,7 @@
                 <!-- /////////////////////// -->
 
                 <!-- installation -->
-                <div id="installation_EN-container"></div>
+                <div id="installation_ForBlenderMarket-container"></div>
 
                 <!-- Update -->
                 <h2 id="section5" class="headline1 fontSize2" style="margin-bottom: 20px">Update</h2>
@@ -483,12 +458,27 @@
                 <div style="margin: 0 auto; text-align: center">
                     <a class="defaultText" style="color: #f3f3f3" href="https://www.flaticon.com/free-icons/paint-brush" target="_blank" rel="noopener noreferrer">Paint brush icons created by Freepik - Flaticon</a>
                 </div>
+                <br /><br />
 
                 <!-- シェアボタン -->
-                <div id="shareButtons_EN-container"></div>
+                <div id="shareButtons__ForBlenderMarket-container"></div>
             </main>
         </div>
         <!-- フッター -->
         <div id="footer_ForBlenderMarket-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements_ForBlenderMarket();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_fastSculptAndPaintAssistant_ForBlenderMarket-container", url: "Addons/FastSculptAndPaintAssistant/tableOfContents_fastSculptAndPaintAssistant_ForBlenderMarket.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
     </body>
 </html>
