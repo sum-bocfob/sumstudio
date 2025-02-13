@@ -12,23 +12,34 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/blenderAddons.css" />
+
         <script>
-            function includeHTML(id, url) {
+            function includeHTML(id, url, callback) {
                 fetch(url)
                     .then((response) => response.text())
                     .then((data) => {
                         document.getElementById(id).innerHTML = data;
+                        if (callback) callback();
                     })
                     .catch((error) => console.error("Error loading HTML:", error));
             }
 
-            // ページが読み込まれたらHTMLをインクルード
+            // ページ全体が読み込まれたら、HTMLをインクルードし、シェアボタンの初期化関数を呼び出す
             window.onload = function () {
                 includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                includeHTML("shareButtons-container", "includes/shareButtons.html"); // シェアボタンをインクルード
                 includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
+                includeHTML("shareButtons-container", "includes/shareButtons.html", function () {
+                    // インクルードされた後に、setCurrentURLToShareButtons() を実行
+                    if (typeof setCurrentURLToShareButtons === "function") {
+                        setCurrentURLToShareButtons();
+                    } else {
+                        console.error("setCurrentURLToShareButtons() is not defined.");
+                    }
+                });
             };
         </script>
+        <!-- setCurrentURLToShareButtons.js を読み込む -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
     </head>
 
     <body>
@@ -216,28 +227,5 @@
         <script>
             setRandomVideo("adddonTutorialList");
         </script>
-
-        <!-- 現在のページのURLを取得してシェアボタンに渡す -->
-        <!-- <script>
-            window.addEventListener("load", function () {
-                const currentUrl = encodeURIComponent(window.location.href);
-
-                function updateShareLinks() {
-                    document.querySelectorAll("#shareButtons-container a").forEach((link) => {
-                        if (link.href.includes("https://sum-bocfob.github.io/")) {
-                            link.href = link.href.replace("https://sum-bocfob.github.io/", currentUrl);
-                        }
-                    });
-                }
-
-                // 初回実行（すでにロードされている場合のため）
-                updateShareLinks();
-
-                // MutationObserverを使ってシェアボタンのHTMLが追加されたときに更新
-                const observer = new MutationObserver(updateShareLinks);
-                observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
-            });
-        </script> -->
-        <script src="js/setCurrentURLToShareButtons.js"></script>
     </body>
 </html>
