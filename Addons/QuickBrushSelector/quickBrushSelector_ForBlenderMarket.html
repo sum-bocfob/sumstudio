@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quick Brush Selector</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
+
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
+    </head>
+
+    <body>
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_quickBrushSelector_ForBlenderMarket-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Quick Brush Selector</h1>
+
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">This addon makes it easy to select brushes for sculpt, Texture Paint and Grease Pencil(Draw Mode) with circular menu.</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">This makes it easy to load brushes between different blend files and different versions of Blender.</h3>
+                    <h4 style="font-weight: bold; color: #f3f3f3">Versions 1.6.1 and above are compatible with Blender 3.4 and above.</h4>
+                    <div class="imgContainer">
+                        <img class="imgBorder" src="Addons/QuickBrushSelector/Menu.png" style="max-width: 80%" />
+                    </div>
+                    <a href="https://sum-bocfob.github.io/sumstudio/Addons/QuickBrushSelector/quickBrushSelector.html" target="_blank" rel="noreferrer noopener" style="text-align: center"> <p class="default" style="text-decoration: underline; color: #f3f3f3">日本語のドキュメント</p></a>
+                    <br />
+                    <h5 style="color: #f3f3f3">Due to improved functionality of the Sculpt Brush Toolset, the product name has changed to Quick Brush Selector.</h5>
+                    <iframe
+                        width="580"
+                        height="326"
+                        src="https://www.youtube.com/embed/CgvLfXqV9BY"
+                        title="Sculpt Brush Toolset is now compatible with Blender4.3【Blender Addon】"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                    <h5 style="color: #bfd7ff">
+                        Texture Paint mode and Grease Pencil Draw mode functions work with Blender 4.3 and later.<br />
+                        For Blender 4.2 and earlier versions, please use sculpt_brush_toolset_1.2.2.zip, which only works for sculpt brushes.
+                    </h5>
+                    <br />
+                </div>
+                <!-- Features -->
+                <h2 id="section2" class="headline1 fontSize2">Features</h2>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">Easily activate brushes with your preferred settings</li>
+                        <li class=".myListContent">Save multiple toolset(collection of brushes)</li>
+                        <li class=".myListContent">Customizable UI parameters</li>
+                    </ul>
+                </div>
+                <!-- how to use -->
+                <h2 id="section3" class="headline1 fontSize2">How to use</h2>
+                <p class="defaultText">In Sculpt mode, Texture Paint mode or Draw Grease Pencil mode, select QBS in N panel.</p>
+                <div class="imgContainer">
+                    <img src="Addons/QuickBrushSelector/NPanel1.png" class="imgBorder" />
+                </div>
+
+                <div style="margin: 16px auto; text-align: center; color: #f3f3f3">
+                    <!-- Add Toolset / Brush -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Add Toolset / Brush</span>
+                    </h1>
+                    <p class="defaultText">
+                        "Toolset" is collection of brushes.<br />
+                        You can have multiple Toolsets and add them by clicking <span class="fontAccent">"Add Toolset".</span>
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/AddToolset.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p class="defaultText">You can add a brush to the active Toolset or new Toolset by right-clicking on the brush in the AssetShelf of the 3DViewport and selecting <span class="fontAccent">"Add to active toolset"</span> or <span class="fontAccent">"Add to New Toolset"</span>.</p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/AddBrush.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p class="defaultText">
+                        You can also add tool like Box Mask, Lasso Hide, Cloth Filter, Move, etc, in Sculpt and Box, Trim, Eyedropper, etc, in Draw(Grease Pencil).<br /><br />
+                        Firstly make the tool you want to add to toolset active, then right-clicking on tool shelf and click <span class="fontAccent">"Add Active Tool to Active Toolset / New Toolset"</span>.
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/AddTool.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p class="defaultText">
+                        From Asset Browser, you can add brush to toolset of each mode.<br />
+                        <span class="fontAccent">And also, you can add multiple brushes.</span>
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/FromAssetBrowser_JP.gif" class="imgBorder" />
+                    </div>
+                    <!-- Select Toolset / Brush -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Select Toolset / Brush</span>
+                    </h1>
+                    <p class="defaultText">
+                        After adding brush to Toolset, brush selector is shown by <span class="fontAccent">pressing Y key(default) on 3DView.</span><br />
+                        Activate the brush by <span class="fontAccent">clicking on the image of the brush you want to select.</span>
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/SelectBrush.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p class="defaultText">
+                        When you have multiple toolsets, you can change active toolset by <span class="fontAccent">pressing T or U key(default)</span> after open brush selector.<br />
+                        And also chnage by clicking diamond shape above brush selector.
+                    </p>
+                    <div class="imgContainer" class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/SelectToolset.gif" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p class="defaultText">You can close it by pressing the same key you used to open it or by moving mouse far away.</p>
+                    <div class="imgContainer" class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/CloseMenu.gif" class="imgBorder" />
+                    </div>
+                    <p class="defaultText">
+                        Brushes are arranged clockwise from the top. <br />
+                        You can change the order or delete them from the panel.
+                    </p>
+                    <!-- Import / Export -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Import / Export</span>
+                    </h1>
+                    <p class="defaultText">In import / export menu, there are 3 ways to import(save) / export(load).</p>
+                    <div class="imgContainer" class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/ImportExportMenu.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText">
+                        <span style="font-weight: bold">Global Library</span> can be saved / loaded between different files only between the same version of blender.<br />
+                        Only one global library is saved for each blender version.<br /><br />
+                        Note that "Load Global Library" is overwrite current toolset.<br /><br />
+                        The Global Library is saved separately for each mode.
+                    </p>
+                    <hr style="border: none; height: 3px; text-align: center; margin: 20px auto; background-color: #f3f3f3; width: 80%; border-radius: 5px" />
+                    <p class="defaultText"><span style="font-weight: bold">Toolset</span> exports the active toolset to a text file and imports a toolset from a exported text file.</p>
+                    <hr style="border: none; height: 3px; text-align: center; margin: 20px auto; background-color: #f3f3f3; width: 80%; border-radius: 5px" />
+                    <p class="defaultText">
+                        <span style="font-weight: bold">Library</span> imports/exports all tool sets to a text file.<br /><br />
+                        Note that "Import Library" is overwrite current toolset.
+                    </p>
+                    <!-- Settings -->
+                    <h1 class="fontSize3" style="margin-top: 80px; padding: 10px; text-align: center">
+                        <span class="headline2">Settings</span>
+                    </h1>
+                    <p class="defaultText">In Settings, there are some settings you can tweak.</p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/Settings.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <p class="defaultText">
+                        If you turn on <span class="fontAccent">"Use Simple Panel"</span>, brush selector will turn into simple panel with only its name.<br />
+                        Simple panel displays brushes only in active toolset.(You cannot change the toolset outside of the panel.)<br />
+                        The brushes are ordered from top left to bottom.
+                    </p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/SimplePanel.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p class="defaultText">Icons for the brush selector are generated automatically, but if they are deleted for some reason, you can regenerate them by clicking <span class="fontAccent">"Regenerate Icon Images"</span>.</p>
+                    <br />
+                    <br />
+                    <p class="defaultText">In Toolset Settings, you can change Toolset name or order.</p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/ToolsetSettings.png" class="imgBorder" />
+                    </div>
+                    <br />
+                    <br />
+                    <p class="defaultText">There are some settings in Preferences > Add-ons > Quick Brush Selector</p>
+                    <div class="imgContainer">
+                        <img src="Addons/QuickBrushSelector/Preferences.png" class="imgBorder" />
+                    </div>
+                    <p class="defaultText"><span class="fontAccent">"Auto Load Global Library"</span> automatically loads the Global Library in new Blender file.</p>
+
+                    <!-- installation -->
+                    <div id="installation_ForBlenderMarket-container"></div>
+
+                    <!-- Update -->
+                    <h2 id="section5" class="headline1 fontSize2">Update</h2>
+                    <p class="defaultText">
+                        Version 2.1.0 works with Blender4.3 and Blender4.4.0a.<br />
+                        Version 2.1.0 cannot load libraries and other files created in earlier versions.
+                    </p>
+                    <div style="text-align: center; color: #f3f3f3; margin: auto; margin-bottom: 30px; max-width: 80%; display: block">
+                        <table style="margin: auto; text-align: left; border-collapse: collapse">
+                            <tbody>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>2.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>
+                                        Compatible with Texture Paint mode and Grease Paint Draw mode.<br />
+                                        The product name has changed from Sculpt Brush Toolset to Quick Brush Selector.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>2.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>
+                                        Compatible with Blender 4.3.<br />
+                                        Added functions below.<br />
+                                        - Adding brush(es) from Asset Browser.<br />
+                                        - Adding brush to new toolset.<br />
+                                        - Changing menu color.<br />
+                                        - Changing toolset name.<br />
+                                        - Changing column count for simple panel.<br />
+                                        - Compatible with Japanese.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.2.2</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>Added simple brush panel function.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.2.1</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>Fixed an issue where some brushes could not be registered in Blender 4.2.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.2.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>Compatible with Blender 4.0.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>Fixed an issue where some brushes could not be selected when changing the active toolset.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>
+                                        It is now possible to close selector by pressing the same key as when it was opened or by moving mouse far away.<br />
+                                        Shortcut keys can now be changed from preferences.<br />
+                                        Added backup function for future update.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 1rem; vertical-align: top">
+                                        <div style="display: flex; align-items: baseline"><span>1.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                    </td>
+                                    <td>First release</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="shareButtons_ForBlenderMarket-container"></div>
+            </main>
+        </div>
+        <!-- フッター -->
+        <div id="footer_ForBlenderMarket-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements_ForBlenderMarket();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_quickBrushSelector_ForBlenderMarket-container", url: "Addons/QuickBrushSelector/tableOfContents_quickBrushSelector_ForBlenderMarket.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
+    </body>
+</html>
