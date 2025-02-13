@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Render Multi Objects</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
+
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
+    </head>
+
+    <body>
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_renderMultiObjects_ForBlenderMarket-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Render Multi Objects</h1>
+
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">This addon repeats rendering multiple time(per objects) with the active camera at the same angle in one click.</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">When you want to render multiple objects, it is very tedious to repeatedly go through the process of "render → move camera → render...".</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">This add-on allows you to render large numbers of individual objects at once.</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ApZQ94SktGQ" title="Render Multi Objects_Introduce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <h4 style="font-weight: bold; color: #f3f3f3">Note: Version 1.0.1 and above are compatible with Blender 3.2 and above.</h4>
+                </div>
+                <a href="https://sum-bocfob.github.io/sumstudio/Addons/RenderMultiObjects/renderMultiObjects.html" target="_blank" rel="noreferrer noopener" style="text-align: center"> <p class="default" style="text-decoration: underline; color: #f3f3f3">日本語のドキュメント</p></a>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">How to use</h2>
+
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">Set camera and render settings as you want. (Camera view is also used when render viewport.)</li>
+                        <li class=".myListContent">Select objects that you want to render. (You can ignore this process if you will use Active Collection option later.)</li>
+                        <li class=".myListContent"><span style="color: yellow">Set object active.</span> (Each is rendered while maintaining the positional relationship between this object and the camera.)</li>
+                        <li class=".myListContent">Render > Render Multi Objects.</li>
+                        <li class=".myListContent">Select an option in the popup and hit OK to render.</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/RenderMultiObjects/Popup.png" class="imgBorder" />
+                </div>
+                <br />
+                <p class="defaultText">
+                    If you want to cancel a render in progress, click the <span style="font-weight: bold">"Cancel Render" button that appears in the menu at the top of the Image Editor (the window that opens when you start rendering)</span>.<br />
+                    This button will stop the repeated rendering process, but it will not stop the rendering that is currently in progress.<br />
+                    <span style="font-weight: bold">If you want to stop a rendering that is currently in progress, press the Esc key.</span>
+                </p>
+
+                <!-- 設定項目 -->
+                <h1 class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">Options in the popup</span>
+                </h1>
+
+                <div class="myList-container" style="max-width: 80%; margin: 0 auto">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent">
+                            <span style="font-size: large; font-weight: bold">Object Select Type</span>
+                            <ul>
+                                <li>Selected: will render selected objects.</li>
+                                <li>
+                                    Active Collection: will render objects in active collection.<br />
+                                    The Active Collection icon will be highlighted.<br />
+                                    You can click on the collection to change it.
+                                </li>
+                            </ul>
+                        </li>
+                        <li style="list-style-type: none">
+                            <div class="imgContainer" style="max-width: 80%">
+                                <img src="Addons/RenderMultiObjects/ActiveCollection.png" class="imgBorder" />
+                            </div>
+                        </li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Solo Each Object:</span> Render only each object, hiding other objects. (This will only affect selected or in active collecition objects.)</li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Fit Selection to Camera Frame:</span> Moves the active camera (without changing its orientation) so that its view frames the selected objects.</li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Render Viewport:</span> Render viewport instead of render view.</li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Render Animation</span></li>
+                        <li class=".myListContent" style="padding: 5px 0"><span style="line-height: 30px; font-size: large; font-weight: bold">Fix Camera:</span> Normally, the camera moves by applying an offset between the active object and the camera for each object, but when this is turned on, the camera does not move.</li>
+                        <li class=".myListAContent" style="padding: 5px 0">
+                            <span style="line-height: 30px; font-size: large; font-weight: bold">Base Name:</span> Base name of the rendered file.
+                            <ul>
+                                <li><span style="line-height: 30px; font-size: large; font-weight: bold">Object Name:</span> Use each name of objects.</li>
+                                <li>
+                                    <span style="line-height: 30px; font-size: large; font-weight: bold">Index:</span> They are numbered starting from 0 in the order they are rendered.<br />
+                                    This is not the order of selection or the order in the outliner.
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=".myListContent" style="padding: 5px 0">Use Prefix / Suffix: When turned on, the input field is displayed.</li>
+                    </ul>
+                </div>
+
+                <!-- installation -->
+                <div id="installation_ForBlenderMarket-container"></div>
+
+                <!-- Update -->
+                <h2 id="section3" class="headline1 fontSize2">Update</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    The following features have been added: - Canceling a rendering midway.<br />
+                                    - Rendering animation.<br />
+                                    - Switching base name of rendered file between "Object Name" and "Index".<br />
+                                    - Adding prefix or suffix to rendered file.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.0.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed an issue where an error would occur when the camera object name and the camera name were different.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.0.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Compatible with various Blender version.<br />
+                                    Added render viewport function.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons_ForBlenderMarket-container"></div>
+            </main>
+        </div>
+        <!-- フッター -->
+        <div id="footer_ForBlenderMarket-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements_ForBlenderMarket();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_renderMultiObjects_ForBlenderMarket-container", url: "Addons/RenderMultiObjects/tableOfContents_renderMultiObjects_ForBlenderMarket.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
+    </body>
+</html>

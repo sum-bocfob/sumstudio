@@ -11,36 +11,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css" />
-        <script>
-            function includeHTML(id, url, callback) {
-                fetch(url)
-                    .then((response) => response.text())
-                    .then((data) => {
-                        document.getElementById(id).innerHTML = data;
-                        if (callback) callback();
-                    })
-                    .catch((error) => console.error("Error loading HTML:", error));
-            }
 
-            // ページが読み込まれたらHTMLをインクルード
-            window.onload = function () {
-                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                includeHTML("tableOfContents_renderMultiObjects-container", "Addons/RenderMultiObjects/tableOfContents_renderMultiObjects.html"); // 目次をインクルード
-                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
-                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
-                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
-                // シェアボタンをインクルード
-                includeHTML("shareButtons-container", "includes/shareButtons.html", function () {
-                    // インクルードされた後に、setCurrentURLToShareButtons() を実行
-                    if (typeof setCurrentURLToShareButtons === "function") {
-                        setCurrentURLToShareButtons();
-                    } else {
-                        console.error("setCurrentURLToShareButtons() is not defined.");
-                    }
-                });
-            };
-        </script>
-        <!-- setCurrentURLToShareButtons.js を読み込む -->
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
         <script src="js/setCurrentURLToShareButtons.js"></script>
     </head>
 
@@ -78,9 +53,9 @@
 
                 <div class="myList-container">
                     <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
-                        <li class=".myListContent">カメラを配置し、出力パスなどのレンダリングをします。(ビューポートレンダリングをする場合でも、カメラの向きが使用されます。)</li>
+                        <li class=".myListContent">カメラを配置し、出力パスなどのレンダリング設定をします。(ビューポートレンダリングをする場合でも、カメラの向きが使用されます。)</li>
                         <li class=".myListContent">レンダリングしたいオブジェクトを選択します。(アクティブなコレクションを使用する場合は必要ありません。)</li>
-                        <li class=".myListContent">カメラの位置の基準となるオブジェクトをアクティブにします。(それぞれこのオブジェクトとカメラの位置関係を維持しながらレンダリングされます。)</li>
+                        <li class=".myListContent"><span style="color: yellow">カメラの位置の基準となるオブジェクトをアクティブにします。</span>(それぞれこのオブジェクトとカメラの位置関係を維持しながらレンダリングされます。)</li>
                         <li class=".myListContent">レンダー→Render Multi Objectsをクリックします。</li>
                         <li class=".myListContent">ポップアップでオプションを選択し、OKを押してレンダリングを開始します。</li>
                     </ul>
@@ -184,6 +159,20 @@
         </div>
         <!-- フッター -->
         <div id="footer-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_renderMultiObjects-container", url: "Addons/RenderMultiObjects/tableOfContents_renderMultiObjects.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
 
         <!-- 再生リストの名前ごとにランダムな動画を取得-->
         <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
