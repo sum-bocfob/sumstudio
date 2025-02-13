@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Camera Pie Menu</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
+
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header_ForBlenderMarket-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_cameraPieMenu_ForBlenderMarket-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Camera Pie Menu</h1>
+
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">This add-on is a menu that summarizes some camera operations.</h3>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/CameraPieMenu/Menu.png" class="imgBorder" />
+                </div>
+                <a href="https://sum-bocfob.github.io/sumstudio/Addons/CameraPieMenu/cameraPieMenu.html" target="_blank" rel="noreferrer noopener" style="text-align: center"> <p class="default" style="text-decoration: underline; color: #f3f3f3">日本語のドキュメント</p></a>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">How to use</h2>
+
+                <h3 class="defaultText">On the 3D viewport, press Ctrl + W (default)</h3>
+                <h4 class="defaultText">The available functions differ depending on whether a camera is selected or not.</h4>
+
+                <!-- 搭載機能 -->
+                <h2 id="section3" class="headline1 fontSize2">Functions</h2>
+
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 2; font-size: large; font-weight: bold">
+                        <li class=".myListContent">Camera View</li>
+                        <li class=".myListContent">Align Active Camera View</li>
+                        <li class=".myListContent">Lock Camera to View</li>
+                        <li class=".myListContent">Select Active Camera</li>
+                        <li class=".myListContent">Select All Camera</li>
+                        <li class=".myListContent">Select Next Camera</li>
+                        <li class=".myListContent">Select Previous Camera</li>
+                        <li class=".myListContent">Set Selected Camera Active</li>
+                        <li class=".myListContent">Create Camera Aligned to View</li>
+                        <li class=".myListContent">Show / Hide Passepartout(you can change passepartout alpha value in addon preferences).</li>
+                        <li class=".myListContent">Frame Camera Bounds</li>
+                        <li class=".myListContent">
+                            Track To / Damped Track<br />
+                            <span style="font-weight: normal">
+                                Add "Track To" or "Damped Track" constraint to active camera.<br />
+                                <span style="color: yellow">Select the target and then the camera,</span> and then press the button to set the target automatically.
+                            </span>
+                        </li>
+                        <li class=".myListContent">Composition Guides</li>
+                    </ul>
+                </div>
+
+                <!-- プリファレンス -->
+                <h2 id="section4" class="headline1 fontSize2">Preferences</h2>
+                <h3 class="defaultText">In Preferences, you can change some settings for this addon.</h3>
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 2; font-size: large; font-weight: bold">
+                        <li class=".myListContent">Passepartout Alpha</li>
+                        <li class=".myListContent">Select Order: <span style="font-weight: normal">Selecting order when you pressing Next or Previous.</span></li>
+                        <li class=".myListContent">
+                            Select next / previous by case-insensitive:<br />
+                            <span style="font-weight: normal">If true and Select Order is Name, it select cameras by case-insensitive.</span>
+                        </li>
+                        <li class=".myListContent">Switch to camera view after select next / previous: <span style="font-weight: normal">If true, automatically sets the camera active and goes to camera view when you pressing Next or Previous.</span></li>
+                        <li class=".myListContent">Shortcut: <span style="font-weight: normal">You can change shortcut key.</span></li>
+                    </ul>
+                </div>
+
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/CameraPieMenu/Pref.png" class="imgBorder" style="margin-bottom: 50px" />
+                </div>
+
+                <!-- installation -->
+                <div id="installation_ForBlenderMarket-container"></div>
+
+                <!-- Update -->
+                <h2 id="section5" class="headline1 fontSize2">Update</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.5</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed issue that shows wrong icon.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.4</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed japanese text.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.3</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed select issue.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Fixed select issue.<br />
+                                    Supported Blender3.5.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed a issue about Track To.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Fixed some issue.<br />
+                                    Added select next / previous function.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed an issue where the menu would not appear when there were no cameras in the scene.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Support composition guides.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons_ForBlenderMarket-container"></div>
+            </main>
+        </div>
+        <!-- フッター -->
+        <div id="footer_ForBlenderMarket-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements_ForBlenderMarket();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_cameraPieMenu_ForBlenderMarket-container", url: "Addons/CameraPieMenu/tableOfContents_cameraPieMenu_ForBlenderMarket.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
+    </body>
+</html>
