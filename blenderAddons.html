@@ -218,7 +218,7 @@
         </script>
 
         <!-- 現在のページのURLを取得してシェアボタンに渡す -->
-        <script>
+        <!-- <script>
             window.addEventListener("load", function () {
                 const currentUrl = encodeURIComponent(window.location.href);
 
@@ -237,6 +237,7 @@
                 const observer = new MutationObserver(updateShareLinks);
                 observer.observe(document.getElementById("shareButtons-container"), { childList: true, subtree: true });
             });
-        </script>
+        </script> -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
     </body>
 </html>
