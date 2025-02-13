@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Easy Text Animation</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
+
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header_ForBlenderMarket-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_easyTextAnimation_ForBlenderMarket-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Easy Text Animation</h1>
+
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">Translation, Scale and Rotation value can be animated for each character.</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">You can set each value for 1st and 2nd animation respectively.</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">Apart from the text animation you can create a timer.</h3>
+                    <h4 style="font-weight: bold; color: #f3f3f3">Note: Versions 2.6 and above are compatible with Blender 3.5 and above.</h4>
+                </div>
+                <a href="https://sum-bocfob.github.io/sumstudio/Addons/EasyTextAnimation/easyTextAnimation.html" target="_blank" rel="noreferrer noopener" style="text-align: center"> <p class="default" style="text-decoration: underline; color: #f3f3f3">日本語のドキュメント</p></a>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">How to use</h2>
+                <h1 id="section2_1" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">Easy Text</span>
+                </h1>
+                <!-- 作成 -->
+                <div id="section2_1_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Create
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">in 3D Viewport, press N to open side panel and select tab named "EZTxtAnim".</li>
+                        <li class=".myListContent">type any text to text input field,then press "Create Easy Text".</li>
+                        <li class=".myListContent">if you wanna create new line,type \n in place you wanna wrap back.</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/CreatePanel.png" class="imgBorder" />
+                </div>
+                <!-- 編集 -->
+                <div id="section2_1_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Edit
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <p class="defaultText">if you selected object that is created with this addon,the side panel will change for edit the text.</p>
+                <h3 class="headline3">"Text" panel let you edit the text.</h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/TextPanel.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">You can edit text, text material, font, size, thickness, spacing, horizontal/vertical alignment, max width, shade smooth, initial rotation object and along curve.</li>
+                        <li class=".myListContent">Max Width represents the length before line breaks when the text consists of multiple words. 0 means no newline.</li>
+                        <li class=".myListContent">Shade Smooth is same as default Shade Auto Smooth.</li>
+                        <li class=".myListContent">
+                            Initial Rotation Object is an object for setting the initial rotation of each character of the text.<br />
+                            The rotation value of this object will be reflected in each letter.
+                        </li>
+                        <li class=".myListContent">If you turn on Animation by Initial Object's Rotation, it will animate towards the local coordinates after rotating according to the object. If you turn it off, it will animate towards the world coordinates(Scale always animates towards local coordinates.).</li>
+                        <li class=".myListContent">Along Curve aligns text to curve object.</li>
+                    </ul>
+                </div>
+                <h3 class="headline3">"1st Animation" panel let you edit the animation without keyframe.</h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/1stAnimationPanel.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">You can edit start from, start frame, end frame and character offset.</li>
+                        <li class=".myListContent">You can select built-in preset or resistered by yourself.</li>
+                    </ul>
+                </div>
+                <h3 class="headline3" style="max-width: 70%; border-width: 3px; font-weight: 550">In addition,this panel has three region named "Translate","Scale" and "Rotation".</h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Translate1stPanel.png" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Scale1stPanel.png" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Rotate1stPanel.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; max-width: 70%">
+                        <li class=".myListContent">You can edit value, animate from/to, easing type and easing fact in each section.</li>
+                        <li class=".myListContent">In Scale or Rotation section, you can set pivot type to Bounding Box or Offset</li>
+                    </ul>
+                </div>
+                <h3 class="headline3" style="max-width: 60%; border-width: 1px; font-weight: 500">Bounding Box is to set pivot to each characters bounding box.</h3>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; max-width: 60%">
+                        <li class=".myListContent">For XZ direction, you can set to Top Left, Top, Top Right, Middle, Bottom Left, Bottom or Bottom Right.</li>
+                        <li class=".myListContent">For Y direction, you can set to Front, Middle or Back.</li>
+                    </ul>
+                </div>
+                <h3 class="headline3" style="max-width: 60%; border-width: 1px; font-weight: 500">Offset is to set that pivot is how far from the center of each character.</h3>
+                <br />
+                <h3 class="headline3">"2nd Animation" panel let you edit nearly same as "1st Animation" panel.</h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/2ndAnimationPanel.png" class="imgBorder" />
+                </div>
+                <h3 class="headline3" style="max-width: 70%; border-width: 2px; font-weight: 550">The "Tranlste", "Scale" and "Rotation" sections of "2nd Animation" are almost the same as "1st Animation", but there is a difference in how the values ​​are animated (Animation FROM/TO).</h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Translate2ndPanel.png" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Scale2ndPanel.png" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/Rotate2ndPanel.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; max-width: 70%">
+                        <li class=".myListContent">Offset is how much to translate, scale and rotate from the value after the 1st animation is completed.</li>
+                        <li class=".myListContent">When set to a target, it will move, scale and rotate to the specified value regardless of the 1st animation.</li>
+                    </ul>
+                </div>
+                <h3 class="headline3">You can also edit easing type "Custom" to your own.</h3>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">Select object created with this addon,go to geometry node editor.</li>
+                        <li class=".myListContent">Select node group named "sum_EasingTypeSwitcher_2.5.1v" framed by red.</li>
+                        <li class=".myListContent">Press Tab key and go into node group.</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/CustomEasingNodeGroupPlace.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">Edit "Float Curve" node in "Custom" frame.</li>
+                        <li class=".myListContent">If the easing type in the "Translate", "Scale" and "Rotate" sections is set to Custom, the edited easing will work.</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/CustomEasingFloatCurvePlace.png" class="imgBorder" />
+                </div>
+
+                <!-- プリセット -->
+                <div id="section2_1_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Presets
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Slide In.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Roll.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Stretch In.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Typewriter.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Scale Bounce.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/PresetGIFs/Scale Fade In Out.gif" class="imgBorder" />
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Grow.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Shrink.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Flip Up.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Get Up.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Back Flip.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Whirlwind.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Hop.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Fly Down Rotate.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 28%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Drop.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 28%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Fly In Twist.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 28%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Bounce.gif" class="imgBorder" />
+                    </div>
+                </div>
+                <div style="margin: 0 auto; text-align: center">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Yo-Yo.gif" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/PresetGIFs/Pass By.gif" class="imgBorder" />
+                    </div>
+                </div>
+
+                <!-- マテリアル -->
+                <div id="section2_1_4" class="section2_3" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Material
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <p class="defaultText" style="font-weight: bold; color: #fff6a8">To set materials for objects created with this add-on, please set them from the material in the text panel.</p>
+                <p class="defaultText" style="font-weight: bold; margin-bottom: 50px">Setting it from the Material tab of the properties does not take effect.</p>
+                <h3 class="headline3">
+                    There are several attributes available for use with Materials.<br />
+                    You can copy these attributes to clipboard by press right side button.
+                </h3>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/AttributeForMaterialPanel.png" class="imgBorder" />
+                </div>
+                <p class="defaultText">You can use these attribute by enter in name of attribute node in shader editor.</p>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/AttributeNode.png" class="imgBorder" />
+                </div>
+
+                <!-- タイマー -->
+                <h1 id="section2_2" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">Timer</span>
+                </h1>
+                <!-- 作成 -->
+                <div id="section2_2_1" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Create
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">3D Viewport → N Panel → Select EZTxtAnim tab</li>
+                        <li class=".myListContent">Click "Create Timer"</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/CreatePanel.png" class="imgBorder" />
+                </div>
+                <!-- 編集 -->
+                <div id="section2_2_2" style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Edit
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <p class="defaultText">if you selected object that is created with above,the side panel will change for edit the timer.</p>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/EasyTextAnimation/TimerPanel.png" class="imgBorder" />
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">You can change material, Font, Size, Thickness, Horizontal Alignment and Vertical Alignment as well as Easy Text.</li>
+                        <li class=".myListContent">Unlike Easy Text, spacing only works between characters.</li>
+                        <li class=".myListContent">Type: You can choose timer type from Count Up or Count Down.</li>
+                        <li class=".myListContent">You can display / hide day, hour, and millisecond. It is restricted to not displaying day without displaying hour.</li>
+                        <li class=".myListContent">Offset: Day, Hour, Minute and Second offset is able to use. Timer starts from offseted time.</li>
+                        <li class=".myListContent">Use Start / Stop Frame: If this turned on, timer starts running at the start frame and stops at the end frame.</li>
+                        <li class=".myListContent">Time Scale: 1 counts on time. 0.5 counts as 1/2, 2 counts as double.</li>
+                    </ul>
+                </div>
+
+                <!-- 注意事項 -->
+                <h1 id="section2_3" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">Note</span>
+                </h1>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">When you duplicate a text object, some properties are linked to the original, so you can unlink them by clicking the "Make Linking Off" button.</li>
+                        <li class=".myListContent">If you set start from to "FROM" in 1st animation, there is no difference to set "Animate" offset or target in 2nd animation.</li>
+                        <li class=".myListContent">If you wanna create new scene, don't use "New" option.</li>
+                    </ul>
+                </div>
+                <div style="margin: 0 auto; text-align: center; margin-bottom: 50px">
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/NewScene.png" class="imgBorder" />
+                    </div>
+                    <div class="imgContainer" style="max-width: 40%; display: inline-block">
+                        <img src="Addons/EasyTextAnimation/NewScenePanel.png" class="imgBorder" />
+                    </div>
+                </div>
+                <div class="myList-container">
+                    <ul class="myList" style="line-height: 30px">
+                        <li class=".myListContent">If you turn on Along Curve and Rotate along Curve, Offset won't act correctly.</li>
+                        <li class=".myListContent">Try to increase character offset to higher like 999 if easing type "Instant" won't work.</li>
+                    </ul>
+                </div>
+                <br /><br />
+                <!-- /////////////////////////////////////// -->
+
+                <!-- installation -->
+                <div id="installation_ForBlenderMarket-container"></div>
+
+                <!-- Update -->
+                <h2 id="section4" class="headline1 fontSize2">Update</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.6.6</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Fixed an issue where the 2ndAnimation value was misaligned when 1stAnimation was disabled.<br />
+                                    Fixed an issue where switching between Offset and Target in 2nd Translate did not change anything.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.6.5</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed small bug.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.6.4</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Compatible with Blender4.3.<br />
+                                    Fixed wrong orientation for certain presets and timer.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.6.3</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed bug that can not create text and timer in first time in Blender4.2.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.6.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Change detail of node group.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.6.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed bug.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.6.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Attributes for use in material added.<br />
+                                    Initial rotation obj bug fixed.<br />
+                                    The initial orientation is now up.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.5.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed an issue that the timer checkbox did not work properly.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.5.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fixed easing type "Instant" not working.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.5.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Fixed issue that couldn't open font file.<br />
+                                    Multiple objects can specify different fonts.<br />
+                                    Add Along Curve function.<br />
+                                    Add Initial Rotation function.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.4.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Compatible with Blender3.5.<br />
+                                    Add parameter "Max Width".
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.3.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Fixed glitching when Motion Blur turns on.<br />
+                                    Fix Shading issue.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.2.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Added Shade Smooth function.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ライセンス -->
+                <h2 id="section5" class="headline1 fontSize2">License</h2>
+                <p class="defaultText">
+                    The license follows CC-BY-SA.<br />
+                    This contains geometry node groups in <a style="color: #f3f3f3" href="https://bradley-animations.gumroad.com/" target="_blank" rel="noopener noreferrer">Free GN Presets</a>made by <a style="color: #f3f3f3" href="https://bradley-animations.gumroad.com/l/jSyDM" target="_blank" rel="noopener noreferrer">Bradley_Animations</a>.
+                </p>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons_ForBlenderMarket-container"></div>
+            </main>
+        </div>
+        <!-- フッター -->
+        <div id="footer_ForBlenderMarket-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements_ForBlenderMarket();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_easyTextAnimation_ForBlenderMarket-container", url: "Addons/EasyTextAnimation/tableOfContents_easyTextAnimation_ForBlenderMarket.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
+    </body>
+</html>
