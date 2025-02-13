@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Node Utilities</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
+
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
+    </head>
+
+    <body>
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_nodeUtilities_ForBlenderMarket-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Node Utilities</h1>
+
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">This addon provides a pie menu that groups together several useful node operations.</h3>
+                    <h3 style="font-weight: bold; color: #f3f3f3">It has a wide range of functions such as align, distribute, flip, node search, coloring, etc.</h3>
+                    <h4 style="font-weight: bold; color: #f3f3f3">Versions 1.6.1 and above are compatible with Blender 3.4 and above.</h4>
+                    <a href="https://sum-bocfob.github.io/sumstudio/Addons/NodeUtilities/nodeUtilities.html" target="_blank" rel="noreferrer noopener" style="text-align: center"> <p class="default" style="text-decoration: underline; color: #f3f3f3">日本語のドキュメント</p></a>
+                </div>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">How to use</h2>
+
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 2; font-size: large; font-weight: bold">
+                        <li class=".myListContent">
+                            Go to Compositor, Shader Editor or Geometry Node Editor.
+                            <ul>
+                                <li>Press D on them to open utility pie menu, or E to open selection pie menu.</li>
+                                <li>Press Shift z or Shift x on them to change width of selected nodes.</li>
+                                <li>Press Shift Ctrl Alt D on them to duplicate and unparent selected nodes.</li>
+                            </ul>
+                        </li>
+                        <br />
+                        <li class=".myListContent">Press Shift E on Geometry Node Editor to toggle viewer on and off.</li>
+                    </ul>
+                </div>
+
+                <br />
+
+                <!-- 搭載機能 -->
+                <h2 id="section3" class="headline1 fontSize2">Functions</h2>
+
+                <h1 class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">Node Utility Pie Menu</span>
+                </h1>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/UtilityPieMenu.png" class="imgBorder" />
+                </div>
+                <p class="defaultText">The functions that can be used vary depending on the node or frame selected.</p>
+
+                <!-- 整列 / 反転 / 等間隔に配置 -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Align / Flip / Distribute
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/AlignFlipDist.gif" class="imgBorder" />
+                </div>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent"><span style="font-weight: bold">Align X:</span> Align selected nodes along the x-axis(same as press S > X > 0).</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Align Y:</span> Align selected nodes along the y-axis(same as press S > Y > 0).</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Flip X:</span> Flip selected nodes' x location(same as press S > X > -1).</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Flip Y:</span> Flip selected nodes' x location(same as press S > Y > -1).</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Distribute X:</span> Arrange the selected nodes evenly along the x-axis.</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Distribute Y:</span> Arrange the selected nodes evenly along the y-axis.</li>
+                    </ul>
+                </div>
+
+                <!-- 色設定 -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Coloring
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/Color.gif" class="imgBorder" />
+                </div>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent"><span style="font-weight: bold">Set Fav Color:</span> Changes the color of the selected nodes and frames to the color specified in preferences.</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Use Color Off:</span> Turn off Use Color for the selected nodes and frames.</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Color Input:</span> Changes the color of the selected nodes and frames to the its color.</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Paste Color of Active Node:</span> Applies the active node or frame color to all selections.</li>
+                    </ul>
+                </div>
+
+                <!-- ラベリング -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Labeling
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/LabelWithName.gif" class="imgBorder" />
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/LabelSize.gif" class="imgBorder" />
+                </div>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent">
+                            <span style="font-weight: bold">Labeling with Node Name:</span> Changes the label of a node depending on its name or operation.<br />
+                            Math, Vector Math, Boolean Math, Compare, and Mix Color nodes are named according to their operation.
+                        </li>
+                        <li class=".myListContent">
+                            <span style="font-weight: bold">Label Size:</span> Changes the label size of the selected frames.<br />
+                            Min: Set to 8 / Half: Set to 36 / Max: Set to 64 / Number: Set to its number.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 最後のノードをアウトプットに接続 (ジオメトリノードエディターのみ) -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Connect Last to Output (Geometry Nodes only)
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/ConnectLast.gif" class="imgBorder" />
+                </div>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent">
+                            <span style="font-weight: bold">Connect Last to Output:</span><br />
+                            Connects the specified node to the output.<br />
+                            For large node groups, you can sometimes use Shift Alt LMB to connect intermediate states to the output to check them.<br />
+                            This makes it easy to connect a last node back into an output node again.
+                        </li>
+                        <li class=".myListContent"><span style="font-weight: bold">Set Active Node to Last:</span> Specify the active node as the Last Node.</li>
+                    </ul>
+                </div>
+
+                <!-- ノードを検索 -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Search Node
+
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/Search.gif" class="imgBorder" />
+                </div>
+                <p class="defaultText">
+                    <span style="font-weight: bold">Search Node:</span> Search a node by its name and the name of its connected output socket.<br />
+                    Search a node by the name of its output socket is useful when a node group has multiple Group Inputs.
+                </p>
+
+                <!-- ズーム -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Zoom
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/Zoom.gif" class="imgBorder" />
+                </div>
+                <p class="defaultText">
+                    Zoom: Zoom to setected nodes or frames by zoom level specified in preferences.<br />
+                    This is useful because the period key does not zoom when you have a single node selected.<br />
+                    <span style="font-weight: bold">Note that it will not zoom exactly to the zoom level specified in the preferences.</span>
+                </p>
+
+                <!-- 同タイプのノードに対する接続されていないソケットを隠す -->
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Hide unconnected socket for same type
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/HideUnconnected.gif" class="imgBorder" />
+                </div>
+                <p class="defaultText">
+                    Hide unconnected socket for same type: Hide unconnected socket for same type of the active node.<br />
+                    This is especially useful if you have multiple group inputs.
+                </p>
+                <br />
+                <h1 id="section2_1" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">Selection Pie Menu</span>
+                </h1>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/SelectPie.png" class="imgBorder" />
+                </div>
+                <p class="defaultText">
+                    Selects nodes in each direction from the mouse position when the key is pressed.<br />
+                    If you turn on Select Frame, it will also select the frame.
+                </p>
+                <br />
+                <h1 id="section2_1" class="fontSize3" style="padding: 10px; text-align: center">
+                    <span class="headline2">Others</span>
+                </h1>
+                <div class="myList-container" style="margin: 0 auto; width: 80%; margin-bottom: 50px">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent"><span style="font-weight: bold">Increase / Decrease Node Width:</span> Shift x / Shift z keys will increase or decrease the width of the selected node. <br />The shortcut keys and node width increment / decrement value can be changed in the preferences.<br /></li>
+                        <li class=".myListContent">
+                            <span style="font-weight: bold">Toggle Viewer:</span> Shift e toggles the viewer on and off (Geometry Nodes only)
+                            <br />
+                            This works when there is only one viewer.
+                        </li>
+                        <li class=".myListContent"><span style="font-weight: bold">Duplicate and Unparent:</span> Shift Ctrl Alt d to duplicate and unparent selected nodes.</li>
+                    </ul>
+                </div>
+
+                <!-- プリファレンス -->
+                <h2 id="section4" class="headline1 fontSize2">Preferences</h2>
+                <p class="defaultText">You can change the shortcut keys.</p>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/NodeUtilities/Pref1.png" class="imgBorder" />
+                </div>
+                <br />
+                <p class="defaultText" style="margin-bottom: -10px">You can change the following items:</p>
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 2">
+                        <li class=".myListContent"><span style="font-weight: bold">Width Additinal Amount::</span> node width increment/decrement value. Node width increment/decrement values.</li>
+                        <li class=".myListContent"><span style="font-weight: bold">av Color:</span> Colors used in Set Fav Color.</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Auto Zoom:</span> Whether to automatically zoom after searching a node.</li>
+                        <li class=".myListContent"><span style="font-weight: bold">Zoom Level:</span> Higher values zoom more.</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%; margin-bottom: 100px">
+                    <img src="Addons/NodeUtilities/Pref2.png" class="imgBorder" />
+                </div>
+
+                <!-- installation -->
+                <div id="installation_ForBlenderMarket-container"></div>
+
+                <!-- Update -->
+                <h2 id="section5" class="headline1 fontSize2">Update</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Duplicate and Unparent works with selected multiple nodes now.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>2.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    The UI has been changed.<br />
+                                    Align X now aligns along the X axis, and Align Y now aligns along the Y axis.<br />
+                                    The default shortcut key for the Node Utility Pie Menu has been changed to D.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.6.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Small bug fix.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.6.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Added mute / unmute geometry node viewer function.<br />
+                                    "Change node width" affects multiple nodes now.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.5.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Search function can be used in node group now.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.5.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Fix bug.<br />
+                                    Added "search node" function.<br />
+                                    Added "connect last node to output" function.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.4.3</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Selection pie menu now opens only on node editor.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.4.2</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>Fix bug for change color.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.4.1</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    "Set Fav Color" and color change from color input now affect all selected nodes.<br />
+                                    Small bug fix.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons_ForBlenderMarket-container"></div>
+            </main>
+        </div>
+        <!-- フッター -->
+        <div id="footer_ForBlenderMarket-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements_ForBlenderMarket();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_nodeUtilities_ForBlenderMarket-container", url: "Addons/NodeUtilities/tableOfContents_nodeUtilities_ForBlenderMarket.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
+    </body>
+</html>
