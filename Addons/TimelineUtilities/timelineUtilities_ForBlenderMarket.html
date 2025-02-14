@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Timeline Utilities</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style_ForBlenderMarket.css" />
+
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
+    </head>
+
+    <body>
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_timelineUtilities_ForBlenderMarket-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Timeline Utilities</h1>
+
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">This add-on summarizes some timeline operations.</h3>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/TimelineUtilities/Menu.png" class="imgBorder" />
+                </div>
+                <br /><br />
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">How to use</h2>
+
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">Go to Timeline, Graph Editor or Dope Sheet(Dope Sheet mode or Action mode)</li>
+                        <li class=".myListContent">Press Y key</li>
+                    </ul>
+                </div>
+                <br />
+                <!-- 搭載機能 -->
+                <h2 id="section3" class="headline1 fontSize2">Functions</h2>
+                <p class="defaultText" style="margin-bottom: -10px">The following functions are summarized</p>
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">Swap Keyframe: Swap selected two keyframe's frame</li>
+                        <li class=".myListContent">
+                            Keyframe Move: Move selected keyframe with each value.<br />
+                            3 values(default 1,5,10) are customizable in Preferences.
+                        </li>
+                        <li class=".myListContent">Start/End Frame Move: Move Start/End frame with each value</li>
+                        <li class=".myListContent">Mirror By: Mirrorize selected key with the each button's value as the axis</li>
+                        <li class=".myListContent">
+                            Keying Set: Functions related keying<br />
+                            Bottom one's CustomKeyingType is customizable in Preferences
+                        </li>
+                        <li class=".myListContent">Move to Previous/Next Marker: Press "/" or "\"</li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/TimelineUtilities/Prefs.png" class="imgBorder" />
+                </div>
+                <br />
+                <!-- installation -->
+                <div id="installation_ForBlenderMarket-container"></div>
+
+                <!-- Update -->
+                <h2 id="section4" class="headline1 fontSize2">Update</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Support for graph editor and dope sheet.<br />
+                                    Support for Japanese.<br />
+                                    Changed the default shortcut key for moving to marker.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    Supports multiple Blender versions<br />
+                                    Fixed some bugs
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>First release</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons_ForBlenderMarket-container"></div>
+            </main>
+        </div>
+        <!-- フッター -->
+        <div id="footer_ForBlenderMarket-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements_ForBlenderMarket();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_timelineUtilities_ForBlenderMarket-container", url: "Addons/TimelineUtilities/tableOfContents_timelineUtilities_ForBlenderMarket.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
+    </body>
+</html>

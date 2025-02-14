@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- In Remote automatically changes to https://sum-bocfob.github.io/sumstudio/   -->
+        <base href="https://sum-bocfob.github.io/sumstudio/" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Timeline Utilities</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
+        <script src="js/setCurrentURLToShareButtons.js"></script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <div id="header-container"></div>
+
+        <!-- コンテンツとサイドバー -->
+        <div class="container">
+            <!-- 目次 -->
+            <div id="tableOfContents_timelineUtilities-container"></div>
+
+            <main>
+                <!-- タイトル -->
+                <h1 id="section1" class="headline1 fontSize1 title">Timeline Utilities</h1>
+
+                <div class="imgContainer" style="background: #efefef; padding: 10px 0">
+                    <a class="productPage-btn" href="https://blendermarket.com/products/timeline-utilities" target="_blank" rel="noopener noreferrer" style="margin-right: 100px">
+                        <img src="WebIcons/Blender Market logo.png" alt="Easy Text Animation Blender Market" style="width: 200px; height: auto; display: block" />
+                    </a>
+                    <a class="productPage-btn" href="https://sumsum.booth.pm/items/6597712" target="_blank" rel="noopener noreferrer" style="margin-right: 20px">
+                        <img src="WebIcons/BOOTH_Logo.png" alt="Easy Text Animation BOOTH" style="width: 200px; height: auto; display: block" />
+                    </a>
+                </div>
+                <div style="margin-top: 40px; text-align: center; max-width: 80%; margin-left: auto; margin-right: auto">
+                    <h3 style="font-weight: bold; color: #f3f3f3">このアドオンは、タイムラインのいくつかの機能をまとめたパイメニューを提供します</h3>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/TimelineUtilities/Menu_JP.png" class="imgBorder" />
+                </div>
+
+                <!-- 使用方法 -->
+                <h2 id="section2" class="headline1 fontSize2">使用方法</h2>
+
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">タイムライン、グラフエディターまたはドープシート(ドープシートモードまたはアクションモード)を開く</li>
+                        <li class=".myListContent">Yキー(デフォルト)を押す</li>
+                    </ul>
+                </div>
+
+                <!-- 搭載機能 -->
+                <h2 id="section3" class="headline1 fontSize2">搭載機能</h2>
+                <p class="defaultText">以下の機能があります</p>
+                <div class="myList-container" style="margin: 0 auto; width: 80%">
+                    <ul class="myList" style="line-height: 30px; font-size: large; font-weight: bold">
+                        <li class=".myListContent">キーフレームの位置を反転: 選択している二つのキーフレームの位置を反転します</li>
+                        <li class=".myListContent">
+                            キーフレームの移動: 選択しているキーフレームを移動さっせます。<br />
+                            3つの値(デフォルトで1,5,10)はプリファレンスから変更できます。
+                        </li>
+                        <li class=".myListContent">開始 / 終了フレームの移動: 開始 / 終了フレームをそれぞれのフレームに移動させます</li>
+                        <li class=".myListContent">反転: 選択しているキーフレームをそれぞれの値を中心に反転させます</li>
+                        <li class=".myListContent">
+                            キーイングセット: キーイング関連の機能<br />
+                            最下部のボタンはプリファレンスから変更できます
+                        </li>
+                        <li class=".myListContent">
+                            前の / 次のマーカーへ移動: /キーで前のマーカーへ、\キーで次のマーカーへ移動します<br />
+                            ショートカットキーはプリファレンスから変更できます
+                        </li>
+                    </ul>
+                </div>
+                <div class="imgContainer" style="max-width: 80%">
+                    <img src="Addons/TimelineUtilities/Prefs_JP.png" class="imgBorder" />
+                </div>
+
+                <!-- installation -->
+                <div id="installation-container"></div>
+
+                <!-- Update -->
+                <h2 id="section4" class="headline1 fontSize2">アップデート履歴</h2>
+                <div style="text-align: center; color: #f3f3f3; margin: 30px auto 30px auto; max-width: 80%; display: block">
+                    <table style="margin: auto; text-align: left; border-collapse: collapse">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.2.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    グラフエディター、ドープシートに対応<br />
+                                    日本語に対応<br />
+                                    マーカへ移動するショートカットキーのデフォルトを変更
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.1.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>
+                                    複数のBlenderバージョンに対応<br />
+                                    いくつかのバグを修正
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 1rem; vertical-align: top">
+                                    <div style="display: flex; align-items: baseline"><span>1.0.0</span><span style="margin-left: 0.5rem"></span></div>
+                                </td>
+                                <td>初期リリース</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- シェアボタン -->
+                <div id="shareButtons-container"></div>
+            </main>
+
+            <aside>
+                <!-- 人気のアドオン -->
+                <div id="popularAddons-container"></div>
+
+                <div class="recomTut">
+                    <h2>おすすめのチュートリアル</h2>
+                    <div class="iframe-container">
+                        <iframe id="videoIframe" src="https://www.youtube.com/embed/h7rYgz2HntE?si=uDidgrN98elI8vYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- フッター -->
+        <div id="footer-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_timelineUtilities-container", url: "Addons/TimelineUtilities/tableOfContents_timelineUtilities.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
+
+        <!-- 再生リストの名前ごとにランダムな動画を取得-->
+        <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
+        <script>
+            setRandomVideo("adddonTutorialList");
+        </script>
+    </body>
+</html>
