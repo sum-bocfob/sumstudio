@@ -12,37 +12,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/carousel.css" />
-        <script>
-            function includeHTML(id, url, callback) {
-                fetch(url)
-                    .then((response) => response.text())
-                    .then((data) => {
-                        document.getElementById(id).innerHTML = data;
-                        if (callback) callback();
-                    })
-                    .catch((error) => console.error("Error loading HTML:", error));
-            }
 
-            // ページが読み込まれたらHTMLをインクルード
-            window.onload = function () {
-                // includeHTML("carousel-container", "includes/carousel.html"); // カルーセルをインクルード
-                includeHTML("header-container", "includes/header.html"); // ヘッダーをインクルード
-                includeHTML("tableOfContents_specialCurves-container", "Addons/SpecialCurves/tableOfContents_specialCurves.html"); // 目次をインクルード
-                includeHTML("installation-container", "includes/installation.html"); // インストール方法をインクルード
-                includeHTML("popularAddons-container", "includes/popularAddons.html"); // 人気のアドオンをインクルード
-                includeHTML("footer-container", "includes/footer.html"); // フッターをインクルード
-                // シェアボタンをインクルード
-                includeHTML("shareButtons-container", "includes/shareButtons.html", function () {
-                    // インクルードされた後に、setCurrentURLToShareButtons() を実行
-                    if (typeof setCurrentURLToShareButtons === "function") {
-                        setCurrentURLToShareButtons();
-                    } else {
-                        console.error("setCurrentURLToShareButtons() is not defined.");
-                    }
-                });
-            };
-        </script>
-        <!-- setCurrentURLToShareButtons.js を読み込む -->
+        <!-- 固定要素インクルード用の関数群 -->
+        <script src="js/includeHTML.js"></script>
+        <script src="js/includeFixedElements.js"></script>
+        <!-- シェアボタンのURL更新用関数 -->
         <script src="js/setCurrentURLToShareButtons.js"></script>
     </head>
 
@@ -222,8 +196,10 @@
                 <div class="myList-container">
                     <ul class="myList" style="line-height: 30px; font-size: large">
                         <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
-                        <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます</li>
-                        <li class=".myListContent">オフの場合、数によって決めます</li>
+                        <li class=".myListContent">
+                            Resample By Distance: オンの場合、カーブの分割数は距離によって決めます<br />
+                            オフの場合、数によって決めます
+                        </li>
                         <li class=".myListContent">Sync Resample(Vine以外): Stem(茎)のカーブ分割数とThorn(棘)の生成数を同期させる</li>
                         <li class=".myListContent">Use UV</li>
                         <li class=".myListContent">Shade Smooth</li>
@@ -242,13 +218,21 @@
                             <span style="font-weight: bold">Stem(茎)</span>
 
                             <ul style="line-height: 30px; font-size: large">
-                                <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
-                                <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます</li>
-                                <li class=".myListContent">オフの場合、数によって決めます</li>
-                                <li class=".myListContent">Sync Resample(Vine以外): Stem(茎)のカーブ分割数とThorn(棘)の生成数を同期させる</li>
-                                <li class=".myListContent">Use UV</li>
-                                <li class=".myListContent">Shade Smooth</li>
-                                <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                                <li class=".myListContent">
+                                    Distance(Resample By Distanceがオンの場合): メインの部分(茎)のカーブの分割間の距離<br />
+                                    ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります***<br />
+                                    これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています
+                                </li>
+
+                                <li class=".myListContent">
+                                    Count(Resample By Distanceがオフの場合): メインの部分(茎)のカーブの分割数<br />
+                                    ***値を大きくし過ぎるとBlenderがクラッシュする可能性があります***<br />
+                                    これを防ぐため、プリファレンスの”Maximum Count”によって制限されています
+                                </li>
+                                <li class=".myListContent">Radius: 茎の半径</li>
+                                <li class=".myListContent">Resolution: 茎の断面の頂点数</li>
+                                <li class=".myListContent">Tip Shrink: 先端の細さ</li>
+                                <li class=".myListContent">Material: 茎のマテリアル</li>
                             </ul>
                         </li>
                         <br />
@@ -256,13 +240,32 @@
                             <span style="font-weight: bold">Thorn(棘)</span>
 
                             <ul style="line-height: 30px; font-size: large">
-                                <li class=".myListContent">Fill Caps: 先端の面を閉じるか</li>
-                                <li class=".myListContent">Resample By Distance: オンの場合、カーブの分割数は距離によって決めます</li>
-                                <li class=".myListContent">オフの場合、数によって決めます</li>
-                                <li class=".myListContent">Sync Resample(Vine以外): Stem(茎)のカーブ分割数とThorn(棘)の生成数を同期させる</li>
-                                <li class=".myListContent">Use UV</li>
-                                <li class=".myListContent">Shade Smooth</li>
-                                <li class=".myListContent">Auto Smooth Angle(Shade Smoothがオンの場合)</li>
+                                <li class=".myListContent">
+                                    Distance(Resample By Distanceがオンの場合): 棘を生成するカーブの分割間の距離<br />
+                                    ***値を小さくし過ぎるとBlenderがクラッシュする可能性があります***<br />
+                                    これを防ぐため、プリファレンスの”Minimum Distance”によって制限されています
+                                </li>
+
+                                <li class=".myListContent">
+                                    Count(Resample By Distanceがオフの場合): 棘を生成するカーブの分割数<br />
+                                    ***値を大きくし過ぎるとBlenderがクラッシュする可能性があります***<br />
+                                    これを防ぐため、プリファレンスの”Maximum Count”によって制限されています
+                                </li>
+                                <li class=".myListContent">Thorn Radius: 棘の半径</li>
+                                <li class=".myListContent">Resolution: 棘の断面の頂点数</li>
+                                <li class=".myListContent">Length: 棘の長さ</li>
+                                <li class=".myListContent">Length Random Factor: 棘の長さのランダムさ</li>
+                                <li class=".myListContent">Length Seed: 棘の長さのランダムさのシード値</li>
+                                <li class=".myListContent">Offset: カーブの中心へのオフセット</li>
+                                <li class=".myListContent">Exponent: 棘の形状</li>
+                                <li class=".myListContent">Random Rotation: 茎に沿ったランダムな回転</li>
+                                <li class=".myListContent">Rotation Seed: 茎に沿ったランダムな回転のシード値</li>
+                                <li class=".myListContent">Scale along Curve: 茎の先端に行くにつれたスケール</li>
+                                <li class=".myListContent">Delete Start Point: カーブの始点から棘を削除する数</li>
+                                <li class=".myListContent">Delete End Point: カーブの終点から棘を削除する数</li>
+                                <li class=".myListContent">Probability: 棘を生成する割合</li>
+                                <li class=".myListContent">Probability Seed: 棘を生成する割合のシード値</li>
+                                <li class=".myListContent">Material: 棘のマテリアル</li>
                             </ul>
                         </li>
                     </ul>
@@ -284,6 +287,10 @@
                     </ul>
                 </div>
 
+                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Cactus(サボテン)
+                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
+                </div>
                 <div class="myList-container">
                     <ul class="myList">
                         <li>
@@ -329,11 +336,6 @@
                             </ul>
                         </li>
                     </ul>
-                </div>
-
-                <div style="font-size: 21px; display: flex; align-items: center; justify-content: center; width: 80%; font-weight: bold; margin: 50px auto 0 auto">
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-right: 10px"></span>Cactus(サボテン)
-                    <span style="flex-grow: 1; height: 1px; background-color: #f3f3f3; margin-left: 10px"></span>
                 </div>
 
                 <!-- Road -->
@@ -726,8 +728,10 @@
                         <li class=".myListContent">Fillet Count: ベベルの数</li>
                         <li class=".myListContent">Fillet Radius: ベベルの半径</li>
                         <li class=".myListContent">Thickness: 厚さ</li>
-                        <li class=".myListContent">reverse: 並び順を反転</li>
-                        <li class=".myListContent">回転とスケールは並び順によって影響されます</li>
+                        <li class=".myListContent">
+                            reverse: 並び順を反転<br />
+                            回転とスケールは並び順によって影響されます
+                        </li>
                         <li class=".myListContent">Material</li>
                         <li class=".myListContent">
                             Rotaiton
@@ -763,73 +767,93 @@
 
                 <!-- 対応表 -->
                 <h2 id="section4" class="headline1 fontSize2">対応表</h2>
-                <table border="2" style="margin: 20px auto; border-collapse: collapse; text-align: center">
+
+                <table border="2" style="margin: 20px auto; border-collapse: collapse; text-align: center; max-width: 95%">
                     <thead>
                         <tr>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3"></th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Arrow</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Chain</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Plant</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Road</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Cable</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Flag</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Hose</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Lightning</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Pipe</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Stair</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">Stitches</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">RandomWire</th>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3">CylinderLine</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3"></th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Arrow</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Chain</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Plant</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Road</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Cable</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Flag</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Hose</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Lightning</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3" scope="row">カーブのループ</th>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3" scope="row">カーブのループ</th>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
                         </tr>
                         <tr>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3" scope="row">一つのオブジェクトに複数のスプライン</th>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">*〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3" scope="row">一つのオブジェクトに複数のスプライン</th>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">*〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
                         </tr>
                         <tr>
-                            <th style="padding: 8px; border: 1px solid #f3f3f3" scope="row">UV</th>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">*〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">*〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">〇</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
-                            <td style="padding: 8px; border: 1px solid #f3f3f3">✕</td>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3" scope="row">UV</th>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">*〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">*〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table border="2" style="margin: 20px auto; border-collapse: collapse; text-align: center; max-width: 95%">
+                    <thead>
+                        <tr>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3"></th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Pipe</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Stair</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">Stitches</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">RandomWire</th>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3">CylinderLine</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3" scope="row">カーブのループ</th>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                        </tr>
+                        <tr>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3" scope="row">一つのオブジェクトに複数のスプライン</th>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                        </tr>
+                        <tr>
+                            <th style="padding: 6px; border: 1px solid #f3f3f3" scope="row">UV</th>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">〇</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
+                            <td style="padding: 6px; border: 1px solid #f3f3f3">✕</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1018,7 +1042,6 @@
                 <div class="imgContainer" style="max-width: 80%">
                     <img src="Addons/SpecialCurves/stair_uv_SC_y.png" class="imgBorder" />
                 </div>
-                <p class="defaultText">PipeのZは使用できません</p>
                 <div class="imgContainer" style="max-width: 80%">
                     <img src="Addons/SpecialCurves/stair_uv_SC_z.png" class="imgBorder" />
                 </div>
@@ -1028,7 +1051,6 @@
                 <div class="imgContainer" style="max-width: 80%">
                     <img src="Addons/SpecialCurves/handrail_y.png" class="imgBorder" />
                 </div>
-                <p class="defaultText">PipeのTypeが1の場合、ConnectorのZは使用できません。</p>
                 <div class="imgContainer" style="max-width: 80%">
                     <img src="Addons/SpecialCurves/handrail_z.png" class="imgBorder" />
                 </div>
@@ -1181,6 +1203,20 @@
         </div>
         <!-- フッター -->
         <div id="footer-container"></div>
+
+        <!-- ページ読み込み完了後のインクルード処理 -->
+        <script>
+            window.onload = function () {
+                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
+                includeFixedElements();
+
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML([{ id: "tableOfContents_specialCurves-container", url: "Addons/SpecialCurves/tableOfContents_specialCurves.html" }], function () {
+                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                    setCurrentURLToShareButtons();
+                });
+            };
+        </script>
 
         <!-- 再生リストの名前ごとにランダムな動画を取得-->
         <script src="GetYouTubeURLs/loadRandomUrl_AddonTutorial.js"></script>
