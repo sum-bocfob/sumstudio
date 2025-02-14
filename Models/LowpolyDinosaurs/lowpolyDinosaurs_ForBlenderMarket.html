@@ -426,16 +426,17 @@
         <!-- ページ読み込み完了後のインクルード処理 -->
         <script>
             window.onload = function () {
-                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
-                includeFixedElements_ForBlenderMarket(function () {
-                    setCurrentURLToShareButtons();
-                });
-
-                // // 複数のHTMLファイルをインクルードする例
-                // includeMultipleHTML([{ id: "tableOfContents_lowpolyDinosaurs-container", url: "Models/LowpolyDinosaurs/tableOfContents_lowpolyDinosaurs.html" }], function () {
-                //     // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
-                //     setCurrentURLToShareButtons();
-                // });
+                // 複数のHTMLファイルをインクルードする例
+                includeMultipleHTML(
+                    [
+                        { id: "shareButtons_ForBlenderMarket-container", url: "includes/shareButtons_ForBlenderMarket.html" },
+                        { id: "footer_ForBlenderMarket-container", url: "includes/footer_ForBlenderMarket.html" },
+                    ],
+                    function () {
+                        // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                        setCurrentURLToShareButtons();
+                    }
+                );
             };
         </script>
     </body>

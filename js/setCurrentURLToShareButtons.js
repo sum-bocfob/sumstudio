@@ -1,3 +1,5 @@
+// js/setCurrentURLToShareButtons.js
+
 function setCurrentURLToShareButtons() {
     var currentUrl = encodeURIComponent(window.location.href);
     var mainUrl = window.location.href.replace(window.location.protocol + "//", "");

@@ -433,14 +433,18 @@
         <!-- ページ読み込み完了後のインクルード処理 -->
         <script>
             window.onload = function () {
-                // 固定要素（ヘッダー、フッターなど）を一括でインクルード
-                includeFixedElements_ForBlenderMarket();
-
                 // 複数のHTMLファイルをインクルードする例
-                includeMultipleHTML([{ id: "tableOfContents_extremeLowpolyPack_ForBlenderMarket-container", url: "Models/ExtremeLowpolyPack/tableOfContents_extremeLowpolyPack_ForBlenderMarket.html" }], function () {
-                    // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
-                    setCurrentURLToShareButtons();
-                });
+                includeMultipleHTML(
+                    [
+                        { id: "tableOfContents_extremeLowpolyPack_ForBlenderMarket-container", url: "Models/ExtremeLowpolyPack/tableOfContents_extremeLowpolyPack_ForBlenderMarket.html" },
+                        { id: "shareButtons_ForBlenderMarket-container", url: "includes/shareButtons_ForBlenderMarket.html" },
+                        { id: "footer_ForBlenderMarket-container", url: "includes/footer_ForBlenderMarket.html" },
+                    ],
+                    function () {
+                        // shareButtons.html のインクルードが完了した後にシェアボタンのhrefを更新
+                        setCurrentURLToShareButtons();
+                    }
+                );
             };
         </script>
     </body>

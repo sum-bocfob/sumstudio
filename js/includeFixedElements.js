@@ -56,7 +56,9 @@ function includeFixedElements_ForBlenderMarket(callback) {
     // includeMultipleHTML が定義されている場合はそれを利用
     if (typeof includeMultipleHTML === "function") {
         includeMultipleHTML(fixedElements_ForBlenderMarket, callback);
+        console.log("TDDD");
     } else {
+        console.log("AAAAAAAAAAAAAAAAAAA");
         // includeMultipleHTML がない場合は、個別に includeHTML を呼び出す
         let loaded = 0;
         fixedElements_ForBlenderMarket.forEach(function (item) {
